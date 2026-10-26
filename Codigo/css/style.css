@@ -1,6 +1,4 @@
-/* ==========================================
-   1. VARIABLES GLOBALES (Paleta EduNova)
-   ========================================== */
+/* 1. VARIABLES GLOBALES (Paleta EduNova) */
 :root {
   --blanco-puro: #FFFFFF;
   --deep-navy: #1A237E;
@@ -14,9 +12,7 @@
   --morado: #8B5CF6;
 }
 
-/* ==========================================
-   2. RESETEO Y ESTILOS BASE
-   ========================================== */
+/* 2. RESETEO Y ESTILOS BASE */
 * {
   margin: 0;
   padding: 0;
@@ -40,9 +36,7 @@ main:not(.dashboard-main):not(.auth-container) {
   margin: 0 auto; 
 }
 
-/* ==========================================
-   3. BOTONES Y UTILIDADES GLOBALES
-   ========================================== */
+/* 3. BOTONES Y UTILIDADES GLOBALES */
 .btn {
   display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: bold;
   text-align: center; cursor: pointer; min-height: 44px; border: none;
@@ -69,9 +63,7 @@ main:not(.dashboard-main):not(.auth-container) {
 .bg-purple-light { background-color: #F3E8FF; }
 .bg-green-light { background-color: #D1FAE5; }
 
-/* ==========================================
-   4. PANTALLA 1: LANDING PAGE (Planes)
-   ========================================== */
+/* 4. PANTALLA 1: LANDING PAGE (Planes) */
 header { border-bottom: 1px solid var(--gris-fondo); padding: 16px 20px; }
 .navbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 .logo { height: 60px; max-width: 250px; width: auto; }
@@ -123,9 +115,7 @@ footer { border-top: 1px solid var(--gris-fondo); padding: 40px 20px; margin-top
 .footer-links h3 { font-family: var(--fuente-titulos); color: var(--deep-navy); margin-bottom: 15px; }
 .footer-links li { margin-bottom: 10px; }
 
-/* ==========================================
-   5. PANTALLAS 2 Y 3: LOGIN / REGISTRO
-   ========================================== */
+/* 5. PANTALLAS 2 Y 3: LOGIN / REGISTRO */
 .auth-body { height: 100vh; overflow-x: hidden; }
 .auth-container { display: flex; flex-direction: column; min-height: 100vh; width: 100%; padding: 0; margin: 0; }
 .auth-image-section { display: none; position: relative; background-color: var(--gris-fondo); overflow: hidden; padding: 0 !important; }
@@ -158,9 +148,7 @@ footer { border-top: 1px solid var(--gris-fondo); padding: 40px 20px; margin-top
 .auth-footer { text-align: center; font-size: 0.9rem; }
 .auth-footer a { color: var(--deep-navy); font-weight: bold; }
 
-/* ==========================================
-   6. PANTALLA 4: DASHBOARD (Nuevo)
-   ========================================== */
+/* 6. PANTALLA 4: DASHBOARD (Nuevo) */
 .dashboard-body { background-color: var(--gris-fondo); display: flex; overflow-x: hidden; }
 
 .sidebar { width: 260px; background-color: var(--blanco-puro); height: 100vh; position: fixed; left: -260px; top: 0; border-right: 1px solid #E2E8F0; display: flex; flex-direction: column; transition: left 0.3s ease; z-index: 1000; }
@@ -251,9 +239,7 @@ footer { border-top: 1px solid var(--gris-fondo); padding: 40px 20px; margin-top
 .course-info p { font-size: 0.85rem; color: var(--gris-pizarra); margin-bottom: 15px; }
 .course-info .btn-link { color: var(--azul-principal) !important; font-weight: bold; }
 
-/* ==========================================
-   7. DISEÑO RESPONSIVO (Tablets y Escritorio)
-   ========================================== */
+/* 7. DISEÑO RESPONSIVO (Tablets y Escritorio)*/
 @media (min-width: 768px) {
   .footer-contenido { flex-direction: row; justify-content: space-between; flex-wrap: wrap; }
   .footer-logo-info { width: 30%; }
