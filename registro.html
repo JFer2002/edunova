@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduNova - Crear Cuenta Nueva</title>
+    
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Codigo/css/style.css">
+</head>
+<body class="auth-body">
+
+    <!-- Contenedor principal dividido -->
+    <main class="auth-container">
+        
+        <!-- Mitad izquierda: Formulario de Registro (Lo ponemos primero para que salga a la izquierda) -->
+        <section class="auth-form-section">
+            <div class="auth-form-container">
+                
+                <div class="auth-header">
+                    <h1>Crear cuenta nueva</h1>
+                    <p>Regístrate y empieza tu nuevo viaje</p>
+                </div>
+
+                <!-- Formulario -->
+                <form action="login.html" method="GET" class="auth-form">
+                    
+                    <!-- Campo: Nombres -->
+                    <div class="form-group">
+                        <label for="nombres">Nombres</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user input-icon"></i>
+                            <input type="text" id="nombres" name="nombres" placeholder="Nombres" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Apellidos -->
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user input-icon"></i>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Correo -->
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope input-icon"></i>
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Contraseña -->
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                            <button type="button" class="btn-eye" aria-label="Mostrar contraseña">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo: Confirmar Contraseña -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar Contraseña</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma tu contraseña" required>
+                            <button type="button" class="btn-eye" aria-label="Mostrar contraseña">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Recuérdame</span>
+                        </label>
+                    </div>
+
+                    <!-- Botón de Registro -->
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                    
+                    <p style="text-align: center; font-size: 0.8rem; color: #9CA3AF; margin-top: 10px;">
+                        Al ingresar aceptas los términos y condiciones
+                    </p>
+                </form>
+
+                <div class="auth-separator">
+                    <span>Otras formas de iniciar sesión</span>
+                </div>
+
+                <!-- Botones Sociales -->
+                <div class="social-login">
+                    <button type="button" class="btn-social" aria-label="Iniciar con Facebook">
+                        <i class="fa-brands fa-facebook" style="color: #1877F2;"></i>
+                    </button>
+                    <button type="button" class="btn-social" aria-label="Iniciar con Apple">
+                        <i class="fa-brands fa-apple" style="color: #000000;"></i>
+                    </button>
+                    <button type="button" class="btn-social" aria-label="Iniciar con Google">
+                        <i class="fa-brands fa-google" style="color: #EA4335;"></i>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesión</a></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mitad derecha: Ilustración y Logo (Ahora está abajo en el código) -->
+        <section class="auth-image-section">
+            <!-- Colocamos style inline temporal para mover el logo a la derecha como en tu mockup -->
+            <div class="auth-logo" style="left: auto; right: 40px;">
+                <a href="index.html">
+                    <img src="./Recursos/Imagenes/Logo EduNova.png" alt="Logotipo de EduNova">
+                </a>
+            </div>
+            <img src="./Recursos/Imagenes/Hombre programando.jpg" alt="Estudiante programando" class="auth-illustration">
+        </section>
+
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

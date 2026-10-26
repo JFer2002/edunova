@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduNova - Dashboard del Estudiante</title>
+    
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="codigo/css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- ==========================================
+         MENÚ LATERAL (SIDEBAR)
+         ========================================== -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Logo -->
+        <div class="sidebar-logo">
+            <a href="index.html">
+                <img src="./Recursos/Imagenes/Logo EduNova.png" alt="Logotipo EduNova">
+            </a>
+            <!-- Botón para cerrar el menú en móvil -->
+            <button id="close-sidebar" class="btn-close-sidebar d-md-none"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Navegación del Menú Lateral -->
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-layer-group"></i> Cursos <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-clipboard"></i> Tareas <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Reportes <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user-group"></i> Tutores <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-calendar-check"></i> Asesorías <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-user"></i> Mi Perfil <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-simple"></i> Mi Actividad <i class="fa-solid fa-chevron-down arrow-icon"></i></a></li>
+            </ul>
+
+            <ul class="nav-list nav-bottom">
+                <li><a href="#"><i class="fa-regular fa-life-ring"></i> Soporte</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Configuraciones</a></li>
+            </ul>
+        </nav>
+
+        <!-- Tarjeta Flotante: Continúa aprendiendo (Regla 8 de la Unificada B) -->
+        <div class="floating-card">
+            <div class="floating-card-header">
+                <h4>Continúa aprendiendo</h4>
+                <button class="btn-close-card" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p>Has completado el 90% de tu curso de Creador de contenido. ¡Estás muy cerca de certificarte!</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 90%;"></div>
+            </div>
+            <div class="floating-card-actions">
+                <a href="#" class="btn-link">Ocultar</a>
+                <a href="#" class="btn-link text-blue">Continuar Curso</a>
+            </div>
+        </div>
+
+        <!-- Perfil del usuario (Abajo a la izquierda) -->
+        <div class="sidebar-user">
+            <img src="https://ui-avatars.com/api/?name=Juan+Guio&background=1A237E&color=fff" alt="Avatar Juan" class="user-avatar">
+            <div class="user-info">
+                <p class="user-name">Juan Guio</p>
+                <p class="user-email">juan@edunova.com</p>
+            </div>
+            <!-- Botón para cerrar sesión que lleva al Index -->
+            <a href="index.html" class="logout-btn" title="Cerrar sesión"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+    </aside>
+<!-- ==========================================
+         CONTENIDO PRINCIPAL DEL DASHBOARD
+         ========================================== -->
+    <main class="dashboard-main">
+        
+        <!-- Encabezado Superior (Top Bar) -->
+        <header class="dashboard-header">
+            <!-- Botón de hamburguesa para móvil -->
+            <button id="open-sidebar" class="btn-menu-mobile"><i class="fa-solid fa-bars"></i></button>
+            
+            <div class="header-titles">
+                <h1>Bienvenido de nuevo, Juan Guio</h1>
+                <p>Resumen de tu progreso y actividad reciente.</p>
+            </div>
+            
+            <div class="header-search">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar">
+                </div>
+            </div>
+        </header>
+
+        <!-- ¡ESTA ES LA ETIQUETA QUE FALTABA! Abre la cuadrícula -->
+        <div class="dashboard-grid">
+
+            <!-- Banner Principal (Promo Premium) -->
+            <div class="panel banner-premium grid-col-span-2">
+                <div class="banner-text">
+                    <h2>Sube a nivel Premium con un<br>20% de descuento</h2>
+                    <p>Potencia tus habilidades con nuestras rutas de aprendizaje personalizadas. Accede a mentorías en vivo y lleva tu carrera profesional al siguiente nivel.</p>
+                </div>
+                <img src="./Recursos/Imagenes/hombresentado1.png" alt="Estudiante aprendiendo" class="banner-img">
+            </div>
+
+            <!-- Panel Lateral Derecho: Mi Progreso -->
+            <div class="panel progress-panel grid-row-span-2">
+                <div class="panel-header">
+                    <h3>Mi progreso</h3>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                
+                <div class="progress-item">
+                    <div class="progress-icon bg-blue-light"><i class="fa-solid fa-desktop text-blue"></i></div>
+                    <div class="progress-details">
+                        <div class="progress-text"><span>Diseño Web</span> <span class="text-blue">55%</span></div>
+                        <div class="progress-bar-container"><div class="progress-bar bg-blue" style="width: 55%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-icon bg-pink-light"><i class="fa-solid fa-bag-shopping text-pink"></i></div>
+                    <div class="progress-details">
+                        <div class="progress-text"><span>Facebook Ads</span> <span class="text-pink">75%</span></div>
+                        <div class="progress-bar-container"><div class="progress-bar bg-pink" style="width: 75%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-icon bg-purple-light"><i class="fa-solid fa-cart-shopping text-purple"></i></div>
+                    <div class="progress-details">
+                        <div class="progress-text"><span>Diseño Gráfico</span> <span class="text-purple">70%</span></div>
+                        <div class="progress-bar-container"><div class="progress-bar bg-purple" style="width: 70%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-icon bg-green-light"><i class="fa-solid fa-link text-green"></i></div>
+                    <div class="progress-details">
+                        <div class="progress-text"><span>Creador de Contenido</span> <span class="text-green">90%</span></div>
+                        <div class="progress-bar-container"><div class="progress-bar bg-green" style="width: 90%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Tarjetas de Estadísticas (Kpis) -->
+            <div class="stats-row grid-col-span-2">
+                <div class="panel stat-card">
+                    <div class="stat-header"><span>Cursos Completados</span><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    <div class="stat-number">28</div>
+                </div>
+                <div class="panel stat-card">
+                    <div class="stat-header"><span>Cursos en progreso</span><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    <div class="stat-number">14</div>
+                </div>
+                <div class="panel stat-card">
+                    <div class="stat-header"><span>Asesorías agendadas</span><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    <div class="stat-number">91</div>
+                </div>
+            </div>
+
+            <!-- Gráfico de Progreso Académico -->
+            <div class="panel chart-panel grid-col-span-2">
+                <div class="panel-header">
+                    <div>
+                        <h3>Tu progreso académico</h3>
+                        <p class="subtitle">Haz un seguimiento de tus horas de estudio acumuladas en el año</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="chart-placeholder">
+                    <img src="./Recursos/Imagenes/Graficadebarras.png" alt="Gráfica de barras de estudio" style="width: 100%; max-width: 600px;">
+                </div>
+            </div>
+
+            <!-- Panel de Evaluación (Radar) -->
+            <div class="panel radar-panel">
+                <div class="panel-header">
+                    <h3>Evaluación de Competencias</h3>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="chart-placeholder text-center">
+                    <img src="./Recursos/Imagenes/Graficaradar.png" alt="Gráfica de radar de competencias" style="width: 80%; margin: 20px auto;">
+                </div>
+                <button class="btn btn-outline btn-block mt-3">Ver informe completo</button>
+            </div>
+
+            <!-- Cursos Recientes -->
+            <div class="recent-courses-section grid-col-span-3">
+                <div class="panel-header mb-3">
+                    <h3>Cursos Recientes</h3>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-img bg-api"></div>
+                        <div class="course-info">
+                            <h4>Construyendo tu ecosistema API</h4>
+                            <p>Domina las herramientas más modernas para crear, probar y gestionar APIs RESTful en tus proyectos de software.</p>
+                            <a href="#" class="btn-link text-blue">Ir al curso <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-img bg-android"></div>
+                        <div class="course-info">
+                            <h4>Conviértete en Desarrollador Android</h4>
+                            <p>Aprende a programar aplicaciones móviles desde cero y domina el entorno de desarrollo nativo.</p>
+                            <a href="#" class="btn-link text-blue">Ir al curso <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-img bg-ux"></div>
+                        <div class="course-info">
+                            <h4>Colaboración: La clave del buen diseño UX/UI</h4>
+                            <p>Descubre cómo el trabajo en equipo y las metodologías ágiles pueden potenciar tus habilidades de diseño.</p>
+                            <a href="#" class="btn-link text-blue">Ir al curso <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Fin del Grid -->
+    </main>

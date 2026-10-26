@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!-- Definimos el idioma en español, buena práctica de accesibilidad -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- ETIQUETA OBLIGATORIA: Hace que la página sea Responsive (Mobile First) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduNova - Planes y Suscripciones</title>
+    
+    <!-- Aquí conectamos nuestra hoja de estilos -->
+    <link rel="stylesheet" href="./Codigo/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado y navegación -->
+    <header>
+        <!-- Etiqueta nav semántica -->
+        <nav aria-label="Navegación Principal" class="navbar">
+            
+            <!-- Logo de la empresa -->
+            <div class="logo-container">
+                <img src="./Recursos/Imagenes/Logo EduNova.png" alt="Logotipo de EduNova" class="logo">
+            </div>
+
+            <!-- Menú de navegación (Se ocultará en móvil y se verá en escritorio) -->
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Explorar Cursos</a></li>
+                <li><a href="index.html" class="activo">Planes</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+
+            <!-- Botón de inicio de sesión que conecta con la pantalla de Login -->
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-login">Iniciar Sesión</a>
+            </div>
+            
+        </nav>
+    </header>
+
+   <!-- Contenido Principal -->
+    <main>
+        <!-- Sección de Título e Interruptor -->
+        <section class="planes-header">
+            <h1>Elige tu plan perfecto</h1>
+            <p>Selecciona el plan que mejor se adapte a tus necesidades. Cambia o cancela en cualquier momento.</p>
+            
+            <!-- Interruptor Mensual/Anual -->
+            <div class="toggle-container">
+                <span class="toggle-label">Mensual</span>
+                <label class="switch" for="plan-toggle">
+                    <input type="checkbox" id="plan-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Anual</span>
+            </div>
+        </section>
+
+        <!-- Contenedor de las Tarjetas de Planes -->
+        <section class="planes-cards">
+            
+            <!-- TARJETA BÁSICA -->
+            <article class="card card-basico">
+                <span class="badge">Básico</span>
+                <h2>Explorador</h2>
+                <div class="precio">
+                    <span class="moneda">$</span>199.000 <span class="cop">COP</span>
+                </div>
+                <!-- Agregamos la clase texto-verde para el ahorro -->
+                <p class="facturacion">Por año <br><span class="texto-verde">(Ahorras $39.800)</span></p>
+                <p class="descripcion">Ideal para empezar a aprender a tu propio ritmo y conocer la plataforma</p>
+                
+                <ul class="lista-beneficios">
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Cursos introductorios</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Modo Oscuro</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Dashboard básico</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Foros</li>
+                    <!-- Elementos tachados -->
+                    <li class="no-incluido">Catálogo ilimitado</li>
+                    <li class="no-incluido">Certificados con QR</li>
+                    <li class="no-incluido">Clases sincrónicas</li>
+                    <li class="no-incluido">Asesorías 1 a 1</li>
+                </ul>
+                <a href="registro.html" class="btn btn-outline">Suscríbete</a>
+            </article>
+
+            <!-- TARJETA PRO -->
+            <article class="card card-pro recomendado">
+                <span class="badge badge-popular">El más popular</span>
+                <h2>Pro</h2>
+                <div class="precio">
+                    <span class="moneda">$</span>500.000 <span class="cop">COP</span>
+                </div>
+                <p class="facturacion">Por año <br><span class="texto-verde">(Ahorras $100.000 - ¡2 meses gratis!)</span></p>
+                <p class="descripcion">Desbloquea todo el potencial de EduNova. Tu pago apoya directamente a las universidades</p>
+                
+                <ul class="lista-beneficios">
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Catálogo ilimitado</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Certificados con QR</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Clases sincrónicas (50 est.)</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Rutas personalizadas</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> WhatsApp</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Modo Oscuro</li>
+                    <li class="no-incluido">Asesorías 1 a 1</li>
+                    <li class="no-incluido">Material exclusivo</li>
+                </ul>
+                <a href="registro.html" class="btn btn-primary">Suscríbete</a>
+            </article>
+
+            <!-- TARJETA VIP -->
+            <article class="card card-vip">
+                <span class="badge">VIP</span>
+                <h2>Premium</h2>
+                <div class="precio">
+                    <span class="moneda">$</span>899.000 <span class="cop">COP</span>
+                </div>
+                <p class="facturacion">Por año <br><span class="texto-verde">(Ahorras $179.800 - ¡2 meses gratis!)</span></p>
+                <p class="descripcion">Para estudiantes que quieren un acompañamiento total</p>
+                
+                <ul class="lista-beneficios">
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Todo lo de Básico y Pro</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Asesorías 1 a 1</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Grabaciones en diferido</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Material exclusivo</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Soporte prioritario</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Certificados con QR</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> Rutas personalizadas</li>
+                    <li class="incluido"><i class="fa-solid fa-check"></i> WhatsApp prioritario</li>
+                </ul>
+                <a href="registro.html" class="btn btn-outline">Suscríbete</a>
+            </article>
+
+        </section>
+
+        <!-- Sección inferior de garantía -->
+        <section class="garantia-seccion">
+            <p>Todos los planes incluyen una garantía de devolución de 30 días.</p>
+            <p>¿Tienes preguntas? <a href="#">Contáctanos</a></p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-contenido">
+            <!-- Columna 1: Logo, texto y redes sociales -->
+            <div class="footer-logo-info">
+                <img src="./Recursos/Imagenes/Logo EduNova.png" alt="Logo EduNova" class="logo-footer">
+                <p>Transformando la educación técnica a través de herramientas digitales de vanguardia para instructores y aprendices.</p>
+                
+                <!-- Íconos de redes sociales -->
+                <div class="redes-sociales">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <!-- Columna 2: Navegación Rápida -->
+            <div class="footer-links">
+                <h3>Navegación Rápida</h3>
+                <ul>
+                    <li><a href="#">Explorar cursos</a></li>
+                    <li><a href="#">Nuestros Instructores</a></li>
+                    <li><a href="#">Precios y suscripciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Soporte Legal -->
+            <div class="footer-links">
+                <h3>Soporte Legal</h3>
+                <ul>
+                    <li><a href="#">Centro de ayuda</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad (Ley 1581 de 2012)</a></li>
+                    <li><a href="#">Reglamento del estudiante</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Contacto -->
+            <div class="footer-links">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Eventos y Webinars</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
