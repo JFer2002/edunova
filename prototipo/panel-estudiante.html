@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Estudiante — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Estudiante</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación usuario">
+        <ul>
+          <li><a href="panel-estudiante.html" class="activo">Mi Panel</a></li>
+          <li><a href="mis-cursos.html">Mis Cursos</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal con Layout Sidebar -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Menú Lateral (Sidebar) -->
+      <aside class="sidebar-panel">
+        <div style="text-align: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea);">
+          <div style="width: 60px; height: 60px; background-color: var(--color-gris-claro); border-radius: 50%; margin: 0 auto 0.5rem auto; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            ES
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 0.2rem;">Estudiante Demo</h3>
+          <span class="insignia insignia-oscura">Plan Pro</span>
+        </div>
+
+        <nav aria-label="Menú de panel">
+          <ul class="menu-sidebar">
+            <li><a href="panel-estudiante.html" class="activo"> Dashboard</a></li>
+            <li><a href="mis-cursos.html"> Mis Cursos Inscritos</a></li>
+            <li><a href="aula-modulo.html"> Aula Virtual / Lección</a></li>
+            <li><a href="entrega-evidencia.html"> Envío de Evidencias</a></li>
+            <li><a href="certificados.html"> Mis Certificados</a></li>
+            <li><a href="catalogo.html"> Explorar Catálogo</a></li>
+            <li><a href="login.html"> Cambiar de Cuenta</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Contenido Principal -->
+      <section>
+
+        <!-- Bienvenida -->
+        <div style="margin-bottom: 2rem;">
+          <h1>¡Hola de nuevo, Estudiante!</h1>
+          <p style="color: var(--color-gris-medio);">Continúa con tus cursos activos y revisa tus próximas actividades sincrónicas.</p>
+        </div>
+
+        <!-- Cursos Activos con Barra de Porcentaje (RF-05, HU-03) -->
+        <div style="margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem;">Cursos en Progreso</h2>
+
+          <div class="grid-tarjetas">
+
+            <!-- Tarjeta Curso Activo 1 -->
+            <article class="tarjeta">
+              <div class="tarjeta-cuerpo">
+                <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Desarrollo Web</span>
+                <h3 class="tarjeta-titulo">Desarrollo Web Frontend con HTML5 y CSS3</h3>
+                <p class="tarjeta-texto">Módulo actual: Módulo 3 — CSS3 y Flexbox</p>
+                
+                <div class="contenedor-progreso">
+                  <div class="etiqueta-progreso">
+                    <span>Avance General</span>
+                    <span>75%</span>
+                  </div>
+                  <div class="barra-progreso-fondo">
+                    <div class="barra-progreso-relleno" style="width: 75%;"></div>
+                  </div>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <span style="font-size: 0.8rem; color: var(--color-gris-medio);">3 de 4 Módulos</span>
+                  <a href="aula-modulo.html" class="btn btn-principal btn-sm">Continuar</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Tarjeta Curso Activo 2 -->
+            <article class="tarjeta">
+              <div class="tarjeta-cuerpo">
+                <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Programación</span>
+                <h3 class="tarjeta-titulo">JavaScript Vanilla y Lógica de Programación</h3>
+                <p class="tarjeta-texto">Módulo actual: Módulo 1 — Variables y Funciones</p>
+                
+                <div class="contenedor-progreso">
+                  <div class="etiqueta-progreso">
+                    <span>Avance General</span>
+                    <span>20%</span>
+                  </div>
+                  <div class="barra-progreso-fondo">
+                    <div class="barra-progreso-relleno" style="width: 20%;"></div>
+                  </div>
+                </div>
+
+                <div class="tarjeta-pie">
+                  <span style="font-size: 0.8rem; color: var(--color-gris-medio);">1 de 5 Módulos</span>
+                  <a href="aula-modulo.html" class="btn btn-principal btn-sm">Continuar</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Calendario Mensual y Próximas Sesiones en Vivo (RF-06, HU-03) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+
+          <!-- Widget Calendario Mensual -->
+          <article class="tarjeta" style="padding: 1.25rem;">
+            <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+              Calendario — Noviembre 2026
+            </h3>
+            <table class="tabla-general" style="text-align: center; font-size: 0.85rem;">
+              <thead>
+                <tr>
+                  <th>Lun</th><th>Mar</th><th>Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
+                </tr>
+                <tr>
+                  <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+                </tr>
+                <tr>
+                  <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+                </tr>
+                <tr>
+                  <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td style="background-color: var(--color-gris-linea); font-weight: bold;">22</td><td>23</td>
+                </tr>
+                <tr>
+                  <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <!-- Lista de Próximas Sesiones en Vivo -->
+          <article class="tarjeta" style="padding: 1.25rem;">
+            <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+              Próximas Sesiones en Vivo
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="border-left: 3px solid var(--color-negro); padding-left: 0.75rem;">
+                <strong>Taller de CSS Grid y Responsive Design</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Lunes, 24 Nov • 18:00 - 19:30 HR</p>
+                <a href="aula-modulo.html" style="font-size: 0.8rem; font-weight: bold;">Unirse a la clase &rarr;</a>
+              </li>
+              <li style="border-left: 3px solid var(--color-gris-linea); padding-left: 0.75rem;">
+                <strong>Mentoría "Tú a Tú": Dudas JavaScript</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Miércoles, 26 Nov • 16:00 - 16:45 HR</p>
+                <a href="aula-modulo.html" style="font-size: 0.8rem; font-weight: bold;">Ver detalles de agendamiento &rarr;</a>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Sistema LMS.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

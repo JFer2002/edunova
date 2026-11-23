@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Certificado Digital — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Estudiante</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación usuario">
+        <ul>
+          <li><a href="panel-estudiante.html">Mi Panel</a></li>
+          <li><a href="mis-cursos.html">Mis Cursos</a></li>
+          <li><a href="entrega-evidencia.html">Entregables</a></li>
+          <li><a href="certificados.html" class="activo">Certificados</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Estudiante -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Navegación del Aprendiz
+        </h3>
+        <nav aria-label="Menú del estudiante">
+          <ul class="menu-sidebar">
+            <li><a href="panel-estudiante.html"> Dashboard</a></li>
+            <li><a href="mis-cursos.html"> Mis Cursos Inscritos</a></li>
+            <li><a href="aula-modulo.html"> Aula Virtual / Lección</a></li>
+            <li><a href="entrega-evidencia.html"> Envío de Evidencias</a></li>
+            <li><a href="certificados.html" class="activo"> Mis Certificados</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Certificados -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Certificados Digitales Verificables (RF-15, RF-16)</h1>
+          <p style="color: var(--color-gris-medio);">Consulta y descarga los certificados emitidos al completar el 100% del avance de un curso o ruta de formación.</p>
+        </div>
+
+        <!-- Estado de Avance para Certificación -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <h2 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Estado de Emisión</h2>
+          <p style="font-size: 0.9rem; color: var(--color-gris-medio); margin-bottom: 1rem;">
+            El certificado se emite automáticamente cuando tu porcentaje de avance alcanza el 100% y todas las evidencias han sido calificadas.
+          </p>
+
+          <div class="contenedor-progreso">
+            <div class="etiqueta-progreso">
+              <span>Introducción a Git y Control de Versiones</span>
+              <span>100% — Emitido</span>
+            </div>
+            <div class="barra-progreso-fondo">
+              <div class="barra-progreso-relleno" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="contenedor-progreso">
+            <div class="etiqueta-progreso">
+              <span>Desarrollo Web Frontend con HTML5 y CSS3</span>
+              <span>75% — Pendiente</span>
+            </div>
+            <div class="barra-progreso-fondo">
+              <div class="barra-progreso-relleno" style="width: 75%;"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certificado Emitido (RF-15, HU-08) -->
+        <section style="margin-bottom: 2rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Certificado Emitido</h2>
+
+          <article class="tarjeta" style="border: 3px double var(--color-gris-oscuro); padding: 3rem 2rem; text-align: center;">
+            <p style="letter-spacing: 4px; font-size: 0.8rem; text-transform: uppercase; color: var(--color-gris-medio); margin-bottom: 0.5rem;">EduNova — Certificado Digital</p>
+            <h2 style="font-size: 1.9rem; margin-bottom: 1.5rem;">Certificado de Finalización</h2>
+
+            <p style="color: var(--color-gris-medio); margin-bottom: 0.25rem;">Se certifica que</p>
+            <p style="font-size: 1.5rem; font-weight: 700; color: var(--color-negro); margin-bottom: 1rem;">Estudiante Demo</p>
+
+            <p style="color: var(--color-gris-medio); margin-bottom: 0.25rem;">ha completado satisfactoriamente el curso</p>
+            <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Introducción a Git y Control de Versiones</p>
+
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.9rem;">
+              <div>
+                <strong>Duración:</strong>
+                <p style="color: var(--color-gris-medio);">12 Horas académicas</p>
+              </div>
+              <div>
+                <strong>Fecha de Emisión:</strong>
+                <p style="color: var(--color-gris-medio);">05 de Noviembre de 2026</p>
+              </div>
+              <div>
+                <strong>Identificador Único:</strong>
+                <p style="color: var(--color-gris-medio);">EDN-CERT-2026-00841</p>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 3rem; align-items: center; flex-wrap: wrap;">
+              <!-- Firma del Instructor -->
+              <div>
+                <div style="width: 180px; border-top: 2px solid var(--color-gris-oscuro); padding-top: 0.5rem; margin: 0 auto;">
+                  <strong>Prof. Carlos Mendoza</strong>
+                  <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Instructor Titular</p>
+                </div>
+              </div>
+
+              <!-- Código QR de Verificación (RF-16) -->
+              <div>
+                <div class="tarjeta-imagen-placeholder" style="width: 120px; height: 120px; margin: 0 auto; font-size: 0.75rem;">
+                  Código QR<br>de Verificación
+                </div>
+                <p style="font-size: 0.8rem; color: var(--color-gris-medio); margin-top: 0.5rem;">
+                  Escanea para validar
+                </p>
+              </div>
+
+              <!-- Sello / Firma Institucional -->
+              <div>
+                <div style="width: 180px; border-top: 2px solid var(--color-gris-oscuro); padding-top: 0.5rem; margin: 0 auto;">
+                  <strong>Dirección Académica</strong>
+                  <p style="font-size: 0.85rem; color: var(--color-gris-medio);">EduNova Inc.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Acciones del Certificado -->
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+            <button class="btn btn-principal">Descargar Certificado (PDF)</button>
+            <button class="btn btn-outline">Copiar Enlace de Verificación</button>
+            <a href="mis-cursos.html" class="btn btn-secundario">Volver a Mis Cursos</a>
+          </div>
+        </section>
+
+        <!-- Certificados en Proceso -->
+        <section>
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Certificados Pendientes</h2>
+
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Avance</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desarrollo Web Frontend con HTML5 y CSS3</td>
+                <td><strong>75%</strong></td>
+                <td><span class="insignia">En Curso</span></td>
+                <td><a href="aula-modulo.html" class="btn btn-secundario btn-sm">Continuar Curso</a></td>
+              </tr>
+              <tr>
+                <td>JavaScript Vanilla y Lógica de Programación</td>
+                <td><strong>20%</strong></td>
+                <td><span class="insignia">En Curso</span></td>
+                <td><a href="aula-modulo.html" class="btn btn-secundario btn-sm">Continuar Curso</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Certificados Digitales Verificables con QR.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

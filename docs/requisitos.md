@@ -7,16 +7,16 @@ Requisitos derivados de las 20 historias de usuario (`docs/historias.md`). Cada 
 | RF-01 | El sistema debe presentar la landing pública de EduNova con la propuesta de valor, los beneficios principales y los accesos directos a registro, planes e inicio de sesión. | HU-01 | Must |
 | RF-02 | El sistema debe ofrecer enlaces visibles a la página de registro, a la página de planes e inicio de sesión. | HU-01 | Must |
 | RF-03 | El sistema debe permitir ingresar con correo y contraseña y validar las credenciales ingresadas. | HU-02 | Must |
-| RF-04 | El sistema de debe redirigir al dashboard correspondiente al rol autenticado tras un ingreso exitoso. | HU-02 | Must |
+| RF-04 | El sistema de be redirigir al dashboard correspondiente al rol autenticado tras un ingreso exitoso. | HU-02 | Must |
 | RF-05 | El sistema debe mostrar un dashboard adaptado a Estudiante con tarjetas de cursos activos que incluyan barra de porcentaje de avance. | HU-03 | Must |
-| RF-06 | El sistema de debe mostrar en el dashboard de Estudiante un calendario mensual y una sección de próximas sesiones en vivo. | HU-03 | Must |
+| RF-06 | El sistema de be mostrar en el dashboard de Estudiante un calendario mensual y una sección de próximas sesiones en vivo. | HU-03 | Must |
 | RF-07 | El sistema debe ofrecer un buscador en tiempo real que filtre el catálogo de cursos y carreras técnicas. | HU-04 | Must |
-| RF-08 | El sistema de debe aplicar filtros de categorías y rutas sobre la lista de resultados mostrada. | HU-04 | Must |
-| RF-09 | El sistema de debe permitir a Instructores publicar cursos y editar su título, descripción y categoría. | HU-05 | Must |
-| RF-10 | El sistema de debe mostrar los módulos del curso en orden secuencial. | HU-05 | Must |
-| RF-11 | El sistema de debe ofrecer agenda interactiva de mentorías "tú a tú" con fecha y franja horaria. | HU-06 | Should |
-| RF-12 | El sistema de debe mostrar enlaces de sesiones en vivo y una sección de grabaciones en diferido. | HU-06 | Should |
-| RF-13 | El sistema de debe permitir cargar entregables prácticos (archivos, enlaces y notas) desde la página de inscripción. | HU-07 | Must |
+| RF-08 | El sistema de be aplicar filtros de categorías y rutas sobre la lista de resultados mostrada. | HU-04 | Must |
+| RF-09 | El sistema de be permitir a Instructores publicar cursos y editar su título, descripción y categoría. | HU-05 | Must |
+| RF-10 | El sistema de be mostrar los módulos del curso en orden secuencial. | HU-05 | Must |
+| RF-11 | El sistema de be ofrecer agenda interactiva de mentorías "tú a tú" con fecha y franja horaria. | HU-06 | Should |
+| RF-12 | El sistema de be mostrar enlaces de sesiones en vivo y una sección de grabaciones en diferido. | HU-06 | Should |
+| RF-13 | El sistema de be permitir cargar entregables prácticos (archivos, enlaces y notas) desde la página de inscripción. | HU-07 | Must |
 | RF-14 | El sistema de be mostrar el historial de calificaciones con las entregas y calificaciones recibidas. | HU-07 | Must |
 | RF-15 | El sistema de be mostrar el certificado digital emitido al alcanzar el 100% de avance de un curso o ruta. | HU-08 | Should |
 | RF-16 | El sistema de be incluir en el certificado un código QR visible y respaldable. | HU-08 | Should |

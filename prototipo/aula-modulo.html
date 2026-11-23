@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Virtual — Módulo 3: CSS3 Puro y Flexbox</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal del Aula -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="panel-estudiante.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Aula Virtual</span>
+      </a>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <span style="font-size: 0.9rem; font-weight: 500;">Curso: Desarrollo Web Frontend</span>
+        <a href="mis-cursos.html" class="btn btn-secundario btn-sm">&larr; Volver a Mis Cursos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido Principal con Layout Sidebar -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Navegación Secuencial de Módulos y Lecciones (RF-10, HU-05) -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Módulos del Curso
+        </h3>
+
+        <nav aria-label="Navegación de contenido de módulo">
+          <ul class="menu-sidebar">
+            <li>
+              <a href="aula-modulo.html" style="opacity: 0.7;">
+                ✓ Módulo 1: HTML5 Semántico
+              </a>
+            </li>
+            <li>
+              <a href="aula-modulo.html" style="opacity: 0.7;">
+                ✓ Módulo 2: Formularios y Accesibilidad
+              </a>
+            </li>
+            <li>
+              <a href="aula-modulo.html" class="activo">
+                ► Módulo 3: CSS3 y Flexbox (Actual)
+              </a>
+            </li>
+            <li>
+              <a href="aula-modulo.html">
+                ○ Módulo 4: Proyecto Final
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--color-gris-linea);">
+
+        <!-- Enlaces a Sesiones Sincrónicas (RF-12, HU-06) -->
+        <div>
+          <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem;">Sesión Sincrónica en Vivo</h4>
+          <p style="font-size: 0.85rem; color: var(--color-gris-medio); margin-bottom: 0.75rem;">
+            Próxima clase: Lunes 24 Nov • 18:00 HR
+          </p>
+          <a href="#" class="btn btn-outline btn-sm btn-bloque">Unirse a la Videollamada</a>
+        </div>
+      </aside>
+
+      <!-- Reproductor de Lección y Zona de Entregables -->
+      <section>
+
+        <!-- Titular de Lección -->
+        <div style="margin-bottom: 1.5rem;">
+          <span class="insignia insignia-oscura">Lección 3.2</span>
+          <h1 style="margin-top: 0.5rem;">Maquetación Flexible con Flexbox y Variables CSS</h1>
+        </div>
+
+        <!-- Visor / Contenedor de Video de Lección (Placeholder) -->
+        <div class="tarjeta" style="margin-bottom: 2rem;">
+          <div class="tarjeta-imagen-placeholder" style="height: 360px; font-size: 1.25rem;">
+            [ Visualizador de Contenido / Video de la Lección ]
+          </div>
+          <div class="tarjeta-cuerpo">
+            <h3>Descripción de la Lección</h3>
+            <p class="tarjeta-texto">
+              En este módulo práctico aprenderás a utilizar el modelo de caja flexible (`flexbox`), alineando elementos horizontal y verticalmente mediante `justify-content` y `align-items`. Además, estructuraremos las variables globales `:root` para mantener una arquitectura de código CSS limpia y mantenible.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sección de Grabaciones en Diferido (RF-12, HU-06) -->
+        <section class="tarjeta" style="padding: 1.25rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.75rem;">Grabaciones de Clases Sincrónicas Anteriores</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--color-gris-fondo); border-radius: 4px;">
+              <span>Grabación Clase 1: Arquitectura HTML5 y Etiquetas Semánticas (10 Nov)</span>
+              <a href="#" class="btn btn-secundario btn-sm">Ver Grabación</a>
+            </li>
+            <li style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; background-color: var(--color-gris-fondo); border-radius: 4px;">
+              <span>Grabación Clase 2: Creación de Formularios Accesibles (17 Nov)</span>
+              <a href="#" class="btn btn-secundario btn-sm">Ver Grabación</a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Formulario de Carga de Evidencias / Entregables Prácticos (RF-13, HU-07) -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;">Envío de Evidencia Práctica — Módulo 3</h3>
+          <p style="font-size: 0.9rem; color: var(--color-gris-medio); margin-bottom: 1.25rem;">
+            Sube los archivos de tu práctica o comparte el enlace a tu repositorio público para evaluación por parte del instructor.
+          </p>
+
+          <form action="mis-cursos.html" method="GET">
+            <div class="grupo-campo">
+              <label for="archivo-evidencia">Adjuntar Archivo de Evidencia (ZIP, PDF, HTML, CSS)</label>
+              <input type="file" id="archivo-evidencia" name="archivo_evidencia">
+            </div>
+
+            <div class="grupo-campo">
+              <label for="enlace-repositorio">Enlace a Repositorio o Demo en Vivo</label>
+              <input type="text" id="enlace-repositorio" name="enlace" placeholder="https://github.com/usuario/proyecto-css">
+            </div>
+
+            <div class="grupo-campo">
+              <label for="notas-estudiante">Notas o Comentarios sobre tu Entrega</label>
+              <textarea id="notas-estudiante" name="notas" rows="4" placeholder="Describe brevemente los componentes construidos y cualquier duda para el instructor..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-principal">Enviar Evidencia Práctica</button>
+          </form>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Aula Virtual.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear / Editar Curso — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Instructor</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación del instructor">
+        <ul>
+          <li><a href="panel-instructor.html">Mi Panel</a></li>
+          <li><a href="crear-curso.html" class="activo">Crear Curso</a></li>
+          <li><a href="calificar-evidencias.html">Calificar Evidencias</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Instructor -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Navegación del Instructor
+        </h3>
+        <nav aria-label="Menú de instructor">
+          <ul class="menu-sidebar">
+            <li><a href="panel-instructor.html"> Dashboard Instructor</a></li>
+            <li><a href="crear-curso.html" class="activo"> Autoría de Cursos</a></li>
+            <li><a href="calificar-evidencias.html"> Calificar Evidencias</a></li>
+            <li><a href="catalogo.html"> Ver Catálogo Público</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Autoría de Curso -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Autoría y Gestión de Cursos (RF-09, RF-10)</h1>
+          <p style="color: var(--color-gris-medio);">Define la información general del curso y organiza sus módulos en orden secuencial.</p>
+        </div>
+
+        <!-- Formulario de Información General del Curso -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Información General del Curso</h2>
+
+          <form action="panel-instructor.html" method="GET">
+            <div class="grupo-campo">
+              <label for="titulo-curso">Título del Curso</label>
+              <input type="text" id="titulo-curso" name="titulo" value="Desarrollo Web Frontend con HTML5 y CSS3" required>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="descripcion-curso">Descripción del Curso</label>
+              <textarea id="descripcion-curso" name="descripcion" rows="4" required>Aprende a construir sitios y aplicaciones web accesibles, semánticas y responsivas utilizando exclusivamente estándares HTML5 y CSS3 moderno.</textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="grupo-campo">
+                <label for="categoria-curso">Categoría</label>
+                <select id="categoria-curso" name="categoria" required>
+                  <option value="desarrollo-web" selected>Desarrollo Web</option>
+                  <option value="programacion">Programación</option>
+                  <option value="base-datos">Bases de Datos</option>
+                  <option value="diseno">Diseño UI/UX</option>
+                  <option value="herramientas">Herramientas</option>
+                </select>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="nivel-curso">Nivel</label>
+                <select id="nivel-curso" name="nivel" required>
+                  <option value="principiante" selected>Principiante</option>
+                  <option value="intermedio">Intermedio</option>
+                  <option value="avanzado">Avanzado</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="requisitos-curso">Requisitos Previos</label>
+              <textarea id="requisitos-curso" name="requisitos" rows="2" placeholder="Ej. Manejo básico de computadora y conexión a internet."></textarea>
+            </div>
+          </form>
+        </section>
+
+        <!-- Definición de Módulos Secuenciales (RF-10, HU-05) -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.15rem;">Módulos del Curso (Orden Secuencial)</h2>
+            <button class="btn btn-secundario btn-sm">+ Agregar Módulo</button>
+          </div>
+
+          <!-- Módulo 1 -->
+          <article style="border: 1px solid var(--color-gris-linea); border-radius: var(--radio-borde); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong>Módulo 1</strong>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secundario btn-sm">Editar</button>
+                <button class="btn btn-outline btn-sm">Eliminar</button>
+              </div>
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0.75rem;">
+              <label for="modulo-1-titulo">Título del Módulo 1</label>
+              <input type="text" id="modulo-1-titulo" name="modulo_1_titulo" value="Fundamentos de HTML5 y Estructura Semántica">
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="modulo-1-lecciones">Lecciones del Módulo 1</label>
+              <textarea id="modulo-1-lecciones" name="modulo_1_lecciones" rows="2">1. Etiquetas semánticas. 2. Estructura del documento. 3. Accesibilidad básica. 4. Buenas prácticas.</textarea>
+            </div>
+          </article>
+
+          <!-- Módulo 2 -->
+          <article style="border: 1px solid var(--color-gris-linea); border-radius: var(--radio-borde); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong>Módulo 2</strong>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secundario btn-sm">Editar</button>
+                <button class="btn btn-outline btn-sm">Eliminar</button>
+              </div>
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0.75rem;">
+              <label for="modulo-2-titulo">Título del Módulo 2</label>
+              <input type="text" id="modulo-2-titulo" name="modulo_2_titulo" value="Formularios Web y Validación Semántica">
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="modulo-2-lecciones">Lecciones del Módulo 2</label>
+              <textarea id="modulo-2-lecciones" name="modulo_2_lecciones" rows="2">1. Elementos de formulario. 2. Asociación label for. 3. Tipos de input. 4. Atributos de validación.</textarea>
+            </div>
+          </article>
+
+          <!-- Módulo 3 -->
+          <article style="border: 1px solid var(--color-gris-linea); border-radius: var(--radio-borde); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong>Módulo 3</strong>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secundario btn-sm">Editar</button>
+                <button class="btn btn-outline btn-sm">Eliminar</button>
+              </div>
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0.75rem;">
+              <label for="modulo-3-titulo">Título del Módulo 3</label>
+              <input type="text" id="modulo-3-titulo" name="modulo_3_titulo" value="CSS3 Puro, Flexbox y Grid Layout">
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="modulo-3-lecciones">Lecciones del Módulo 3</label>
+              <textarea id="modulo-3-lecciones" name="modulo_3_lecciones" rows="2">1. Modelo de caja. 2. Variables CSS en :root. 3. Flexbox. 4. CSS Grid.</textarea>
+            </div>
+          </article>
+
+          <!-- Módulo 4 -->
+          <article style="border: 1px solid var(--color-gris-linea); border-radius: var(--radio-borde); padding: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong>Módulo 4</strong>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-secundario btn-sm">Editar</button>
+                <button class="btn btn-outline btn-sm">Eliminar</button>
+              </div>
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0.75rem;">
+              <label for="modulo-4-titulo">Título del Módulo 4</label>
+              <input type="text" id="modulo-4-titulo" name="modulo_4_titulo" value="Proyecto Final y Entregable Práctico">
+            </div>
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="modulo-4-lecciones">Lecciones del Módulo 4</label>
+              <textarea id="modulo-4-lecciones" name="modulo_4_lecciones" rows="2">1. Definición del proyecto. 2. Construcción guiada. 3. Entrega de evidencia práctica.</textarea>
+            </div>
+          </article>
+        </section>
+
+        <!-- Acciones de Publicación -->
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end;">
+          <a href="panel-instructor.html" class="btn btn-outline">Cancelar</a>
+          <button class="btn btn-secundario">Guardar Borrador</button>
+          <button class="btn btn-principal">Enviar a Moderación</button>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Módulo de Autoría de Cursos.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

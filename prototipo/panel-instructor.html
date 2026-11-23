@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel del Instructor — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Instructor</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación del instructor">
+        <ul>
+          <li><a href="panel-instructor.html" class="activo">Mi Panel</a></li>
+          <li><a href="crear-curso.html">Crear Curso</a></li>
+          <li><a href="calificar-evidencias.html">Calificar Evidencias</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Instructor -->
+      <aside class="sidebar-panel">
+        <div style="text-align: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea);">
+          <div style="width: 60px; height: 60px; background-color: var(--color-gris-claro); border-radius: 50%; margin: 0 auto 0.5rem auto; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            CM
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 0.2rem;">Prof. Carlos Mendoza</h3>
+          <span class="insignia insignia-oscura">Instructor</span>
+        </div>
+
+        <nav aria-label="Menú de instructor">
+          <ul class="menu-sidebar">
+            <li><a href="panel-instructor.html" class="activo"> Dashboard Instructor</a></li>
+            <li><a href="crear-curso.html"> Autoría de Cursos</a></li>
+            <li><a href="calificar-evidencias.html"> Calificar Evidencias</a></li>
+            <li><a href="catalogo.html"> Ver Catálogo Público</a></li>
+            <li><a href="login.html"> Cambiar de Cuenta</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Contenido Principal -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Dashboard del Instructor</h1>
+          <p style="color: var(--color-gris-medio);">Gestiona tus cursos, revisa las evidencias pendientes y administra tu agenda de mentorías.</p>
+        </div>
+
+        <!-- Indicadores Clave (Métricas) -->
+        <section class="grid-tarjetas" style="margin-bottom: 2.5rem;">
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Cursos</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">4</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Cursos publicados y activos</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Aprendices</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">128</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Estudiantes matriculados</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Evidencias</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">17</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Entregables pendientes de revisión</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Mentorías</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">6</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Sesiones agendadas esta semana</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Cursos del Instructor -->
+        <section style="margin-bottom: 2.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.25rem;">Mis Cursos Creados</h2>
+            <a href="crear-curso.html" class="btn btn-principal btn-sm">+ Crear Nuevo Curso</a>
+          </div>
+
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Categoría</th>
+                <th>Módulos</th>
+                <th>Estudiantes</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Desarrollo Web Frontend con HTML5 y CSS3</strong></td>
+                <td>Desarrollo Web</td>
+                <td>4</td>
+                <td>56</td>
+                <td><span class="insignia insignia-oscura">Publicado</span></td>
+                <td><a href="crear-curso.html" class="btn btn-secundario btn-sm">Editar</a></td>
+              </tr>
+              <tr>
+                <td><strong>JavaScript Vanilla y Lógica de Programación</strong></td>
+                <td>Programación</td>
+                <td>5</td>
+                <td>42</td>
+                <td><span class="insignia insignia-oscura">Publicado</span></td>
+                <td><a href="crear-curso.html" class="btn btn-secundario btn-sm">Editar</a></td>
+              </tr>
+              <tr>
+                <td><strong>Bases de Datos Relacionales y SQL</strong></td>
+                <td>Bases de Datos</td>
+                <td>3</td>
+                <td>30</td>
+                <td><span class="insignia">En Moderación</span></td>
+                <td><a href="crear-curso.html" class="btn btn-secundario btn-sm">Editar</a></td>
+              </tr>
+              <tr>
+                <td><strong>Fundamentos de Git y Control de Versiones</strong></td>
+                <td>Herramientas</td>
+                <td>2</td>
+                <td>0</td>
+                <td><span class="insignia">Borrador</span></td>
+                <td><a href="crear-curso.html" class="btn btn-secundario btn-sm">Editar</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Evidencias Pendientes y Agenda de Mentorías -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+
+          <!-- Evidencias Pendientes -->
+          <article class="tarjeta" style="padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+              <h3 style="font-size: 1.05rem;">Evidencias por Calificar</h3>
+              <a href="calificar-evidencias.html" style="font-size: 0.8rem; font-weight: bold;">Ver todas &rarr;</a>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="border-left: 3px solid var(--color-negro); padding-left: 0.75rem;">
+                <strong>Ana Torres</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Módulo 3: CSS3 Puro y Flexbox • 22 Nov 2026</p>
+                <a href="calificar-evidencias.html" style="font-size: 0.8rem; font-weight: bold;">Calificar entrega &rarr;</a>
+              </li>
+              <li style="border-left: 3px solid var(--color-negro); padding-left: 0.75rem;">
+                <strong>Luis Ramírez</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Módulo 2: Formulario Web con Labels • 21 Nov 2026</p>
+                <a href="calificar-evidencias.html" style="font-size: 0.8rem; font-weight: bold;">Calificar entrega &rarr;</a>
+              </li>
+              <li style="border-left: 3px solid var(--color-gris-linea); padding-left: 0.75rem;">
+                <strong>María Gómez</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Módulo 1: Layout HTML Semántico • 20 Nov 2026</p>
+                <a href="calificar-evidencias.html" style="font-size: 0.8rem; font-weight: bold;">Calificar entrega &rarr;</a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Agenda de Mentorías (RF-22, HU-12) -->
+          <article class="tarjeta" style="padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+              Agenda de Mentorías "Tú a Tú"
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="border-left: 3px solid var(--color-negro); padding-left: 0.75rem;">
+                <strong>Mentoría: Ana Torres</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Lunes, 24 Nov • 16:00 - 16:45 HR</p>
+                <p style="font-size: 0.8rem; color: var(--color-gris-medio);">Enlace: https://meet.edunova.com/m-2416</p>
+              </li>
+              <li style="border-left: 3px solid var(--color-negro); padding-left: 0.75rem;">
+                <strong>Mentoría: Luis Ramírez</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Miércoles, 26 Nov • 18:00 - 18:45 HR</p>
+                <p style="font-size: 0.8rem; color: var(--color-gris-medio);">Enlace: https://meet.edunova.com/m-2618</p>
+              </li>
+              <li style="border-left: 3px solid var(--color-gris-linea); padding-left: 0.75rem;">
+                <strong>Mentoría: María Gómez</strong>
+                <p style="font-size: 0.85rem; color: var(--color-gris-medio);">Viernes, 28 Nov • 10:00 - 10:45 HR</p>
+                <p style="font-size: 0.8rem; color: var(--color-gris-medio);">Enlace: https://meet.edunova.com/m-2810</p>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Panel del Instructor.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

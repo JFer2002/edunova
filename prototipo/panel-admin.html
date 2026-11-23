@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Administrador</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación administrativa">
+        <ul>
+          <li><a href="panel-admin.html" class="activo">Panel Admin</a></li>
+          <li><a href="gestion-usuarios.html">Gestión de Usuarios</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Administrador -->
+      <aside class="sidebar-panel">
+        <div style="text-align: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea);">
+          <div style="width: 60px; height: 60px; background-color: var(--color-gris-claro); border-radius: 50%; margin: 0 auto 0.5rem auto; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            AD
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 0.2rem;">Administrador Demo</h3>
+          <span class="insignia insignia-oscura">Admin</span>
+        </div>
+
+        <nav aria-label="Menú de administración">
+          <ul class="menu-sidebar">
+            <li><a href="panel-admin.html" class="activo"> Dashboard Administrativo</a></li>
+            <li><a href="gestion-usuarios.html"> Gestión de Usuarios</a></li>
+            <li><a href="#moderacion-cursos"> Moderación de Cursos</a></li>
+            <li><a href="catalogo.html"> Ver Catálogo Público</a></li>
+            <li><a href="login.html"> Cambiar de Cuenta</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Contenido Principal -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Panel de Administración</h1>
+          <p style="color: var(--color-gris-medio);">Supervisa las métricas de la plataforma, modera los cursos publicados y administra las cuentas de usuario.</p>
+        </div>
+
+        <!-- Métricas de la Plataforma -->
+        <section class="grid-tarjetas" style="margin-bottom: 2.5rem;">
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Usuarios</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">842</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Cuentas activas registradas</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Cursos</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">36</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Cursos publicados en el catálogo</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Moderación</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">5</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Cursos pendientes de aprobación</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Membresías</span>
+              <p style="font-size: 2rem; font-weight: 700; color: var(--color-negro);">612</p>
+              <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Suscripciones activas (Pro y Premium)</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Distribución de Planes (RF-17, HU-09) -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Distribución de Planes de Membresía</h2>
+
+          <div class="contenedor-progreso">
+            <div class="etiqueta-progreso">
+              <span>Plan Explorador (Gratuito)</span>
+              <span>230 usuarios — 27%</span>
+            </div>
+            <div class="barra-progreso-fondo">
+              <div class="barra-progreso-relleno" style="width: 27%;"></div>
+            </div>
+          </div>
+
+          <div class="contenedor-progreso">
+            <div class="etiqueta-progreso">
+              <span>Plan Pro</span>
+              <span>384 usuarios — 46%</span>
+            </div>
+            <div class="barra-progreso-fondo">
+              <div class="barra-progreso-relleno" style="width: 46%;"></div>
+            </div>
+          </div>
+
+          <div class="contenedor-progreso">
+            <div class="etiqueta-progreso">
+              <span>Plan Premium</span>
+              <span>228 usuarios — 27%</span>
+            </div>
+            <div class="barra-progreso-fondo">
+              <div class="barra-progreso-relleno" style="width: 27%;"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Moderación de Cursos Pendientes (RF-25, HU-15) -->
+        <section id="moderacion-cursos" style="margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Cursos Pendientes de Moderación</h2>
+
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Instructor</th>
+                <th>Categoría</th>
+                <th>Módulos</th>
+                <th>Fecha de Envío</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bases de Datos Relacionales y SQL</strong></td>
+                <td>Prof. Carlos Mendoza</td>
+                <td>Bases de Datos</td>
+                <td>3</td>
+                <td>20 Nov 2026</td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-principal btn-sm">Aprobar</button>
+                    <button class="btn btn-outline btn-sm">Rechazar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Introducción a la Ciberseguridad</strong></td>
+                <td>Prof. Laura Vega</td>
+                <td>Seguridad</td>
+                <td>4</td>
+                <td>19 Nov 2026</td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-principal btn-sm">Aprobar</button>
+                    <button class="btn btn-outline btn-sm">Rechazar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Diseño de Interfaces Accesibles</strong></td>
+                <td>Prof. Andrés Paredes</td>
+                <td>Diseño UI/UX</td>
+                <td>5</td>
+                <td>18 Nov 2026</td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-principal btn-sm">Aprobar</button>
+                    <button class="btn btn-outline btn-sm">Rechazar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Accesos Directos de Administración -->
+        <section class="grid-tarjetas">
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Usuarios</span>
+              <h3 class="tarjeta-titulo">Gestión de Usuarios y Roles</h3>
+              <p class="tarjeta-texto">Consulta el listado de usuarios, crea nuevas cuentas y desactiva usuarios según sea necesario.</p>
+              <a href="gestion-usuarios.html" class="btn btn-principal btn-sm">Administrar Usuarios</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Planes</span>
+              <h3 class="tarjeta-titulo">Gestión de Planes y Precios</h3>
+              <p class="tarjeta-texto">Configura el tipo de plan, precio y modalidad de cobro (Mensual o Anual).</p>
+              <a href="#moderacion-cursos" class="btn btn-secundario btn-sm">Configurar Planes</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-cuerpo">
+              <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Convenios</span>
+              <h3 class="tarjeta-titulo">Convenios y Revenue Share</h3>
+              <p class="tarjeta-texto">Revisa el total de estudiantes bajo convenio y la distribución de ingresos.</p>
+              <a href="#moderacion-cursos" class="btn btn-secundario btn-sm">Ver Convenios</a>
+            </div>
+          </article>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Panel de Administración del Sistema.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Prototipo</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="registro.html" class="activo btn btn-principal btn-sm">Registrarse</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <section class="tarjeta-formulario">
+      <h1 style="text-align: center; margin-bottom: 0.5rem;">Crear una Cuenta</h1>
+      <p style="text-align: center; color: var(--color-gris-medio); margin-bottom: 1.5rem; font-size: 0.9rem;">
+        Únete a EduNova y accede a nuestros programas de formación
+      </p>
+
+      <form action="panel-estudiante.html" method="GET">
+        <div class="grupo-campo">
+          <label for="nombre-completo">Nombre Completo</label>
+          <input type="text" id="nombre-completo" name="nombre" placeholder="Juan Pérez" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="correo-registro">Correo Electrónico</label>
+          <input type="email" id="correo-registro" name="correo" placeholder="juan.perez@ejemplo.com" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="plan-seleccionado">Seleccionar Plan de Membresía</label>
+          <select id="plan-seleccionado" name="plan">
+            <option value="explorador">Plan Explorador (Acceso limitado a cursos gratuitos)</option>
+            <option value="pro" selected>Plan Pro (Acceso ilimitado a catálogo + certificados)</option>
+            <option value="premium">Plan Premium (Acceso total + mentorías 1 a 1)</option>
+          </select>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="contrasena-registro">Contraseña</label>
+          <input type="password" id="contrasena-registro" name="contrasena" placeholder="Mínimo 8 caracteres" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="confirmar-contrasena">Confirmar Contraseña</label>
+          <input type="password" id="confirmar-contrasena" name="confirmar_contrasena" placeholder="Repite tu contraseña" required>
+        </div>
+
+        <div class="grupo-campo campo-checkbox">
+          <input type="checkbox" id="acepto-terminos" name="terminos" required>
+          <label for="acepto-terminos">Acepto los términos de servicio y políticas de privacidad</label>
+        </div>
+
+        <button type="submit" class="btn btn-principal btn-bloque">Completar Registro</button>
+      </form>
+
+      <div style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+        <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

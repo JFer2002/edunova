@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Cursos — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Prototipo</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+          <li><a href="panel-estudiante.html">Mi Panel</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="registro.html" class="btn btn-principal btn-sm">Registrarse</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <section style="margin-bottom: 2rem;">
+      <h1>Catálogo de Cursos y Carreras Técnicas</h1>
+      <p style="color: var(--color-gris-medio);">Explora nuestra oferta formativa y desarrolla tus competencias digitales.</p>
+    </section>
+
+    <!-- Buscador y Filtros (RF-07, RF-08, HU-04) -->
+    <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+      <form style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; align-items: flex-end;">
+        <div class="grupo-campo" style="margin-bottom: 0;">
+          <label for="busqueda-curso">Buscar Cursos</label>
+          <input type="text" id="busqueda-curso" name="q" placeholder="Ej. JavaScript, SQL, CSS, Frontend...">
+        </div>
+
+        <div class="grupo-campo" style="margin-bottom: 0;">
+          <label for="filtro-categoria">Categoría</label>
+          <select id="filtro-categoria" name="categoria">
+            <option value="">Todas las Categorías</option>
+            <option value="desarrollo-web">Desarrollo Web</option>
+            <option value="programacion">Programación</option>
+            <option value="base-datos">Bases de Datos</option>
+            <option value="diseno">Diseño UI/UX</option>
+          </select>
+        </div>
+
+        <div class="grupo-campo" style="margin-bottom: 0;">
+          <label for="filtro-nivel">Nivel</label>
+          <select id="filtro-nivel" name="nivel">
+            <option value="">Todos los Niveles</option>
+            <option value="principiante">Principiante</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <!-- Lista de Resultados en Grid -->
+    <section>
+      <div class="grid-tarjetas">
+
+        <!-- Curso 1 -->
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <div style="margin-bottom: 0.5rem;">
+              <span class="insignia">Desarrollo Web</span>
+              <span class="insignia">Principiante</span>
+            </div>
+            <h3 class="tarjeta-titulo">Desarrollo Web Frontend con HTML5 y CSS3</h3>
+            <p class="tarjeta-texto">Domina maquetación web moderna, accesibilidad, semántica y diseño responsivo sin frameworks.</p>
+            <div class="tarjeta-pie">
+              <span style="font-size: 0.85rem; font-weight: bold;">4 Módulos • 20 Horas</span>
+              <a href="detalle-curso.html" class="btn btn-principal btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Curso 2 -->
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <div style="margin-bottom: 0.5rem;">
+              <span class="insignia">Programación</span>
+              <span class="insignia">Intermedio</span>
+            </div>
+            <h3 class="tarjeta-titulo">JavaScript Vanilla y Lógica de Programación</h3>
+            <p class="tarjeta-texto">Aprende los fundamentos de JavaScript sin frameworks y gestiona la interactividad del DOM.</p>
+            <div class="tarjeta-pie">
+              <span style="font-size: 0.85rem; font-weight: bold;">5 Módulos • 30 Horas</span>
+              <a href="detalle-curso.html" class="btn btn-principal btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Curso 3 -->
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <div style="margin-bottom: 0.5rem;">
+              <span class="insignia">Bases de Datos</span>
+              <span class="insignia">Intermedio</span>
+            </div>
+            <h3 class="tarjeta-titulo">Bases de Datos Relacionales y SQL</h3>
+            <p class="tarjeta-texto">Diseño de modelos relacionales, consultas complejas, índices y procedimientos almacenados en SQL.</p>
+            <div class="tarjeta-pie">
+              <span style="font-size: 0.85rem; font-weight: bold;">3 Módulos • 18 Horas</span>
+              <a href="detalle-curso.html" class="btn btn-principal btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Curso 4 -->
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <div style="margin-bottom: 0.5rem;">
+              <span class="insignia">Diseño UI/UX</span>
+              <span class="insignia">Principiante</span>
+            </div>
+            <h3 class="tarjeta-titulo">Fundamentos de Diseño Web Accesible</h3>
+            <p class="tarjeta-texto">Principios de experiencia de usuario, contraste de color, sistemas de diseño y normativas WCAG.</p>
+            <div class="tarjeta-pie">
+              <span style="font-size: 0.85rem; font-weight: bold;">4 Módulos • 15 Horas</span>
+              <a href="detalle-curso.html" class="btn btn-principal btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Plataforma de Aprendizaje en Línea.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

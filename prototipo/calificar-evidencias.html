@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificar Evidencias — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Instructor</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación del instructor">
+        <ul>
+          <li><a href="panel-instructor.html">Mi Panel</a></li>
+          <li><a href="crear-curso.html">Crear Curso</a></li>
+          <li><a href="calificar-evidencias.html" class="activo">Calificar Evidencias</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Instructor -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Navegación del Instructor
+        </h3>
+        <nav aria-label="Menú de instructor">
+          <ul class="menu-sidebar">
+            <li><a href="panel-instructor.html"> Dashboard Instructor</a></li>
+            <li><a href="crear-curso.html"> Autoría de Cursos</a></li>
+            <li><a href="calificar-evidencias.html" class="activo"> Calificar Evidencias</a></li>
+            <li><a href="catalogo.html"> Ver Catálogo Público</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Calificación -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Revisión y Calificación de Evidencias (RF-14)</h1>
+          <p style="color: var(--color-gris-medio);">Evalúa los entregables prácticos de tus estudiantes y registra su calificación con retroalimentación.</p>
+        </div>
+
+        <!-- Filtros de Entregas -->
+        <section class="tarjeta" style="padding: 1.25rem; margin-bottom: 2rem;">
+          <form style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; align-items: flex-end;">
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="filtro-curso-calificar">Curso</label>
+              <select id="filtro-curso-calificar" name="curso">
+                <option value="">Todos los Cursos</option>
+                <option value="dw-frontend">Desarrollo Web Frontend con HTML5 y CSS3</option>
+                <option value="js-vanilla">JavaScript Vanilla y Lógica de Programación</option>
+                <option value="sql-bd">Bases de Datos Relacionales y SQL</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="filtro-estado-calificar">Estado</label>
+              <select id="filtro-estado-calificar" name="estado">
+                <option value="pendiente" selected>Pendientes de Revisión</option>
+                <option value="calificado">Ya Calificadas</option>
+                <option value="">Todas</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="buscar-estudiante">Buscar Estudiante</label>
+              <input type="text" id="buscar-estudiante" name="q" placeholder="Nombre del aprendiz...">
+            </div>
+          </form>
+        </section>
+
+        <!-- Listado de Evidencias Pendientes -->
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Entregas Pendientes (17)</h2>
+
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Estudiante</th>
+                <th>Curso</th>
+                <th>Módulo</th>
+                <th>Fecha de Envío</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ana Torres</strong></td>
+                <td>Desarrollo Web Frontend</td>
+                <td>Módulo 3: CSS3 y Flexbox</td>
+                <td>22 Nov 2026</td>
+                <td><span class="insignia">Pendiente</span></td>
+                <td><a href="#panel-calificacion" class="btn btn-principal btn-sm">Calificar</a></td>
+              </tr>
+              <tr>
+                <td><strong>Luis Ramírez</strong></td>
+                <td>Desarrollo Web Frontend</td>
+                <td>Módulo 2: Formularios</td>
+                <td>21 Nov 2026</td>
+                <td><span class="insignia">Pendiente</span></td>
+                <td><a href="#panel-calificacion" class="btn btn-principal btn-sm">Calificar</a></td>
+              </tr>
+              <tr>
+                <td><strong>María Gómez</strong></td>
+                <td>JavaScript Vanilla</td>
+                <td>Módulo 1: Variables y Funciones</td>
+                <td>20 Nov 2026</td>
+                <td><span class="insignia">Pendiente</span></td>
+                <td><a href="#panel-calificacion" class="btn btn-principal btn-sm">Calificar</a></td>
+              </tr>
+              <tr>
+                <td><strong>Jorge Salas</strong></td>
+                <td>Bases de Datos Relacionales</td>
+                <td>Módulo 2: Consultas SQL</td>
+                <td>19 Nov 2026</td>
+                <td><span class="insignia">Pendiente</span></td>
+                <td><a href="#panel-calificacion" class="btn btn-principal btn-sm">Calificar</a></td>
+              </tr>
+              <tr>
+                <td><strong>Valeria Ruiz</strong></td>
+                <td>Desarrollo Web Frontend</td>
+                <td>Módulo 1: HTML Semántico</td>
+                <td>18 Nov 2026</td>
+                <td><span class="insignia insignia-oscura">Calificada</span></td>
+                <td><button class="btn btn-secundario btn-sm">Ver Calificación</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Panel de Calificación de la Evidencia Seleccionada -->
+        <section id="panel-calificacion" class="tarjeta" style="padding: 1.5rem;">
+          <h2 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Calificar Evidencia — Ana Torres</h2>
+          <p style="font-size: 0.9rem; color: var(--color-gris-medio); margin-bottom: 1.25rem;">
+            Curso: Desarrollo Web Frontend con HTML5 y CSS3 • Módulo 3: CSS3 Puro y Flexbox • Enviado el 22 Nov 2026
+          </p>
+
+          <!-- Datos de la Entrega -->
+          <div style="background-color: var(--color-gris-fondo); border: 1px solid var(--color-gris-linea); border-radius: var(--radio-borde); padding: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 0.95rem; margin-bottom: 0.75rem;">Datos de la Entrega del Estudiante</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+              <li><strong>Archivo adjunto:</strong> proyecto-modulo3.zip (2.4 MB)</li>
+              <li><strong>Repositorio:</strong> https://github.com/anatorres/proyecto-css</li>
+              <li><strong>Notas del estudiante:</strong> "Construí el layout con Flexbox y variables CSS en :root. Incluí un diseño responsivo para móviles."</li>
+            </ul>
+            <div style="display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;">
+              <button class="btn btn-secundario btn-sm">Descargar Archivo</button>
+              <button class="btn btn-outline btn-sm">Abrir Repositorio</button>
+            </div>
+          </div>
+
+          <!-- Formulario de Evaluación -->
+          <form action="calificar-evidencias.html" method="GET">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="grupo-campo">
+                <label for="nota-calificacion">Calificación Asignada (0 - 100)</label>
+                <input type="text" id="nota-calificacion" name="nota" placeholder="Ej. 92" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="resultado-calificacion">Resultado</label>
+                <select id="resultado-calificacion" name="resultado" required>
+                  <option value="aprobado" selected>Aprobado</option>
+                  <option value="rechazado">Rechazado — Requiere Reenvío</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="retroalimentacion">Retroalimentación Pedagógica para el Estudiante</label>
+              <textarea id="retroalimentacion" name="retroalimentacion" rows="5" placeholder="Detalla los aciertos de la entrega y los aspectos a mejorar..."></textarea>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button type="submit" class="btn btn-principal">Guardar Calificación y Notificar</button>
+              <a href="panel-instructor.html" class="btn btn-outline">Volver al Panel</a>
+            </div>
+          </form>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Sistema de Evaluación de Evidencias.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

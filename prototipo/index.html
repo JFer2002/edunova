@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduNova — Plataforma de Aprendizaje Continuo</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Prototipo</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+          <li><a href="registro.html" class="btn btn-principal btn-sm">Registrarse</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <!-- Hero Section -->
+    <section class="seccion-hero">
+      <h1>Aprende habilidades del futuro a tu propio ritmo</h1>
+      <p>EduNova es la plataforma SaaS LMS diseñada para transformar tu carrera profesional con cursos prácticos, mentorías personalizadas y certificados digitales verificables.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="registro.html" class="btn btn-principal">Explorar Planes e Inscribirse</a>
+        <a href="catalogo.html" class="btn btn-outline">Ver Catálogo de Cursos</a>
+      </div>
+    </section>
+
+    <!-- Beneficios Principales (RF-01, HU-01) -->
+    <section style="margin-bottom: 3rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem;">¿Por qué elegir EduNova?</h2>
+      <div class="grid-tarjetas">
+        <article class="tarjeta">
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Flexibilidad</span>
+            <h3 class="tarjeta-titulo">Rutas Secuenciales</h3>
+            <p class="tarjeta-texto">Aprende módulo por módulo con contenidos estructurados y ejercicios prácticos evaluados por instructores expertos.</p>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Sincrónico</span>
+            <h3 class="tarjeta-titulo">Mentorías "Tú a Tú"</h3>
+            <p class="tarjeta-texto">Agenda asesorías individuales e interactúa en clases en vivo para resolver dudas y acelerar tu aprendizaje.</p>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Verificación</span>
+            <h3 class="tarjeta-titulo">Certificados con QR</h3>
+            <p class="tarjeta-texto">Obtén certificaciones validadas con código QR al completar el 100% de tus cursos para impulsar tu CV.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cursos Destacados -->
+    <section style="margin-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <h2>Cursos Destacados</h2>
+        <a href="catalogo.html">Ver todos los cursos &rarr;</a>
+      </div>
+      <div class="grid-tarjetas">
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Desarrollo Web</span>
+            <h3 class="tarjeta-titulo">Desarrollo Web Frontend con HTML5 y CSS3</h3>
+            <p class="tarjeta-texto">Domina maquetación web moderna, accesibilidad y diseño responsivo desde cero.</p>
+            <div class="tarjeta-pie">
+              <span style="font-weight: bold; font-size: 0.9rem;">4 Módulos</span>
+              <a href="detalle-curso.html" class="btn btn-secundario btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Programación</span>
+            <h3 class="tarjeta-titulo">JavaScript Vanilla y Lógica de Programación</h3>
+            <p class="tarjeta-texto">Aprende los fundamentos de JavaScript sin frameworks y gestiona el DOM eficientemente.</p>
+            <div class="tarjeta-pie">
+              <span style="font-weight: bold; font-size: 0.9rem;">5 Módulos</span>
+              <a href="detalle-curso.html" class="btn btn-secundario btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen-placeholder">Imagen de Curso</div>
+          <div class="tarjeta-cuerpo">
+            <span class="insignia" style="width: fit-content; margin-bottom: 0.5rem;">Base de Datos</span>
+            <h3 class="tarjeta-titulo">Bases de Datos Relacionales y SQL</h3>
+            <p class="tarjeta-texto">Diseña esquemas de base de datos, consultas optimizadas y procedimientos en SQL.</p>
+            <div class="tarjeta-pie">
+              <span style="font-weight: bold; font-size: 0.9rem;">3 Módulos</span>
+              <a href="detalle-curso.html" class="btn btn-secundario btn-sm">Ver Detalle</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Plataforma de Gestión de Aprendizaje SaaS.</p>
+      <ul class="links-footer">
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="login.html">Iniciar Sesión</a></li>
+        <li><a href="registro.html">Registro</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

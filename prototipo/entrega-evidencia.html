@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrega de Evidencia Práctica — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Estudiante</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación usuario">
+        <ul>
+          <li><a href="panel-estudiante.html">Mi Panel</a></li>
+          <li><a href="mis-cursos.html">Mis Cursos</a></li>
+          <li><a href="entrega-evidencia.html" class="activo">Entregables</a></li>
+          <li><a href="certificados.html">Certificados</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Estudiante -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Navegación del Aprendiz
+        </h3>
+        <nav aria-label="Menú del estudiante">
+          <ul class="menu-sidebar">
+            <li><a href="panel-estudiante.html"> Dashboard</a></li>
+            <li><a href="mis-cursos.html"> Mis Cursos Inscritos</a></li>
+            <li><a href="aula-modulo.html"> Aula Virtual / Lección</a></li>
+            <li><a href="entrega-evidencia.html" class="activo"> Envío de Evidencias</a></li>
+            <li><a href="certificados.html"> Mis Certificados</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Carga e Historial de Evidencias -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Envío de Evidencias Prácticas (RF-13)</h1>
+          <p style="color: var(--color-gris-medio);">Sube tus archivos o enlaces de proyectos prácticos para recibir calificación y retroalimentación de tu instructor.</p>
+        </div>
+
+        <!-- Formulario de Entrega (RF-13, HU-07) -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">Formulario de Carga de Evidencia</h2>
+
+          <form action="entrega-evidencia.html" method="GET">
+            <div class="grupo-campo">
+              <label for="curso-seleccionado">Curso Asociado</label>
+              <select id="curso-seleccionado" name="curso" required>
+                <option value="dw-frontend" selected>Desarrollo Web Frontend con HTML5 y CSS3</option>
+                <option value="js-vanilla">JavaScript Vanilla y Lógica de Programación</option>
+                <option value="sql-bd">Bases de Datos Relacionales y SQL</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="modulo-seleccionado">Módulo Evaluado</label>
+              <select id="modulo-seleccionado" name="modulo" required>
+                <option value="m1">Módulo 1: Layout HTML Semántico</option>
+                <option value="m2">Módulo 2: Formulario Web con Labels</option>
+                <option value="m3" selected>Módulo 3: CSS3 Puro y Flexbox</option>
+                <option value="m4">Módulo 4: Proyecto Final Integrador</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="archivo-entrega">Cargar Archivo del Entregable (Formatos permitidos: ZIP, PDF, HTML, CSS)</label>
+              <input type="file" id="archivo-entrega" name="archivo">
+            </div>
+
+            <div class="grupo-campo">
+              <label for="url-proyecto">Enlace al Repositorio o Sitio Publicado (GitHub, Vercel, Netlify)</label>
+              <input type="text" id="url-proyecto" name="url" placeholder="https://github.com/usuario/mi-proyecto">
+            </div>
+
+            <div class="grupo-campo">
+              <label for="comentarios-entrega">Notas y Comentarios para el Instructor</label>
+              <textarea id="comentarios-entrega" name="notas" rows="4" placeholder="Explica brevemente la estructura de tu entrega o las decisiones de diseño tomadas..."></textarea>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <button type="submit" class="btn btn-principal">Confirmar y Enviar Evidencia</button>
+              <a href="aula-modulo.html" class="btn btn-outline">Volver al Aula Virtual</a>
+            </div>
+          </form>
+        </section>
+
+        <!-- Historial de Entregas y Calificaciones (RF-14, HU-07) -->
+        <section>
+          <h2 style="margin-bottom: 1rem; font-size: 1.25rem;">Historial de Evidencias Enviadas</h2>
+          
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Módulo / Proyecto</th>
+                <th>Fecha de Envío</th>
+                <th>Estado</th>
+                <th>Calificación</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Módulo 1:</strong> Layout HTML Semántico</td>
+                <td>12 Nov 2026</td>
+                <td><span class="insignia insignia-oscura">Calificado</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td><button class="btn btn-secundario btn-sm">Ver Detalle</button></td>
+              </tr>
+              <tr>
+                <td><strong>Módulo 2:</strong> Formulario Web con Labels</td>
+                <td>18 Nov 2026</td>
+                <td><span class="insignia insignia-oscura">Calificado</span></td>
+                <td><strong>90 / 100</strong></td>
+                <td><button class="btn btn-secundario btn-sm">Ver Detalle</button></td>
+              </tr>
+              <tr>
+                <td><strong>Módulo 3:</strong> CSS3 Puro y Flexbox</td>
+                <td>22 Nov 2026</td>
+                <td><span class="insignia">Pendiente de Revisión</span></td>
+                <td><strong>En Proceso</strong></td>
+                <td><button class="btn btn-secundario btn-sm">Ver Detalle</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Sistema de Evidencias y Calificaciones.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

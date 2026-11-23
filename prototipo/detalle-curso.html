@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Curso — Desarrollo Web Frontend</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Prototipo</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="panel-estudiante.html">Mi Panel</a></li>
+          <li><a href="login.html">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <!-- Encabezado de la Ficha del Curso -->
+    <section class="tarjeta" style="padding: 2rem; margin-bottom: 2rem;">
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+        <div class="tarjeta-imagen-placeholder" style="width: 280px; height: 180px; flex-shrink: 0;">
+          Imagen del Curso
+        </div>
+        <div style="flex: 1;">
+          <div style="margin-bottom: 0.5rem;">
+            <span class="insignia insignia-oscura">Desarrollo Web</span>
+            <span class="insignia">Principiante</span>
+            <span class="insignia">Duración: 20 Horas</span>
+          </div>
+          <h1 style="margin-bottom: 0.75rem;">Desarrollo Web Frontend con HTML5 y CSS3</h1>
+          <p style="color: var(--color-gris-medio); margin-bottom: 1.25rem;">
+            Aprende a construir sitios y aplicaciones web accesibles, semánticas y responsivas utilizando exclusivamente estándares HTML5 y CSS3 moderno.
+          </p>
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <a href="mis-cursos.html" class="btn btn-principal">Inscribirme a este Curso</a>
+            <a href="catalogo.html" class="btn btn-outline">&larr; Volver al Catálogo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout General: Módulos Secuenciales e Información del Instructor -->
+    <div class="layout-sidebar">
+
+      <!-- Módulos Secuenciales del Curso (RF-10, HU-05) -->
+      <section>
+        <h2 style="margin-bottom: 1rem;">Contenido del Curso y Módulos Secuenciales</h2>
+        
+        <div class="tarjeta" style="margin-bottom: 1rem;">
+          <div class="tarjeta-cuerpo">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 class="tarjeta-titulo">Módulo 1: Fundamentos de HTML5 y Estructura Semántica</h3>
+              <span class="insignia">Lección 1 a 4</span>
+            </div>
+            <p class="tarjeta-texto">Etiquetas semánticas (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;), estructura del documento y buenas prácticas de accesibilidad.</p>
+          </div>
+        </div>
+
+        <div class="tarjeta" style="margin-bottom: 1rem;">
+          <div class="tarjeta-cuerpo">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 class="tarjeta-titulo">Módulo 2: Formulario Web y Validación Semántica</h3>
+              <span class="insignia">Lección 5 a 8</span>
+            </div>
+            <p class="tarjeta-texto">Elementos de formulario, asociación de etiquetas label for, tipos de entrada (input types) y atributos de validación nativos.</p>
+          </div>
+        </div>
+
+        <div class="tarjeta" style="margin-bottom: 1rem;">
+          <div class="tarjeta-cuerpo">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 class="tarjeta-titulo">Módulo 3: CSS3 Puro, Flexbox y Grid Layout</h3>
+              <span class="insignia">Lección 9 a 12</span>
+            </div>
+            <p class="tarjeta-texto">Modelo de caja, especificidad de selectores, variables CSS en :root, maquetación flexible con Flexbox y rejillas con CSS Grid.</p>
+          </div>
+        </div>
+
+        <div class="tarjeta" style="margin-bottom: 1rem;">
+          <div class="tarjeta-cuerpo">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 class="tarjeta-titulo">Módulo 4: Proyecto Final y Entregable Práctico</h3>
+              <span class="insignia">Evaluación</span>
+            </div>
+            <p class="tarjeta-texto">Construcción de un prototipo web responsivo y envío de evidencia práctica para calificación del instructor.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sidebar Informativa -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">Información General</h3>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <strong>Instructor:</strong>
+          <p style="color: var(--color-gris-medio); font-size: 0.9rem;">Prof. Carlos Mendoza</p>
+          <span style="font-size: 0.8rem; color: var(--color-gris-medio);">Especialista en Desarrollo Web Frontend</span>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <strong>Certificado:</strong>
+          <p style="color: var(--color-gris-medio); font-size: 0.9rem;">Certificado digital verificable con QR al lograr 100% de avance.</p>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <strong>Modalidad:</strong>
+          <p style="color: var(--color-gris-medio); font-size: 0.9rem;">En línea, a tu propio ritmo + Sesiones sincrónicas semanales.</p>
+        </div>
+
+        <a href="aula-modulo.html" class="btn btn-secundario btn-bloque btn-sm">Ver Vista Previa de Aula</a>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Plataforma de Aprendizaje en Línea.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Cursos — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Estudiante</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-estudiante.html">Mi Panel</a></li>
+          <li><a href="mis-cursos.html" class="activo">Mis Cursos</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal con Layout Sidebar -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar NAVEGACIÓN -->
+      <aside class="sidebar-panel">
+        <nav aria-label="Menú secundario">
+          <ul class="menu-sidebar">
+            <li><a href="panel-estudiante.html"> Dashboard</a></li>
+            <li><a href="mis-cursos.html" class="activo"> Mis Cursos Inscritos</a></li>
+            <li><a href="aula-modulo.html"> Aula Virtual / Lección</a></li>
+            <li><a href="entrega-evidencia.html"> Envío de Evidencias</a></li>
+            <li><a href="certificados.html"> Mis Certificados</a></li>
+            <li><a href="catalogo.html"> Explorar Catálogo</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Mis Cursos e Historial de Calificaciones -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Mis Cursos e Inscripciones</h1>
+          <p style="color: var(--color-gris-medio);">Consulta el estado de tus cursos matriculados y el registro de calificaciones de entregables.</p>
+        </div>
+
+        <!-- Lista de Cursos Inscritos -->
+        <div style="margin-bottom: 2.5rem;">
+          <h2 style="margin-bottom: 1rem;">Cursos en Aprendizaje</h2>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+            <!-- Curso Inscrito 1 -->
+            <article class="tarjeta" style="padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+                <div>
+                  <span class="insignia">En Progreso</span>
+                  <h3 style="margin: 0.5rem 0 0.25rem 0;">Desarrollo Web Frontend con HTML5 y CSS3</h3>
+                  <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Inscrito el: 10 de Noviembre, 2026</p>
+                </div>
+                <a href="aula-modulo.html" class="btn btn-principal btn-sm">Ir al Aula Virtual</a>
+              </div>
+              <div class="contenedor-progreso" style="margin-top: 1rem;">
+                <div class="etiqueta-progreso">
+                  <span>Progreso: 3 de 4 Módulos completados</span>
+                  <span>75%</span>
+                </div>
+                <div class="barra-progreso-fondo">
+                  <div class="barra-progreso-relleno" style="width: 75%;"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Curso Inscrito 2 -->
+            <article class="tarjeta" style="padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+                <div>
+                  <span class="insignia">En Progreso</span>
+                  <h3 style="margin: 0.5rem 0 0.25rem 0;">JavaScript Vanilla y Lógica de Programación</h3>
+                  <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Inscrito el: 15 de Noviembre, 2026</p>
+                </div>
+                <a href="aula-modulo.html" class="btn btn-principal btn-sm">Ir al Aula Virtual</a>
+              </div>
+              <div class="contenedor-progreso" style="margin-top: 1rem;">
+                <div class="etiqueta-progreso">
+                  <span>Progreso: 1 de 5 Módulos completados</span>
+                  <span>20%</span>
+                </div>
+                <div class="barra-progreso-fondo">
+                  <div class="barra-progreso-relleno" style="width: 20%;"></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Curso Completado 3 -->
+            <article class="tarjeta" style="padding: 1.25rem;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+                <div>
+                  <span class="insignia insignia-oscura">Completado 100%</span>
+                  <h3 style="margin: 0.5rem 0 0.25rem 0;">Introducción a Git y Control de Versiones</h3>
+                  <p style="font-size: 0.9rem; color: var(--color-gris-medio);">Finalizado el: 05 de Noviembre, 2026</p>
+                </div>
+                <button class="btn btn-outline btn-sm">Descargar Certificado QR</button>
+              </div>
+              <div class="contenedor-progreso" style="margin-top: 1rem;">
+                <div class="etiqueta-progreso">
+                  <span>Progreso Final</span>
+                  <span>100%</span>
+                </div>
+                <div class="barra-progreso-fondo">
+                  <div class="barra-progreso-relleno" style="width: 100%;"></div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Historial de Calificaciones y Entregables (RF-14, HU-07) -->
+        <section>
+          <h2 style="margin-bottom: 1rem;">Historial de Entregas y Calificaciones</h2>
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Entregable Práctico</th>
+                <th>Fecha de Envío</th>
+                <th>Estado</th>
+                <th>Calificación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desarrollo Web Frontend</td>
+                <td>Proyecto Módulo 1: Layout HTML Semántico</td>
+                <td>12 Nov 2026</td>
+                <td><span class="insignia insignia-oscura">Aprobado</span></td>
+                <td><strong>95 / 100</strong></td>
+              </tr>
+              <tr>
+                <td>Desarrollo Web Frontend</td>
+                <td>Proyecto Módulo 2: Formulario con Labels</td>
+                <td>18 Nov 2026</td>
+                <td><span class="insignia insignia-oscura">Aprobado</span></td>
+                <td><strong>90 / 100</strong></td>
+              </tr>
+              <tr>
+                <td>JavaScript Vanilla</td>
+                <td>Ejercicio 1: Funciones y Manipulación DOM</td>
+                <td>20 Nov 2026</td>
+                <td><span class="insignia">En Revisión</span></td>
+                <td><strong>Pendiente</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Plataforma de Aprendizaje.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios — EduNova</title>
+  <link rel="stylesheet" href="prototipo.css">
+</head>
+<body>
+
+  <!-- Encabezado Principal -->
+  <header class="header-principal">
+    <div class="contenedor-header">
+      <a href="index.html" class="logo-edunova">
+        EduNova <span class="logo-badge">Administrador</span>
+      </a>
+      <nav class="nav-principal" aria-label="Navegación administrativa">
+        <ul>
+          <li><a href="panel-admin.html">Panel Admin</a></li>
+          <li><a href="gestion-usuarios.html" class="activo">Gestión de Usuarios</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html" class="btn btn-secundario btn-sm">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="contenedor-principal">
+
+    <div class="layout-sidebar">
+
+      <!-- Sidebar Navegación Administrador -->
+      <aside class="sidebar-panel">
+        <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--color-gris-linea); padding-bottom: 0.5rem;">
+          Navegación Administrativa
+        </h3>
+        <nav aria-label="Menú de administración">
+          <ul class="menu-sidebar">
+            <li><a href="panel-admin.html"> Dashboard Administrativo</a></li>
+            <li><a href="gestion-usuarios.html" class="activo"> Gestión de Usuarios</a></li>
+            <li><a href="panel-admin.html#moderacion-cursos"> Moderación de Cursos</a></li>
+            <li><a href="catalogo.html"> Ver Catálogo Público</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Área de Gestión de Usuarios -->
+      <section>
+
+        <div style="margin-bottom: 2rem;">
+          <h1>Gestión de Usuarios y Roles (RF-24)</h1>
+          <p style="color: var(--color-gris-medio);">Administra las cuentas registradas, asigna roles y controla el estado de acceso de cada usuario.</p>
+        </div>
+
+        <!-- Formulario de Creación de Usuario -->
+        <section class="tarjeta" style="padding: 1.5rem; margin-bottom: 2rem;">
+          <h2 style="margin-bottom: 1rem; font-size: 1.15rem;">Crear Nuevo Usuario</h2>
+
+          <form action="gestion-usuarios.html" method="GET">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="grupo-campo">
+                <label for="nombre-usuario">Nombre Completo</label>
+                <input type="text" id="nombre-usuario" name="nombre" placeholder="Ej. Camila Fernández" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="correo-usuario">Correo Electrónico</label>
+                <input type="email" id="correo-usuario" name="correo" placeholder="camila.fernandez@edunova.com" required>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="rol-usuario">Rol Asignado</label>
+                <select id="rol-usuario" name="rol" required>
+                  <option value="estudiante" selected>Estudiante</option>
+                  <option value="instructor">Instructor</option>
+                  <option value="admin">Administrador</option>
+                </select>
+              </div>
+
+              <div class="grupo-campo">
+                <label for="plan-usuario">Plan de Membresía</label>
+                <select id="plan-usuario" name="plan">
+                  <option value="explorador">Explorador</option>
+                  <option value="pro" selected>Pro</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-principal">Registrar Usuario</button>
+          </form>
+        </section>
+
+        <!-- Filtros del Listado -->
+        <section class="tarjeta" style="padding: 1.25rem; margin-bottom: 1.5rem;">
+          <form style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; align-items: flex-end;">
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="buscar-usuario">Buscar Usuario</label>
+              <input type="text" id="buscar-usuario" name="q" placeholder="Nombre o correo electrónico...">
+            </div>
+
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="filtro-rol-usuario">Rol</label>
+              <select id="filtro-rol-usuario" name="rol">
+                <option value="">Todos los Roles</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="instructor">Instructor</option>
+                <option value="admin">Administrador</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo" style="margin-bottom: 0;">
+              <label for="filtro-estado-usuario">Estado</label>
+              <select id="filtro-estado-usuario" name="estado">
+                <option value="">Todos los Estados</option>
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+              </select>
+            </div>
+          </form>
+        </section>
+
+        <!-- Listado de Usuarios -->
+        <section>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.15rem;">Usuarios Registrados (842)</h2>
+            <span class="insignia">Página 1 de 85</span>
+          </div>
+
+          <table class="tabla-general">
+            <thead>
+              <tr>
+                <th>Nombre Completo</th>
+                <th>Correo Electrónico</th>
+                <th>Rol</th>
+                <th>Plan</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ana Torres</strong></td>
+                <td>ana.torres@ejemplo.com</td>
+                <td><span class="insignia">Estudiante</span></td>
+                <td>Pro</td>
+                <td><span class="insignia insignia-oscura">Activo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-outline btn-sm">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Carlos Mendoza</strong></td>
+                <td>carlos.mendoza@ejemplo.com</td>
+                <td><span class="insignia insignia-oscura">Instructor</span></td>
+                <td>Premium</td>
+                <td><span class="insignia insignia-oscura">Activo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-outline btn-sm">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Luis Ramírez</strong></td>
+                <td>luis.ramirez@ejemplo.com</td>
+                <td><span class="insignia">Estudiante</span></td>
+                <td>Explorador</td>
+                <td><span class="insignia insignia-oscura">Activo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-outline btn-sm">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>María Gómez</strong></td>
+                <td>maria.gomez@ejemplo.com</td>
+                <td><span class="insignia">Estudiante</span></td>
+                <td>Pro</td>
+                <td><span class="insignia">Inactivo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-principal btn-sm">Activar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Laura Vega</strong></td>
+                <td>laura.vega@ejemplo.com</td>
+                <td><span class="insignia insignia-oscura">Instructor</span></td>
+                <td>Premium</td>
+                <td><span class="insignia insignia-oscura">Activo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-outline btn-sm">Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Administrador Demo</strong></td>
+                <td>admin@edunova.com</td>
+                <td><span class="insignia insignia-oscura">Administrador</span></td>
+                <td>—</td>
+                <td><span class="insignia insignia-oscura">Activo</span></td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secundario btn-sm">Editar</button>
+                    <button class="btn btn-outline btn-sm" disabled>Desactivar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Paginación -->
+          <nav aria-label="Paginación del listado de usuarios" style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem;">
+            <button class="btn btn-secundario btn-sm" disabled>&larr; Anterior</button>
+            <button class="btn btn-principal btn-sm">1</button>
+            <button class="btn btn-secundario btn-sm">2</button>
+            <button class="btn btn-secundario btn-sm">3</button>
+            <button class="btn btn-secundario btn-sm">Siguiente &rarr;</button>
+          </nav>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer-principal">
+    <div class="contenedor-footer">
+      <p>&copy; 2026 EduNova Inc. Administración de Usuarios y Roles.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
