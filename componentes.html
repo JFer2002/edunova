@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía visual interactiva del sistema de diseño de EduNova: paleta, tipografía, botones, etiquetas, tarjetas, tablas, progreso y formularios.">
+  <title>EduNova — Guía de estilos</title>
+
+  <!-- Tipografías de marca: Poppins (títulos) e Inter (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos única del sistema de diseño -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- Encabezado de la guía -->
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="componentes.html" class="marca">
+        EduNova <span class="marca__etiqueta">Guía</span>
+      </a>
+
+      <nav class="nav-superior" aria-label="Navegación de la guía">
+        <ul>
+          <li><a href="#paleta" class="nav-superior__enlace">Paleta</a></li>
+          <li><a href="#tipografia" class="nav-superior__enlace">Tipografía</a></li>
+          <li><a href="#botones" class="nav-superior__enlace">Botones</a></li>
+          <li><a href="#tarjetas" class="nav-superior__enlace">Tarjetas</a></li>
+          <li><a href="#formularios" class="nav-superior__enlace">Formularios</a></li>
+          <li><a href="#tablas" class="nav-superior__enlace">Tablas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <!-- Presentación -->
+    <section aria-labelledby="titulo-guia">
+      <h1 id="titulo-guia">Sistema de diseño EduNova</h1>
+      <p class="texto-intro">
+        Guía visual de los componentes reutilizables definidos en <code>styles.css</code>. Todas las muestras
+        usan las variables de marca y la regla 60-30-10: blanco y gris nube como base, Deep Navy y gris pizarra
+        como estructura, y azul principal con coral como interacción y acento.
+      </p>
+
+      <nav class="guia-indice" aria-label="Índice de componentes">
+        <ul>
+          <li><a href="#paleta">Paleta</a></li>
+          <li><a href="#tipografia">Tipografía</a></li>
+          <li><a href="#botones">Botones</a></li>
+          <li><a href="#etiquetas">Etiquetas de estado</a></li>
+          <li><a href="#tarjetas">Tarjetas</a></li>
+          <li><a href="#tablas">Tablas</a></li>
+          <li><a href="#progreso">Progreso</a></li>
+          <li><a href="#formularios">Formularios</a></li>
+          <li><a href="#navegacion">Navegación</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#complementos">Complementos</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- 1. Paleta -->
+    <section id="paleta" class="seccion-guia" aria-labelledby="titulo-paleta">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-paleta">Paleta de marca</h2>
+        <p>Ocho colores base del manual de marca. La capa semántica de <code>styles.css</code> los aplica según la proporción 60-30-10 y se reasigna automáticamente en modo oscuro.</p>
+      </div>
+
+      <ul class="paleta">
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--blanco" aria-hidden="true"></span>
+          <span class="paleta__nombre">Blanco Puro</span>
+          <code class="paleta__codigo">#FFFFFF · base 60%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--gris" aria-hidden="true"></span>
+          <span class="paleta__nombre">Gris Nube</span>
+          <code class="paleta__codigo">#F1F5F9 · base 60%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--navy" aria-hidden="true"></span>
+          <span class="paleta__nombre">Deep Navy</span>
+          <code class="paleta__codigo">#1A237E · estructura 30%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--pizarra" aria-hidden="true"></span>
+          <span class="paleta__nombre">Gris Pizarra</span>
+          <code class="paleta__codigo">#475569 · estructura 30%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--azul" aria-hidden="true"></span>
+          <span class="paleta__nombre">Azul Principal</span>
+          <code class="paleta__codigo">#44A5FF · interacción 10%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--coral" aria-hidden="true"></span>
+          <span class="paleta__nombre">Coral Vibrante</span>
+          <code class="paleta__codigo">#FF6B6B · acento 10%</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--verde" aria-hidden="true"></span>
+          <span class="paleta__nombre">Verde Éxito</span>
+          <code class="paleta__codigo">#10B981 · feedback</code>
+        </li>
+        <li class="paleta__item">
+          <span class="paleta__muestra paleta__muestra--rojo" aria-hidden="true"></span>
+          <span class="paleta__nombre">Rojo Alerta</span>
+          <code class="paleta__codigo">#EF4444 · feedback</code>
+        </li>
+      </ul>
+
+      <div class="tabla-contenedor">
+        <table class="tabla-datos">
+          <caption>Pares de estado con contraste WCAG AA verificado</caption>
+          <thead>
+            <tr>
+              <th scope="col">Etiqueta</th>
+              <th scope="col">Fondo</th>
+              <th scope="col">Texto</th>
+              <th scope="col">Contraste</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="etiqueta">Neutra</span></th>
+              <td><code>#E2E8F0</code></td>
+              <td><code>#475569</code></td>
+              <td>6.9:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--solida">Sólida</span></th>
+              <td><code>#1A237E</code></td>
+              <td><code>#FFFFFF</code></td>
+              <td>13.3:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--exito">Éxito</span></th>
+              <td><code>#D1FAE5</code></td>
+              <td><code>#047857</code></td>
+              <td>6.8:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--error">Error</span></th>
+              <td><code>#FEE2E2</code></td>
+              <td><code>#B91C1C</code></td>
+              <td>5.2:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--alerta">Alerta</span></th>
+              <td><code>#FEF3C7</code></td>
+              <td><code>#B45309</code></td>
+              <td>4.5:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--info">Información</span></th>
+              <td><code>#DBEAFE</code></td>
+              <td><code>#1D4ED8</code></td>
+              <td>5.4:1</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="etiqueta etiqueta--acento">Acento</span></th>
+              <td><code>#FF6B6B</code></td>
+              <td><code>#1A237E</code></td>
+              <td>4.8:1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. Tipografía -->
+    <section id="tipografia" class="seccion-guia" aria-labelledby="titulo-tipografia">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-tipografia">Tipografía</h2>
+        <p>Poppins se reserva para el logotipo y los encabezados; Inter se usa en lectura, menús, etiquetas, formularios y botones.</p>
+      </div>
+
+      <div class="muestra-tipografia">
+        <p class="muestra-tipografia__dato">El H1 de esta página usa Poppins 700 con tamaño fluido <code>clamp()</code>.</p>
+        <h3>Poppins SemiBold · Encabezado H3</h3>
+        <h4>Poppins SemiBold · Encabezado H4</h4>
+        <p>
+          Inter Regular se emplea en párrafos: EduNova combina aprendizaje asincrónico a ritmo propio con
+          acompañamiento en tiempo real, evaluación práctica por proyectos y certificación verificable.
+        </p>
+        <p class="texto-secundario">Inter Regular · texto secundario de 14 px para metadatos y ayudas.</p>
+        <p class="muestra-tipografia__dato"><strong>Inter SemiBold</strong> · énfasis dentro de bloques de lectura.</p>
+      </div>
+    </section>
+
+    <!-- 3. Botones -->
+    <section id="botones" class="seccion-guia" aria-labelledby="titulo-botones">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-botones">Botones</h2>
+        <p>Altura mínima de 44 px, foco visible y variantes de jerarquía. El texto del botón primario es Deep Navy sobre azul de marca para alcanzar 5.1:1 de contraste.</p>
+      </div>
+
+      <div class="acciones">
+        <button type="button" class="boton boton--primario">Suscribirme ahora</button>
+        <button type="button" class="boton boton--secundario">Ver temario</button>
+        <button type="button" class="boton boton--contorno">Explorar catálogo</button>
+        <button type="button" class="boton boton--peligro">Cancelar suscripción</button>
+      </div>
+
+      <div class="acciones">
+        <button type="button" class="boton boton--primario boton--sm">Entrar al en vivo</button>
+        <button type="button" class="boton boton--secundario boton--sm">Descargar PDF</button>
+        <button type="button" class="boton boton--primario" disabled>Botón deshabilitado</button>
+        <a href="#botones" class="boton boton--secundario" aria-disabled="true">Enlace deshabilitado</a>
+      </div>
+
+      <div class="bloque-destacado">
+        <h3>Botón de bloque</h3>
+        <p class="texto-secundario">Ocupa el 100 % del contenedor, útil en formularios y barras laterales.</p>
+        <button type="button" class="boton boton--primario boton--bloque">Continuar con el curso</button>
+      </div>
+    </section>
+
+    <!-- 4. Etiquetas de estado -->
+    <section id="etiquetas" class="seccion-guia" aria-labelledby="titulo-etiquetas">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-etiquetas">Etiquetas de estado</h2>
+        <p>Comunican estado sin depender solo del color: cada etiqueta incluye texto explícito.</p>
+      </div>
+
+      <div class="acciones">
+        <span class="etiqueta">En revisión</span>
+        <span class="etiqueta etiqueta--solida">Publicado</span>
+        <span class="etiqueta etiqueta--exito">Aprobado</span>
+        <span class="etiqueta etiqueta--error">Rechazado</span>
+        <span class="etiqueta etiqueta--alerta">Pendiente</span>
+        <span class="etiqueta etiqueta--info">Nueva versión</span>
+        <span class="etiqueta etiqueta--acento">Nuevo</span>
+      </div>
+    </section>
+
+    <!-- 5. Tarjetas -->
+    <section id="tarjetas" class="seccion-guia" aria-labelledby="titulo-tarjetas">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-tarjetas">Tarjetas</h2>
+        <p>Un mismo contenedor para cursos, métricas y contenidos destacados. La cuadrícula se adapta sin desbordar la página.</p>
+      </div>
+
+      <h3>Tarjeta base</h3>
+      <div class="rejilla">
+        <article class="tarjeta">
+          <div class="tarjeta__miniatura" aria-hidden="true">Miniatura del contenido</div>
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--acento">Nuevo</span>
+            <h4 class="tarjeta__titulo">Desarrollo Web Frontend con HTML5 y CSS3</h4>
+            <p class="tarjeta__texto">Estructura semántica, accesibilidad y diseño responsivo sin frameworks.</p>
+            <div class="tarjeta__meta">
+              <span>4 módulos</span>
+              <span>20 horas</span>
+              <span>Nivel principiante</span>
+            </div>
+            <div class="tarjeta__pie">
+              <span class="etiqueta">En progreso</span>
+              <a href="#tarjetas" class="boton boton--secundario boton--sm">Ver detalle</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--info">Sincrónico</span>
+            <h4 class="tarjeta__titulo">Mentorías tú a tú</h4>
+            <p class="tarjeta__texto">Agenda individual con fecha, franja horaria y enlace de videollamada generado automáticamente.</p>
+            <div class="tarjeta__pie">
+              <span class="texto-secundario">Cupos limitados</span>
+              <a href="#tarjetas" class="boton boton--primario boton--sm">Agendar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3>Tarjetas de métrica</h3>
+      <div class="rejilla">
+        <article class="tarjeta tarjeta-metrica">
+          <span class="etiqueta">Cursos</span>
+          <p class="tarjeta-metrica__valor">44</p>
+          <p class="tarjeta-metrica__etiqueta">Cursos publicados en el catálogo</p>
+        </article>
+        <article class="tarjeta tarjeta-metrica">
+          <span class="etiqueta">Aprendices</span>
+          <p class="tarjeta-metrica__valor">128</p>
+          <p class="tarjeta-metrica__etiqueta">Estudiantes matriculados este mes</p>
+        </article>
+        <article class="tarjeta tarjeta-metrica">
+          <span class="etiqueta etiqueta--exito">Avance</span>
+          <p class="tarjeta-metrica__valor">75%</p>
+          <p class="tarjeta-metrica__etiqueta">Promedio de finalización de la cohorte</p>
+        </article>
+      </div>
+
+      <h3>Tarjetas de curso</h3>
+      <div class="rejilla">
+        <article class="tarjeta tarjeta-curso">
+          <div class="tarjeta__miniatura" aria-hidden="true">Imagen del curso</div>
+          <div class="tarjeta__cuerpo">
+            <div class="acciones">
+              <span class="etiqueta">Desarrollo Web</span>
+              <span class="etiqueta">Principiante</span>
+            </div>
+            <h4 class="tarjeta__titulo">JavaScript Vanilla y Lógica de Programación</h4>
+            <p class="tarjeta__texto">Fundamentos del lenguaje, manipulación del DOM y ejercicios evaluados por proyectos.</p>
+            <div class="tarjeta__pie">
+              <span class="texto-secundario">5 módulos · 30 horas</span>
+              <a href="#tarjetas" class="boton boton--primario boton--sm">Inscribirme</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-curso">
+          <div class="tarjeta__miniatura" aria-hidden="true">Imagen del curso</div>
+          <div class="tarjeta__cuerpo">
+            <div class="acciones">
+              <span class="etiqueta">Bases de Datos</span>
+              <span class="etiqueta">Intermedio</span>
+            </div>
+            <h4 class="tarjeta__titulo">Bases de Datos Relacionales y SQL</h4>
+            <p class="tarjeta__texto">Modelo relacional, consultas complejas, índices y procedimientos almacenados.</p>
+            <div class="tarjeta__pie">
+              <span class="texto-secundario">3 módulos · 18 horas</span>
+              <a href="#tarjetas" class="boton boton--secundario boton--sm">Ver temario</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Tablas -->
+    <section id="tablas" class="seccion-guia" aria-labelledby="titulo-tablas">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-tablas">Tablas de datos</h2>
+        <p>La tabla se desplaza dentro de su contenedor en pantallas pequeñas, sin generar desbordamiento horizontal en la página.</p>
+      </div>
+
+      <div class="tabla-contenedor">
+        <table class="tabla-datos">
+          <caption>Historial de entregas y calificaciones</caption>
+          <thead>
+            <tr>
+              <th scope="col">Curso</th>
+              <th scope="col">Entregable</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Nota</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Desarrollo Web Frontend</th>
+              <td>Proyecto del Módulo 2</td>
+              <td>18 Nov 2026</td>
+              <td><span class="etiqueta etiqueta--exito">Aprobado</span></td>
+              <td>90 / 100</td>
+              <td>
+                <div class="tabla-datos__acciones">
+                  <button type="button" class="boton boton--secundario boton--sm">Ver detalle</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">JavaScript Vanilla</th>
+              <td>Ejercicio de funciones y DOM</td>
+              <td>20 Nov 2026</td>
+              <td><span class="etiqueta etiqueta--alerta">Pendiente</span></td>
+              <td>—</td>
+              <td>
+                <div class="tabla-datos__acciones">
+                  <button type="button" class="boton boton--primario boton--sm">Calificar</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Bases de Datos Relacionales</th>
+              <td>Consultas SQL avanzadas</td>
+              <td>21 Nov 2026</td>
+              <td><span class="etiqueta etiqueta--error">Rechazado</span></td>
+              <td>54 / 100</td>
+              <td>
+                <div class="tabla-datos__acciones">
+                  <button type="button" class="boton boton--secundario boton--sm">Ver detalle</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Progreso -->
+    <section id="progreso" class="seccion-guia" aria-labelledby="titulo-progreso">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-progreso">Barras de progreso</h2>
+        <p>Cada barra expone su valor a las tecnologías de asistencia mediante <code>role="progressbar"</code> y atributos <code>aria-value*</code>.</p>
+      </div>
+
+      <div class="bloque-destacado">
+        <div class="progreso">
+          <div class="progreso__etiqueta">
+            <span>Desarrollo Web Frontend</span>
+            <span>20 %</span>
+          </div>
+          <div class="progreso__barra" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Avance del curso Desarrollo Web Frontend">
+            <span class="progreso__relleno progreso__relleno--20"></span>
+          </div>
+        </div>
+
+        <div class="progreso">
+          <div class="progreso__etiqueta">
+            <span>JavaScript Vanilla</span>
+            <span>75 %</span>
+          </div>
+          <div class="progreso__barra" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Avance del curso JavaScript Vanilla">
+            <span class="progreso__relleno progreso__relleno--75"></span>
+          </div>
+        </div>
+
+        <div class="progreso">
+          <div class="progreso__etiqueta">
+            <span>Introducción a Git</span>
+            <span>100 % · certificado emitido</span>
+          </div>
+          <div class="progreso__barra" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Avance del curso Introducción a Git completado">
+            <span class="progreso__relleno progreso__relleno--100 progreso__relleno--exito"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Formularios -->
+    <section id="formularios" class="seccion-guia" aria-labelledby="titulo-formularios">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-formularios">Formularios y validación</h2>
+        <p>Cada campo tiene etiqueta asociada con <code>for</code>, ayuda descriptiva y mensajes de error o éxito enlazados con <code>aria-describedby</code>.</p>
+      </div>
+
+      <section class="tarjeta tarjeta-formulario" aria-labelledby="titulo-formulario-ejemplo">
+        <div class="tarjeta-formulario__encabezado">
+          <h3 id="titulo-formulario-ejemplo">Solicitud de mentoría</h3>
+          <p>Completa tus datos para agendar una asesoría individual.</p>
+        </div>
+
+        <form class="formulario" action="#formularios" method="get">
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-nombre">
+              Nombre completo <span class="campo__requerido" aria-hidden="true">*</span>
+            </label>
+            <input class="campo__control" type="text" id="campo-nombre" name="nombre" autocomplete="name" placeholder="Ana Torres" required>
+            <p class="campo__ayuda" id="ayuda-nombre">Tal como aparece en tu documento de identidad.</p>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-correo">
+              Correo electrónico <span class="campo__requerido" aria-hidden="true">*</span>
+            </label>
+            <input class="campo__control" type="email" id="campo-correo" name="correo" autocomplete="email" value="ana.torres@" aria-invalid="true" aria-describedby="error-correo" required>
+            <p class="campo__error" id="error-correo"><span aria-hidden="true">!</span> Ingresa un correo válido, por ejemplo nombre@dominio.com.</p>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-clave">
+              Contraseña <span class="campo__requerido" aria-hidden="true">*</span>
+            </label>
+            <input class="campo__control" type="password" id="campo-clave" name="clave" autocomplete="new-password" aria-describedby="ayuda-clave" required>
+            <p class="campo__ayuda" id="ayuda-clave">Mínimo 8 caracteres, con al menos una mayúscula y un número.</p>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-categoria">Curso de interés</label>
+            <select class="campo__control" id="campo-categoria" name="categoria">
+              <option value="desarrollo-web">Desarrollo Web Frontend</option>
+              <option value="javascript">JavaScript Vanilla</option>
+              <option value="base-datos">Bases de Datos Relacionales</option>
+              <option value="diseno">Diseño UI/UX Accesible</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-mensaje">Motivo de la mentoría <span class="campo__opcional">(opcional)</span></label>
+            <textarea class="campo__control" id="campo-mensaje" name="mensaje" rows="4" placeholder="Describe brevemente el tema que quieres trabajar..."></textarea>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="campo-archivo">Documento de apoyo <span class="campo__opcional">(opcional)</span></label>
+            <input class="campo__archivo" type="file" id="campo-archivo" name="archivo" aria-describedby="ayuda-archivo">
+            <p class="campo__ayuda" id="ayuda-archivo">Formatos permitidos: PDF o DOCX, máximo 5 MB.</p>
+          </div>
+
+          <div class="campo">
+            <div class="campo-casilla">
+              <input type="checkbox" id="campo-terminos" name="terminos" required>
+              <label class="campo-casilla__texto" for="campo-terminos">
+                Acepto la <a href="#formularios">política de tratamiento de datos</a> y los términos del servicio.
+              </label>
+            </div>
+          </div>
+
+          <div class="acciones">
+            <button type="submit" class="boton boton--primario">Enviar solicitud</button>
+            <button type="reset" class="boton boton--secundario">Limpiar campos</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="bloque-destacado">
+        <h3>Estado de campo válido</h3>
+        <div class="campo">
+          <label class="campo__etiqueta" for="campo-correo-valido">Correo verificado</label>
+          <input class="campo__control" type="email" id="campo-correo-valido" name="correo_verificado" value="ana.torres@edunova.com" aria-valid="true" aria-describedby="exito-correo">
+          <p class="campo__exito" id="exito-correo"><span aria-hidden="true">✓</span> El correo está disponible y verificado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Navegación -->
+    <section id="navegacion" class="seccion-guia" aria-labelledby="titulo-navegacion">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-navegacion">Navegación</h2>
+        <p>Encabezado, menú lateral por rol y paginación comparten la misma escala tipográfica y estados de foco.</p>
+      </div>
+
+      <div class="bloque-destacado">
+        <h3>Navegación superior</h3>
+        <nav class="nav-superior" aria-label="Ejemplo de navegación superior">
+          <ul>
+            <li><a href="#navegacion" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Panel</a></li>
+            <li><a href="#navegacion" class="nav-superior__enlace">Mis cursos</a></li>
+            <li><a href="#navegacion" class="nav-superior__enlace">Certificados</a></li>
+            <li><a href="#navegacion" class="nav-superior__enlace">Cerrar sesión</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="disposicion-lateral">
+        <aside class="panel-lateral" aria-labelledby="titulo-menu-lateral">
+          <h3 class="panel-lateral__titulo" id="titulo-menu-lateral">Menú del estudiante</h3>
+          <nav class="menu-lateral" aria-label="Ejemplo de menú lateral">
+            <ul>
+              <li><a href="#navegacion" class="menu-lateral__enlace">Panel principal</a></li>
+              <li><a href="#navegacion" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Mis cursos</a></li>
+              <li><a href="#navegacion" class="menu-lateral__enlace">Envío de evidencias</a></li>
+              <li><a href="#navegacion" class="menu-lateral__enlace">Certificados</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <div class="bloque-destacado">
+          <h3>Contenido junto al panel lateral</h3>
+          <p class="texto-secundario">
+            La cuadrícula de dos columnas se convierte en una sola columna por debajo de 1024 px y el panel deja
+            de ser fijo, evitando desbordamientos en tabletas y móviles.
+          </p>
+        </div>
+      </div>
+
+      <nav aria-label="Paginación de resultados">
+        <ul class="paginacion">
+          <li><a href="#navegacion" class="paginacion__enlace">Anterior</a></li>
+          <li><a href="#navegacion" class="paginacion__enlace" aria-current="page">1</a></li>
+          <li><a href="#navegacion" class="paginacion__enlace">2</a></li>
+          <li><a href="#navegacion" class="paginacion__enlace">3</a></li>
+          <li><a href="#navegacion" class="paginacion__enlace">Siguiente</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- 10. Agenda -->
+    <section id="agenda" class="seccion-guia" aria-labelledby="titulo-agenda">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-agenda">Agenda de sesiones y mentorías</h2>
+        <p>Lista reutilizable para próximas clases en vivo, mentorías individuales y entregas pendientes.</p>
+      </div>
+
+      <ul class="lista-agenda">
+        <li class="lista-agenda__item">
+          <span class="lista-agenda__titulo">Taller de CSS Grid y diseño responsivo</span>
+          <span class="lista-agenda__meta">Lunes 24 de noviembre · 18:00 a 19:30 · Sesión en vivo</span>
+          <span><span class="etiqueta etiqueta--acento">En vivo</span></span>
+        </li>
+        <li class="lista-agenda__item lista-agenda__item--neutro">
+          <span class="lista-agenda__titulo">Mentoría tú a tú: dudas de JavaScript</span>
+          <span class="lista-agenda__meta">Miércoles 26 de noviembre · 16:00 a 16:45 · Enlace automático</span>
+          <span><span class="etiqueta">Agendada</span></span>
+        </li>
+        <li class="lista-agenda__item lista-agenda__item--exito">
+          <span class="lista-agenda__titulo">Entrega del proyecto del Módulo 3</span>
+          <span class="lista-agenda__meta">Viernes 28 de noviembre · 23:59 · Evidencia calificada</span>
+          <span><span class="etiqueta etiqueta--exito">Completada</span></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 11. Complementos -->
+    <section id="complementos" class="seccion-guia" aria-labelledby="titulo-complementos">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-complementos">Mensajes, calendario y certificado</h2>
+        <p>Bloques de retroalimentación y piezas propias del dominio educativo de EduNova.</p>
+      </div>
+
+      <h3>Mensajes de estado</h3>
+      <div class="rejilla">
+        <div class="mensaje mensaje--exito" role="status">
+          <span class="mensaje__titulo">Evidencia enviada</span>
+          <span>Tu entrega fue registrada y quedó pendiente de revisión por el instructor.</span>
+        </div>
+        <div class="mensaje mensaje--error" role="alert">
+          <span class="mensaje__titulo">Credenciales incorrectas</span>
+          <span>El correo o la contraseña no coinciden con una cuenta registrada.</span>
+        </div>
+        <div class="mensaje mensaje--alerta">
+          <span class="mensaje__titulo">Entrega próxima</span>
+          <span>El proyecto del Módulo 3 vence en 48 horas.</span>
+        </div>
+        <div class="mensaje mensaje--info">
+          <span class="mensaje__titulo">Nueva grabación disponible</span>
+          <span>Ya puedes ver la clase sincrónica del 17 de noviembre.</span>
+        </div>
+      </div>
+
+      <h3>Calendario mensual</h3>
+      <div class="tabla-contenedor">
+        <table class="calendario">
+          <caption>Noviembre de 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Lun</th>
+              <th scope="col">Mar</th>
+              <th scope="col">Mié</th>
+              <th scope="col">Jue</th>
+              <th scope="col">Vie</th>
+              <th scope="col">Sáb</th>
+              <th scope="col">Dom</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+              <td>20</td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+            </tr>
+            <tr>
+              <td class="calendario__dia--evento">24</td>
+              <td>25</td>
+              <td class="calendario__dia--evento">26</td>
+              <td>27</td>
+              <td class="calendario__dia--hoy">28</td>
+              <td>29</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Certificado digital</h3>
+      <article class="certificado" aria-labelledby="titulo-certificado">
+        <span class="etiqueta">Certificado Digital</span>
+        <h4 id="titulo-certificado">Certificado de finalización</h4>
+        <p class="texto-secundario">Ana Torres completó el curso Introducción a Git y Control de Versiones.</p>
+        <p class="texto-secundario">Emitido el 5 de noviembre de 2026 · Identificador EDN-CERT-2026-00841</p>
+        <div class="certificado__qr" aria-hidden="true">Código QR de verificación</div>
+        <div class="certificado__firmas">
+          <div class="certificado__firma">
+            <strong>Prof. Carlos Mendoza</strong>
+            <span>Instructor titular</span>
+          </div>
+          <div class="certificado__firma">
+            <strong>Dirección Académica</strong>
+            <span>EduNova</span>
+          </div>
+        </div>
+      </article>
+
+      <h3>Portada</h3>
+      <section class="portada" aria-labelledby="titulo-portada">
+        <h2 id="titulo-portada">Aprende habilidades del futuro a tu propio ritmo</h2>
+        <p class="portada__texto">Cursos prácticos, mentorías individuales y certificados verificables desde una sola plataforma.</p>
+        <div class="acciones">
+          <a href="#complementos" class="boton boton--primario">Explorar planes</a>
+          <a href="#complementos" class="boton boton--secundario">Ver catálogo</a>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Guía de estilos del sistema de diseño.</p>
+      <ul class="pie__enlaces">
+        <li><a href="plantilla.html">Plantilla base</a></li>
+        <li><a href="componentes.html">Guía de estilos</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
