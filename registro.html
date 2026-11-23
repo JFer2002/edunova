@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crea tu cuenta en EduNova y comienza tu ruta de aprendizaje con cursos, mentorías y certificados.">
+  <title>Crear cuenta — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">LMS</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="nav-superior__enlace">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="index.html#planes" class="nav-superior__enlace">Planes</a></li>
+          <li><a href="login.html" class="nav-superior__enlace">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Registro</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <section class="bloque-destacado" aria-labelledby="titulo-registro">
+      <h1 id="titulo-registro">Crea tu cuenta en EduNova</h1>
+      <div class="acciones">
+        <span class="etiqueta etiqueta--solida">RF-02 · Registro público (HU-01)</span>
+      </div>
+      <p class="texto-intro">Completa tus datos para crear una cuenta de Estudiante o Instructor. La creación se simula en esta demostración y no se almacenan datos personales.</p>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-formulario-registro">
+      <h2 id="titulo-formulario-registro" class="visualmente-oculto">Formulario de registro</h2>
+      <div class="rejilla">
+
+        <form class="tarjeta tarjeta-formulario formulario" id="formulario-registro" action="#" method="post" novalidate data-formulario="registro">
+          <div class="tarjeta-formulario__encabezado">
+            <h3>Datos del nuevo usuario</h3>
+            <p>Todos los campos marcados con asterisco son obligatorios.</p>
+          </div>
+
+          <div id="mensaje-registro" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="registro-nombre">Nombre completo <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="registro-nombre" name="nombre" type="text" autocomplete="name" required data-validacion="requerido nombre" aria-describedby="registro-nombre-error">
+            <div id="registro-nombre-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="registro-correo">Correo electrónico <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="registro-correo" name="correo" type="email" autocomplete="email" inputmode="email" required data-validacion="requerido correo" aria-describedby="registro-correo-ayuda registro-correo-error">
+            <p class="campo__ayuda" id="registro-correo-ayuda">Ejemplo: nombre@dominio.com.</p>
+            <div id="registro-correo-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="registro-rol">Rol <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <select class="campo__control" id="registro-rol" name="rol" required data-validacion="rol" aria-describedby="registro-rol-ayuda registro-rol-error">
+              <option value="">Selecciona tu rol</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="instructor">Instructor</option>
+            </select>
+            <p class="campo__ayuda" id="registro-rol-ayuda">El rol Administrador se asigna desde la gestión de usuarios.</p>
+            <div id="registro-rol-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="registro-contrasena">Contraseña <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="registro-contrasena" name="contrasena" type="password" autocomplete="new-password" minlength="8" required data-validacion="requerido contrasena" aria-describedby="registro-contrasena-ayuda registro-contrasena-error">
+            <p class="campo__ayuda" id="registro-contrasena-ayuda">Mínimo 8 caracteres.</p>
+            <div id="registro-contrasena-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="registro-confirmar">Confirmar contraseña <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="registro-confirmar" name="confirmar" type="password" autocomplete="new-password" minlength="8" required data-validacion="requerido confirmacion" data-coincide-con="registro-contrasena" aria-describedby="registro-confirmar-error">
+            <div id="registro-confirmar-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <div class="campo-casilla">
+              <input type="checkbox" id="registro-terminos" name="terminos" required data-validacion="terminos" aria-describedby="registro-terminos-error">
+              <label class="campo-casilla__texto" for="registro-terminos">Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>.</label>
+            </div>
+            <div id="registro-terminos-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <button class="boton boton--primario boton--bloque" type="submit">Crear cuenta</button>
+          <p class="texto-secundario">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>.</p>
+        </form>
+
+        <aside class="bloque-destacado" aria-labelledby="titulo-beneficios-registro">
+          <h3 class="tarjeta__titulo" id="titulo-beneficios-registro">Qué encuentras al registrarte</h3>
+          <ul class="lista-agenda">
+            <li class="lista-agenda__item">
+              <span class="lista-agenda__titulo">Rutas de aprendizaje</span>
+              <span class="lista-agenda__meta">Cursos técnicos organizados por módulos secuenciales.</span>
+            </li>
+            <li class="lista-agenda__item">
+              <span class="lista-agenda__titulo">Acompañamiento</span>
+              <span class="lista-agenda__meta">Mentorías y sesiones en vivo con instructores.</span>
+            </li>
+            <li class="lista-agenda__item">
+              <span class="lista-agenda__titulo">Evidencias y certificados</span>
+              <span class="lista-agenda__meta">Entregas prácticas y certificado digital al completar tu ruta.</span>
+            </li>
+          </ul>
+          <div class="mensaje mensaje--info">
+            <p class="mensaje__titulo">Demostración segura</p>
+            <p>Este formulario valida los datos en el navegador y no los envía a ningún servidor.</p>
+          </div>
+          <a class="boton boton--contorno boton--sm" href="login.html">Ya tengo una cuenta</a>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulta el temario secuencial del curso, sus requisitos, instructor y realiza una inscripción simulada en EduNova.">
+  <title>Detalle del curso — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">LMS</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="nav-superior__enlace">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="true">Catálogo</a></li>
+          <li><a href="index.html#planes" class="nav-superior__enlace">Planes</a></li>
+          <li><a href="login.html" class="nav-superior__enlace">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="nav-superior__enlace">Registro</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <section class="bloque-destacado" aria-labelledby="titulo-curso">
+      <p class="texto-secundario"><a href="catalogo.html">Catálogo</a> / Detalle del curso</p>
+      <h1 id="titulo-curso" data-curso-titulo>Desarrollo Web Full Stack</h1>
+      <div class="acciones">
+        <span class="etiqueta etiqueta--solida">RF-10 · Módulos secuenciales</span>
+        <span class="etiqueta etiqueta--info" data-curso-categoria>Programación</span>
+        <span class="etiqueta etiqueta--exito" data-curso-nivel>Intermedio</span>
+      </div>
+      <p class="texto-intro" data-curso-resumen>Aprende a construir aplicaciones web completas, desde la interfaz hasta la base de datos, con proyectos prácticos y acompañamiento.</p>
+      <div id="aviso-curso" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-contenido-curso">
+      <h2 id="titulo-contenido-curso" class="visualmente-oculto">Contenido del curso</h2>
+      <div class="disposicion-lateral">
+
+        <aside class="panel-lateral" aria-labelledby="titulo-resumen">
+          <h2 class="panel-lateral__titulo" id="titulo-resumen">Resumen del curso</h2>
+          <div class="formulario">
+            <ul class="lista-agenda">
+              <li class="lista-agenda__item lista-agenda__item--neutro">
+                <span class="lista-agenda__meta">Categoría</span>
+                <span class="lista-agenda__titulo" data-curso-categoria>Programación</span>
+              </li>
+              <li class="lista-agenda__item lista-agenda__item--neutro">
+                <span class="lista-agenda__meta">Nivel</span>
+                <span class="lista-agenda__titulo" data-curso-nivel>Intermedio</span>
+              </li>
+              <li class="lista-agenda__item lista-agenda__item--neutro">
+                <span class="lista-agenda__meta">Duración estimada</span>
+                <span class="lista-agenda__titulo" data-curso-duracion>24 semanas</span>
+              </li>
+              <li class="lista-agenda__item lista-agenda__item--neutro">
+                <span class="lista-agenda__meta">Instructor</span>
+                <span class="lista-agenda__titulo" data-curso-instructor>Laura Méndez</span>
+              </li>
+            </ul>
+            <button class="boton boton--primario boton--bloque" type="button" data-accion="inscribir-curso">Inscribirme</button>
+            <div id="mensaje-inscripcion" role="status" aria-live="polite" tabindex="-1"></div>
+            <a class="boton boton--contorno boton--bloque" href="catalogo.html">Volver al catálogo</a>
+          </div>
+        </aside>
+
+        <div class="formulario">
+
+          <article class="tarjeta">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo">Descripción del curso</h2>
+              <p class="tarjeta__texto" data-curso-descripcion>Este curso te lleva paso a paso por el desarrollo web moderno. Trabajarás con HTML5 semántico, CSS3, JavaScript, APIs, bases de datos y despliegue. Cada módulo combina conceptos clave con retos prácticos y una entrega evaluable.</p>
+            </div>
+          </article>
+
+          <section class="tarjeta" aria-labelledby="titulo-temario">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-temario">Temario secuencial</h2>
+              <p class="tarjeta__texto">Los módulos se cursan en orden. Cada uno incluye recursos, práctica guiada y una evidencia evaluable.</p>
+              <ol class="lista-agenda" id="lista-modulos">
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">01</span>
+                  <span class="lista-agenda__titulo">Fundamentos de HTML5 y accesibilidad</span>
+                  <span class="lista-agenda__meta">Semanas 1-2 · Estructura semántica, formularios y buenas prácticas.</span>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">02</span>
+                  <span class="lista-agenda__titulo">CSS3 moderno y diseño responsivo</span>
+                  <span class="lista-agenda__meta">Semanas 3-5 · Flexbox, Grid, variables y adaptación a móviles.</span>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">03</span>
+                  <span class="lista-agenda__titulo">JavaScript esencial</span>
+                  <span class="lista-agenda__meta">Semanas 6-9 · DOM, eventos, funciones y validaciones.</span>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">04</span>
+                  <span class="lista-agenda__titulo">Consumo de APIs y asincronía</span>
+                  <span class="lista-agenda__meta">Semanas 10-13 · Fetch, JSON, promesas y manejo de errores.</span>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">05</span>
+                  <span class="lista-agenda__titulo">Backend y bases de datos</span>
+                  <span class="lista-agenda__meta">Semanas 14-19 · Rutas, autenticación y persistencia.</span>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="etiqueta etiqueta--solida">06</span>
+                  <span class="lista-agenda__titulo">Proyecto final y despliegue</span>
+                  <span class="lista-agenda__meta">Semanas 20-24 · Construcción, pruebas y publicación.</span>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="bloque-destacado" aria-labelledby="titulo-requisitos">
+            <h2 class="tarjeta__titulo" id="titulo-requisitos">Requisitos</h2>
+            <ul class="lista-agenda" id="lista-requisitos">
+              <li class="lista-agenda__item lista-agenda__item--neutro"><span class="lista-agenda__meta">Manejo básico de computador y navegador.</span></li>
+              <li class="lista-agenda__item lista-agenda__item--neutro"><span class="lista-agenda__meta">Ganas de practicar con proyectos reales.</span></li>
+              <li class="lista-agenda__item lista-agenda__item--neutro"><span class="lista-agenda__meta">No se requiere experiencia previa en programación.</span></li>
+            </ul>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-instructor">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-instructor">Instructor</h2>
+              <p class="tarjeta__texto"><strong data-curso-instructor>Laura Méndez</strong></p>
+              <p class="tarjeta__texto" data-curso-instructor-bio>Desarrolladora full stack con más de 10 años de experiencia en productos web y formación de equipos técnicos.</p>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

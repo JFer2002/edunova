@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduNova es la plataforma de aprendizaje en línea para desarrollar habilidades técnicas con cursos, mentorías y certificados verificables.">
+  <title>EduNova — Aprende habilidades para el futuro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">LMS</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="#planes" class="nav-superior__enlace">Planes</a></li>
+          <li><a href="login.html" class="nav-superior__enlace">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="nav-superior__enlace">Registro</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <section class="portada portada--degradado" aria-labelledby="titulo-portada">
+      <h1 id="titulo-portada">Aprende hoy las habilidades que transforman tu futuro</h1>
+      <div class="acciones">
+        <span class="etiqueta etiqueta--solida">RF-01 · Portada institucional</span>
+        <span class="etiqueta etiqueta--info">RF-02 · Accesos públicos</span>
+      </div>
+      <p class="portada__texto">EduNova conecta a estudiantes, instructores e instituciones con formación técnica práctica, mentorías cercanas y certificados verificables.</p>
+      <div class="acciones">
+        <a class="boton boton--secundario" href="registro.html">Crear cuenta</a>
+        <a class="boton boton--secundario" href="catalogo.html">Explorar catálogo</a>
+        <a class="boton boton--secundario" href="#planes">Ver planes</a>
+        <a class="boton boton--secundario" href="login.html">Iniciar sesión</a>
+      </div>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-metricas">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-metricas">Una comunidad que aprende haciendo</h2>
+        <p>Datos de referencia de la plataforma para esta demostración.</p>
+      </div>
+      <div class="rejilla">
+        <article class="tarjeta tarjeta-metrica">
+          <p class="tarjeta-metrica__valor">+12.000</p>
+          <p class="tarjeta-metrica__etiqueta">estudiantes activos</p>
+        </article>
+        <article class="tarjeta tarjeta-metrica">
+          <p class="tarjeta-metrica__valor">120</p>
+          <p class="tarjeta-metrica__etiqueta">cursos y rutas técnicas</p>
+        </article>
+        <article class="tarjeta tarjeta-metrica">
+          <p class="tarjeta-metrica__valor">94%</p>
+          <p class="tarjeta-metrica__etiqueta">de satisfacción reportada</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-beneficios">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-beneficios">¿Por qué elegir EduNova?</h2>
+        <p>Aprendizaje flexible, acompañamiento humano y evidencias que demuestran lo que sabes hacer.</p>
+      </div>
+      <div class="rejilla">
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--info">Aprendizaje práctico</span>
+            <h3 class="tarjeta__titulo">Proyectos reales, no solo teoría</h3>
+            <p class="tarjeta__texto">Cada módulo combina conceptos clave con retos aplicados y entregas evaluables.</p>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--exito">Acompañamiento</span>
+            <h3 class="tarjeta__titulo">Mentorías “tú a tú”</h3>
+            <p class="tarjeta__texto">Resuelve dudas con instructores y comparte sesiones en vivo con tu comunidad.</p>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--acento">Certificación</span>
+            <h3 class="tarjeta__titulo">Certificados verificables</h3>
+            <p class="tarjeta__texto">Al completar tu ruta, obtienes un certificado digital con código QR de verificación.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-cursos">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-cursos">Cursos destacados</h2>
+        <p>Explora algunas de las rutas más elegidas por nuestra comunidad.</p>
+      </div>
+      <div class="formulario">
+        <div class="rejilla">
+        <article class="tarjeta tarjeta-curso">
+          <div class="tarjeta__miniatura">Programación</div>
+          <div class="tarjeta__cuerpo">
+            <div class="tarjeta__meta">
+              <span class="etiqueta etiqueta--info">Programación</span>
+              <span class="etiqueta etiqueta--exito">Intermedio</span>
+            </div>
+            <h3 class="tarjeta__titulo">Desarrollo Web Full Stack</h3>
+            <p class="tarjeta__texto">Construye aplicaciones web completas con HTML, CSS, JavaScript, APIs y bases de datos.</p>
+            <div class="tarjeta__meta">
+              <span>24 semanas</span>
+              <span>Instructora: Laura Méndez</span>
+            </div>
+            <div class="tarjeta__pie">
+              <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=desarrollo-web-full-stack">Ver temario</a>
+            </div>
+          </div>
+        </article>
+        <article class="tarjeta tarjeta-curso">
+          <div class="tarjeta__miniatura">Diseño</div>
+          <div class="tarjeta__cuerpo">
+            <div class="tarjeta__meta">
+              <span class="etiqueta etiqueta--info">Diseño</span>
+              <span class="etiqueta etiqueta--exito">Principiante</span>
+            </div>
+            <h3 class="tarjeta__titulo">Diseño UX/UI de Productos Digitales</h3>
+            <p class="tarjeta__texto">Investiga, prototipa y valida experiencias digitales claras, útiles y accesibles.</p>
+            <div class="tarjeta__meta">
+              <span>12 semanas</span>
+              <span>Instructora: Camila Restrepo</span>
+            </div>
+            <div class="tarjeta__pie">
+              <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=diseno-ux-ui">Ver temario</a>
+            </div>
+          </div>
+        </article>
+        <article class="tarjeta tarjeta-curso">
+          <div class="tarjeta__miniatura">Datos</div>
+          <div class="tarjeta__cuerpo">
+            <div class="tarjeta__meta">
+              <span class="etiqueta etiqueta--info">Datos</span>
+              <span class="etiqueta etiqueta--info">Intermedio</span>
+            </div>
+            <h3 class="tarjeta__titulo">Análisis de Datos con Python</h3>
+            <p class="tarjeta__texto">Limpia, explora y visualiza datos para convertirlos en decisiones informadas.</p>
+            <div class="tarjeta__meta">
+              <span>16 semanas</span>
+              <span>Instructor: Andrés Salazar</span>
+            </div>
+            <div class="tarjeta__pie">
+              <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=analisis-datos-python">Ver temario</a>
+            </div>
+          </div>
+        </article>
+      </div>
+        <div class="acciones">
+          <a class="boton boton--primario" href="catalogo.html">Ver todo el catálogo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-guia" id="planes" aria-labelledby="titulo-planes">
+      <div class="seccion-guia__encabezado">
+        <h2 id="titulo-planes">Planes de membresía</h2>
+        <p>Elige el nivel de acompañamiento que mejor se adapte a tu momento de aprendizaje.</p>
+      </div>
+      <div class="formulario">
+        <div class="rejilla">
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--info">Explorador</span>
+            <h3 class="tarjeta__titulo">Para empezar a explorar</h3>
+            <p class="tarjeta__texto">Acceso a cursos introductorios y recursos de práctica para dar tus primeros pasos.</p>
+            <ul class="lista-agenda">
+              <li class="lista-agenda__item lista-agenda__item--neutro"><span class="lista-agenda__titulo">Cursos introductorios</span><span class="lista-agenda__meta">Contenido base y retos guiados.</span></li>
+              <li class="lista-agenda__item lista-agenda__item--neutro"><span class="lista-agenda__titulo">Comunidad</span><span class="lista-agenda__meta">Acceso a espacios de conversación.</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--acento">Más elegido</span>
+            <h3 class="tarjeta__titulo">Pro</h3>
+            <p class="tarjeta__texto">Rutas completas, mentorías y evaluaciones para avanzar con acompañamiento cercano.</p>
+            <ul class="lista-agenda">
+              <li class="lista-agenda__item"><span class="lista-agenda__titulo">Rutas completas</span><span class="lista-agenda__meta">Cursos técnicos y proyectos integradores.</span></li>
+              <li class="lista-agenda__item"><span class="lista-agenda__titulo">Mentorías</span><span class="lista-agenda__meta">Sesiones “tú a tú” con instructores.</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="tarjeta">
+          <div class="tarjeta__cuerpo">
+            <span class="etiqueta etiqueta--solida">Premium</span>
+            <h3 class="tarjeta__titulo">Para ir más lejos</h3>
+            <p class="tarjeta__texto">Acompañamiento prioritario, certificaciones y recursos avanzados para tu crecimiento.</p>
+            <ul class="lista-agenda">
+              <li class="lista-agenda__item lista-agenda__item--exito"><span class="lista-agenda__titulo">Acompañamiento prioritario</span><span class="lista-agenda__meta">Soporte y revisión de proyectos.</span></li>
+              <li class="lista-agenda__item lista-agenda__item--exito"><span class="lista-agenda__titulo">Certificación</span><span class="lista-agenda__meta">Certificados verificables al completar rutas.</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+        <div class="mensaje mensaje--info">
+          <p class="mensaje__titulo">Comparativo completo</p>
+          <p>Los precios y las modalidades Mensual/Anual se mostrarán en la pantalla de Planes, correspondiente a RF-17.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-cta">
+      <div class="portada">
+        <h2 id="titulo-cta">Tu próximo paso empieza hoy</h2>
+        <p class="portada__texto">Crea tu cuenta, explora el catálogo y encuentra la ruta que te ayude a alcanzar tus metas.</p>
+        <div class="acciones">
+          <a class="boton boton--primario" href="registro.html">Crear mi cuenta</a>
+          <a class="boton boton--secundario" href="catalogo.html">Explorar cursos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

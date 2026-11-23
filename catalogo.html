@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora el catálogo de cursos y rutas técnicas de EduNova. Filtra por texto y categoría en tiempo real.">
+  <title>Catálogo de cursos — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">LMS</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="nav-superior__enlace">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Catálogo</a></li>
+          <li><a href="index.html#planes" class="nav-superior__enlace">Planes</a></li>
+          <li><a href="login.html" class="nav-superior__enlace">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="nav-superior__enlace">Registro</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <section class="bloque-destacado" aria-labelledby="titulo-catalogo">
+      <h1 id="titulo-catalogo">Catálogo de cursos</h1>
+      <div class="acciones">
+        <span class="etiqueta etiqueta--solida">RF-07 · Búsqueda en tiempo real</span>
+        <span class="etiqueta etiqueta--info">RF-08 · Filtros por categoría</span>
+      </div>
+      <p class="texto-intro">Encuentra la formación que necesitas. Escribe una palabra clave o selecciona una categoría para filtrar los cursos al instante.</p>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-filtros">
+      <h2 id="titulo-filtros" class="visualmente-oculto">Filtros del catálogo</h2>
+      <div class="formulario">
+
+        <form class="barra-filtros" id="formulario-filtros" role="search" action="catalogo.html" method="get">
+          <div class="campo">
+            <label class="campo__etiqueta" for="busqueda-cursos">Buscar curso</label>
+            <input class="campo__control" type="search" id="busqueda-cursos" name="buscar" placeholder="Ej. desarrollo web, Python, diseño..." aria-controls="lista-cursos">
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="filtro-categoria">Categoría</label>
+            <select class="campo__control" id="filtro-categoria" name="categoria" aria-controls="lista-cursos">
+              <option value="">Todas las categorías</option>
+              <option value="programacion">Programación</option>
+              <option value="diseno">Diseño</option>
+              <option value="datos">Datos</option>
+              <option value="negocios">Negocios</option>
+              <option value="seguridad">Seguridad</option>
+              <option value="idiomas">Idiomas</option>
+            </select>
+          </div>
+          <button class="boton boton--primario" type="submit">Buscar</button>
+        </form>
+
+        <div class="acciones">
+          <p class="texto-secundario" id="resumen-resultados" aria-live="polite">Mostrando 8 de 8 cursos.</p>
+          <button class="boton boton--contorno boton--sm" type="button" id="limpiar-filtros">Limpiar filtros</button>
+        </div>
+
+        <div class="rejilla" id="lista-cursos" role="list" aria-label="Cursos disponibles">
+
+          <div role="listitem" data-curso data-titulo="Desarrollo Web Full Stack" data-categoria="programacion" data-nivel="Intermedio" data-instructor="Laura Méndez" data-palabras="html css javascript react node frontend backend">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Programación</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Programación</span>
+                  <span class="etiqueta etiqueta--exito">Intermedio</span>
+                </div>
+                <h3 class="tarjeta__titulo">Desarrollo Web Full Stack</h3>
+                <p class="tarjeta__texto">Construye aplicaciones web completas con HTML5, CSS3, JavaScript, APIs y bases de datos.</p>
+                <div class="tarjeta__meta">
+                  <span>24 semanas</span>
+                  <span>Instructora: Laura Méndez</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=desarrollo-web-full-stack">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Diseño UX/UI de Productos Digitales" data-categoria="diseno" data-nivel="Principiante" data-instructor="Camila Restrepo" data-palabras="ux ui figma prototipos investigacion accesibilidad">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Diseño</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Diseño</span>
+                  <span class="etiqueta etiqueta--exito">Principiante</span>
+                </div>
+                <h3 class="tarjeta__titulo">Diseño UX/UI de Productos Digitales</h3>
+                <p class="tarjeta__texto">Investiga, prototipa y valida experiencias digitales claras, útiles y accesibles.</p>
+                <div class="tarjeta__meta">
+                  <span>12 semanas</span>
+                  <span>Instructora: Camila Restrepo</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=diseno-ux-ui">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Análisis de Datos con Python" data-categoria="datos" data-nivel="Intermedio" data-instructor="Andrés Salazar" data-palabras="python pandas datos visualizacion estadistica">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Datos</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Datos</span>
+                  <span class="etiqueta etiqueta--info">Intermedio</span>
+                </div>
+                <h3 class="tarjeta__titulo">Análisis de Datos con Python</h3>
+                <p class="tarjeta__texto">Limpia, explora y visualiza datos para convertirlos en decisiones informadas.</p>
+                <div class="tarjeta__meta">
+                  <span>16 semanas</span>
+                  <span>Instructor: Andrés Salazar</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=analisis-datos-python">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Marketing Digital y Growth" data-categoria="negocios" data-nivel="Principiante" data-instructor="Valentina Ríos" data-palabras="marketing growth embudos contenido metricas">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Negocios</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Negocios</span>
+                  <span class="etiqueta etiqueta--exito">Principiante</span>
+                </div>
+                <h3 class="tarjeta__titulo">Marketing Digital y Growth</h3>
+                <p class="tarjeta__texto">Construye estrategias de marketing digital medibles y centradas en las personas.</p>
+                <div class="tarjeta__meta">
+                  <span>10 semanas</span>
+                  <span>Instructora: Valentina Ríos</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=marketing-digital-growth">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Ciberseguridad Defensiva" data-categoria="seguridad" data-nivel="Avanzado" data-instructor="Diego Torres" data-palabras="seguridad redes incidentes riesgos monitoreo">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Seguridad</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Seguridad</span>
+                  <span class="etiqueta etiqueta--alerta">Avanzado</span>
+                </div>
+                <h3 class="tarjeta__titulo">Ciberseguridad Defensiva</h3>
+                <p class="tarjeta__texto">Protege sistemas y datos con prácticas defensivas, análisis de riesgos y respuesta a incidentes.</p>
+                <div class="tarjeta__meta">
+                  <span>20 semanas</span>
+                  <span>Instructor: Diego Torres</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=ciberseguridad-defensiva">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Gestión de Proyectos Ágiles" data-categoria="negocios" data-nivel="Intermedio" data-instructor="Mateo Cárdenas" data-palabras="agile scrum proyectos backlog equipo">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Negocios</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Negocios</span>
+                  <span class="etiqueta etiqueta--info">Intermedio</span>
+                </div>
+                <h3 class="tarjeta__titulo">Gestión de Proyectos Ágiles</h3>
+                <p class="tarjeta__texto">Planifica, prioriza y entrega valor con marcos ágiles aplicados a proyectos reales.</p>
+                <div class="tarjeta__meta">
+                  <span>8 semanas</span>
+                  <span>Instructor: Mateo Cárdenas</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=gestion-proyectos-agiles">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Fundamentos de Inteligencia Artificial" data-categoria="datos" data-nivel="Intermedio" data-instructor="Sofía Herrera" data-palabras="inteligencia artificial modelos etica machine learning">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Datos</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Datos</span>
+                  <span class="etiqueta etiqueta--info">Intermedio</span>
+                </div>
+                <h3 class="tarjeta__titulo">Fundamentos de Inteligencia Artificial</h3>
+                <p class="tarjeta__texto">Comprende cómo funcionan los sistemas de inteligencia artificial y cómo aplicarlos con criterio.</p>
+                <div class="tarjeta__meta">
+                  <span>14 semanas</span>
+                  <span>Instructora: Sofía Herrera</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=fundamentos-ia">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div role="listitem" data-curso data-titulo="Inglés Técnico para Tecnología" data-categoria="idiomas" data-nivel="Principiante" data-instructor="Julián Pardo" data-palabras="ingles tecnico documentacion reuniones presentaciones">
+            <article class="tarjeta tarjeta-curso">
+              <div class="tarjeta__miniatura">Idiomas</div>
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Idiomas</span>
+                  <span class="etiqueta etiqueta--exito">Principiante</span>
+                </div>
+                <h3 class="tarjeta__titulo">Inglés Técnico para Tecnología</h3>
+                <p class="tarjeta__texto">Comunícate con confianza en entornos tecnológicos usando inglés técnico claro y práctico.</p>
+                <div class="tarjeta__meta">
+                  <span>12 semanas</span>
+                  <span>Instructor: Julián Pardo</span>
+                </div>
+                <div class="tarjeta__pie">
+                  <a class="boton boton--contorno boton--sm" href="detalle-curso.html?curso=ingles-tecnico">Ver temario</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+        <div id="sin-resultados" hidden>
+          <div class="mensaje mensaje--info">
+            <p class="mensaje__titulo">No encontramos cursos</p>
+            <p>Prueba con otra palabra o cambia la categoría seleccionada.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inicia sesión en EduNova con tu rol de Estudiante, Instructor o Administrador.">
+  <title>Iniciar sesión — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">LMS</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="nav-superior__enlace">Inicio</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="index.html#planes" class="nav-superior__enlace">Planes</a></li>
+          <li><a href="login.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Iniciar sesión</a></li>
+          <li><a href="registro.html" class="nav-superior__enlace">Registro</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <section class="bloque-destacado" aria-labelledby="titulo-login">
+      <h1 id="titulo-login">Inicia sesión en EduNova</h1>
+      <div class="acciones">
+        <span class="etiqueta etiqueta--solida">RF-03 · Validación de credenciales</span>
+        <span class="etiqueta etiqueta--info">RF-04 · Redirección por rol</span>
+      </div>
+      <p class="texto-intro">Accede con tu correo y contraseña. El sistema valida tus credenciales y simula la redirección al panel correspondiente a tu rol.</p>
+    </section>
+
+    <section class="seccion-guia" aria-labelledby="titulo-acceso">
+      <h2 id="titulo-acceso" class="visualmente-oculto">Formulario de acceso</h2>
+      <div class="rejilla">
+
+        <form class="tarjeta tarjeta-formulario formulario" id="formulario-login" action="#" method="post" novalidate data-formulario="login">
+          <div class="tarjeta-formulario__encabezado">
+            <h3>Datos de acceso</h3>
+            <p>Selecciona tu rol e ingresa las credenciales de demostración.</p>
+          </div>
+
+          <div id="mensaje-login" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="login-rol">Rol <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <select class="campo__control" id="login-rol" name="rol" required data-validacion="rol" aria-describedby="login-rol-error">
+              <option value="">Selecciona tu rol</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="instructor">Instructor</option>
+              <option value="administrador">Administrador</option>
+            </select>
+            <div id="login-rol-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="login-correo">Correo electrónico <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="login-correo" name="correo" type="email" autocomplete="email" inputmode="email" required data-validacion="requerido correo" aria-describedby="login-correo-ayuda login-correo-error">
+            <p class="campo__ayuda" id="login-correo-ayuda">Usa una de las cuentas de demostración indicadas al lado.</p>
+            <div id="login-correo-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="login-contrasena">Contraseña <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="login-contrasena" name="contrasena" type="password" autocomplete="current-password" minlength="8" required data-validacion="requerido contrasena" aria-describedby="login-contrasena-ayuda login-contrasena-error">
+            <p class="campo__ayuda" id="login-contrasena-ayuda">Mínimo 8 caracteres.</p>
+            <div id="login-contrasena-error" hidden><p class="campo__error"></p></div>
+          </div>
+
+          <div class="campo-casilla">
+            <input type="checkbox" id="login-recordar" name="recordar">
+            <label class="campo-casilla__texto" for="login-recordar">Recordar mi correo en este dispositivo</label>
+          </div>
+
+          <button class="boton boton--primario boton--bloque" type="submit">Ingresar</button>
+          <p class="texto-secundario">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
+        </form>
+
+        <aside class="bloque-destacado" aria-labelledby="titulo-demo">
+          <h3 class="tarjeta__titulo" id="titulo-demo">Cuentas de demostración</h3>
+          <p class="texto-secundario">Usa una de estas cuentas para probar la validación por rol.</p>
+          <ul class="lista-agenda">
+            <li class="lista-agenda__item">
+              <span class="etiqueta etiqueta--info">Estudiante</span>
+              <p class="lista-agenda__titulo">estudiante@edunova.edu</p>
+              <p class="lista-agenda__meta">Contraseña: Estudiante2026</p>
+            </li>
+            <li class="lista-agenda__item">
+              <span class="etiqueta etiqueta--info">Instructor</span>
+              <p class="lista-agenda__titulo">instructor@edunova.edu</p>
+              <p class="lista-agenda__meta">Contraseña: Instructor2026</p>
+            </li>
+            <li class="lista-agenda__item">
+              <span class="etiqueta etiqueta--info">Administrador</span>
+              <p class="lista-agenda__titulo">admin@edunova.edu</p>
+              <p class="lista-agenda__meta">Contraseña: Admin2026</p>
+            </li>
+          </ul>
+          <div class="mensaje mensaje--alerta">
+            <p class="mensaje__titulo">Entorno de demostración</p>
+            <p>No se envían datos a ningún servidor. La redirección a los paneles privados se simula en esta pantalla.</p>
+          </div>
+          <a class="boton boton--contorno boton--sm" href="index.html">Volver a la portada</a>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
