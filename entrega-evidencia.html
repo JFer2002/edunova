@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario para la entrega de evidencias prácticas y consulta del historial de entregas en EduNova.">
+  <title>Entrega de Evidencia — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="panel-estudiante.html" class="marca">EduNova <span class="marca__etiqueta">Estudiante</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-estudiante.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="mis-cursos.html" class="nav-superior__enlace">Mis cursos</a></li>
+          <li><a href="entrega-evidencia.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Entregas</a></li>
+          <li><a href="certificados.html" class="nav-superior__enlace">Certificados</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Navegación del perfil">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">ML</div>
+          <p class="perfil-lateral__nombre">María Fernanda López</p>
+          <span class="etiqueta etiqueta--acento">Plan Pro</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del estudiante">
+          <ul>
+            <li><a href="panel-estudiante.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="mis-cursos.html" class="menu-lateral__enlace">Mis cursos inscritos</a></li>
+            <li><a href="aula-modulo.html" class="menu-lateral__enlace">Aula virtual</a></li>
+            <li><a href="entrega-evidencia.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Entregar evidencia</a></li>
+            <li><a href="certificados.html" class="menu-lateral__enlace">Mis certificados</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Entrega de evidencia práctica</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-13 · Carga de entregables</span>
+            <span class="etiqueta etiqueta--solida">RF-14 · Historial detallado</span>
+          </div>
+          <p class="texto-intro">Envía tus proyectos para revisión. Recuerda que puedes adjuntar un archivo comprimido o compartir un enlace a tu repositorio.</p>
+        </header>
+
+        <section class="tarjeta" aria-labelledby="titulo-formulario-entrega">
+          <div class="tarjeta__cuerpo">
+            <h2 id="titulo-formulario-entrega" class="tarjeta__titulo">Formulario de envío</h2>
+            <form class="formulario" id="formulario-evidencia" data-formulario="evidencia" novalidate action="#">
+              
+              <div id="mensaje-evidencia" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+              <div class="rejilla">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="evidencia-curso">Curso asociado <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="evidencia-curso" name="curso" required data-validacion="requerido">
+                    <option value="desarrollo-web-full-stack" selected>Desarrollo Web Full Stack</option>
+                    <option value="analisis-datos-python">Análisis de Datos con Python</option>
+                    <option value="fundamentos-ia">Fundamentos de Inteligencia Artificial</option>
+                  </select>
+                </div>
+                <div class="campo">
+                  <label class="campo__etiqueta" for="evidencia-modulo">Módulo evaluado <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="evidencia-modulo" name="modulo" required data-validacion="requerido">
+                    <option value="m1">Módulo 1: HTML5 y accesibilidad</option>
+                    <option value="m2">Módulo 2: CSS3 y responsivo</option>
+                    <option value="m3">Módulo 3: JavaScript esencial</option>
+                    <option value="m4" selected>Módulo 4: APIs y asincronía</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="evidencia-archivo">Adjuntar archivo comprimido <span class="campo__opcional">(Opcional si usas enlace)</span></label>
+                <input class="campo__archivo" id="evidencia-archivo" name="archivo" type="file" accept=".zip,.rar,.pdf" data-validacion="archivo" data-evidencia-grupo="evidencia-archivo" data-evidencia-enlace="evidencia-enlace" aria-describedby="evidencia-archivo-ayuda evidencia-archivo-error">
+                <p class="campo__ayuda" id="evidencia-archivo-ayuda">Formatos permitidos: ZIP, RAR, PDF. Máximo 10 MB.</p>
+                <div id="evidencia-archivo-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="evidencia-enlace">Enlace a repositorio o demo <span class="campo__opcional">(GitHub, Vercel, Netlify)</span></label>
+                <input class="campo__control" id="evidencia-enlace" name="enlace" type="url" placeholder="https://github.com/usuario/proyecto" data-validacion="enlace" aria-describedby="evidencia-enlace-error">
+                <div id="evidencia-enlace-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="evidencia-notas">Notas para el instructor</label>
+                <textarea class="campo__control" id="evidencia-notas" name="notas" placeholder="Describe brevemente los componentes construidos o cualquier observación relevante..."></textarea>
+              </div>
+
+              <div class="campo-casilla">
+                <input type="checkbox" id="evidencia-autoria" name="autoria" required data-validacion="terminos" aria-describedby="evidencia-autoria-error">
+                <label class="campo-casilla__texto" for="evidencia-autoria">Confirmo que este trabajo es de mi autoría y cumple con las normas de integridad académica.</label>
+                <div id="evidencia-autoria-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="acciones">
+                <button class="boton boton--primario" type="submit">Confirmar y enviar entrega</button>
+                <a href="aula-modulo.html" class="boton boton--contorno">Volver al aula</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-historial-entregas">
+          <h2 id="titulo-historial-entregas">Historial de mis entregas</h2>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Estado de todas las evidencias enviadas a revisión</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Curso / Módulo</th>
+                  <th scope="col">Fecha envío</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Calificación</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Desarrollo Web / Módulo 3</th>
+                  <td>12 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--exito">Calificado</span></td>
+                  <td>95 / 100</td>
+                  <td><button class="boton boton--secundario boton--sm">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Análisis Datos / Módulo 2</th>
+                  <td>18 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--exito">Calificado</span></td>
+                  <td>90 / 100</td>
+                  <td><button class="boton boton--secundario boton--sm">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <th scope="row">IA Fundamentos / Módulo 3</th>
+                  <td>20 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--info">En revisión</span></td>
+                  <td>Pendiente</td>
+                  <td><button class="boton boton--secundario boton--sm">Ver detalle</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

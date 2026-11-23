@@ -207,6 +207,14 @@
         }
       } else if (regla === 'terminos' && !campo.checked) {
         mensaje = 'Debes aceptar los términos y condiciones.';
+      } else if (regla === 'archivo' && !esCasilla) {
+        const inputEvidencia = document.getElementById(campo.dataset.evidenciaGrupo || '');
+        const enlaceEvidencia = document.getElementById(campo.dataset.evidenciaEnlace || '');
+        if (inputEvidencia && enlaceEvidencia && inputEvidencia.files.length === 0 && enlaceEvidencia.value.trim() === '') {
+          mensaje = 'Adjunta un archivo o ingresa un enlace de repositorio.';
+        }
+      } else if (regla === 'enlace' && valor !== '' && !/^https?:\/\//.test(valor)) {
+        mensaje = 'Ingresa un enlace válido que empiece con http:// o https://';
       }
 
       if (mensaje) {
@@ -366,9 +374,30 @@
           procesarLogin(formulario, contenedor);
         } else if (tipo === 'registro') {
           procesarRegistro(formulario, contenedor);
+        } else if (tipo === 'evidencia') {
+          procesarEvidencia(formulario, contenedor);
         }
       });
     });
+  };
+
+  const procesarEvidencia = function (formulario, contenedor) {
+    const boton = qs('button[type="submit"]', formulario);
+    mostrarMensaje(
+      contenedor,
+      'exito',
+      'Evidencia enviada correctamente',
+      'Tu entrega ha sido registrada en modo demostración. El instructor recibirá una notificación para calificarla.',
+      { href: 'mis-cursos.html', texto: 'Ver mis cursos' }
+    );
+    if (contenedor) {
+      contenedor.focus();
+    }
+    if (boton) {
+      boton.disabled = true;
+      boton.textContent = 'Evidencia enviada';
+    }
+    formulario.reset();
   };
 
   const inicializarLogin = function () {
@@ -906,6 +935,12 @@
       } else if (accion === 'cambiar-estado-usuario') {
         evento.preventDefault();
         simularCambioEstadoUsuario(boton);
+      } else if (accion === 'descargar-certificado') {
+        evento.preventDefault();
+        mostrarMensaje(qs('#mensaje-certificado'), 'exito', 'Descarga iniciada', 'Se está generando el archivo PDF del certificado...');
+      } else if (accion === 'copiar-verificacion') {
+        evento.preventDefault();
+        mostrarMensaje(qs('#mensaje-certificado'), 'info', 'Enlace copiado', 'El enlace de verificación se copió al portapapeles (simulado).');
       }
     });
   };

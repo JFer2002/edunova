@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard personalizado del estudiante en EduNova: métricas, cursos activos y agenda.">
+  <title>Panel de Estudiante — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Estudiante</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-estudiante.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Panel</a></li>
+          <li><a href="mis-cursos.html" class="nav-superior__enlace">Mis cursos</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="certificados.html" class="nav-superior__enlace">Certificados</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del estudiante">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">ML</div>
+          <p class="perfil-lateral__nombre">María Fernanda López</p>
+          <p class="perfil-lateral__correo">estudiante@edunova.edu</p>
+          <span class="etiqueta etiqueta--acento">Plan Pro</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel">
+          <ul>
+            <li><a href="panel-estudiante.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Dashboard</a></li>
+            <li><a href="mis-cursos.html" class="menu-lateral__enlace">Mis cursos inscritos</a></li>
+            <li><a href="aula-modulo.html" class="menu-lateral__enlace">Aula virtual</a></li>
+            <li><a href="entrega-evidencia.html" class="menu-lateral__enlace">Entregar evidencia</a></li>
+            <li><a href="certificados.html" class="menu-lateral__enlace">Mis certificados</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Explorar catálogo</a></li>
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Panel de control</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-05 · Dashboard con avance</span>
+            <span class="etiqueta etiqueta--solida">RF-06 · Calendario y sesiones</span>
+            <span class="etiqueta etiqueta--solida">RF-11 · Agenda interactiva</span>
+          </div>
+          <p class="texto-intro">Bienvenida, María. Aquí tienes un resumen de tu actividad y progreso actual.</p>
+        </header>
+
+        <section class="rejilla" aria-labelledby="titulo-metricas">
+          <h2 id="titulo-metricas" class="visualmente-oculto">Resumen de actividad</h2>
+          <article class="tarjeta tarjeta-metrica">
+            <p class="tarjeta-metrica__valor">3</p>
+            <p class="tarjeta-metrica__etiqueta">cursos activos</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica">
+            <p class="tarjeta-metrica__valor">50 %</p>
+            <p class="tarjeta-metrica__etiqueta">avance promedio</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica">
+            <p class="tarjeta-metrica__valor">2</p>
+            <p class="tarjeta-metrica__etiqueta">certificados obtenidos</p>
+          </article>
+        </section>
+
+        <section aria-labelledby="titulo-cursos-proceso">
+          <div class="fila-espaciada">
+            <h2 id="titulo-cursos-proceso">Continuar aprendiendo</h2>
+            <a href="mis-cursos.html" class="boton boton--contorno boton--sm">Ver todos mis cursos</a>
+          </div>
+          <div class="rejilla">
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Módulo 4 de 6</span>
+                </div>
+                <h3 class="tarjeta__titulo">Desarrollo Web Full Stack</h3>
+                <p class="tarjeta__texto">Lección actual: Consumo de APIs y asincronía.</p>
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Avance</span>
+                    <span>50 %</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso en Desarrollo Web Full Stack">
+                    <span class="progreso__relleno progreso__relleno--50"></span>
+                  </div>
+                </div>
+                <div class="tarjeta__pie">
+                  <a href="aula-modulo.html" class="boton boton--primario boton--sm">Continuar aula</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="tarjeta__meta">
+                  <span class="etiqueta etiqueta--info">Módulo 3 de 5</span>
+                </div>
+                <h3 class="tarjeta__titulo">Análisis de Datos con Python</h3>
+                <p class="tarjeta__texto">Lección actual: Análisis exploratorio y patrones.</p>
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Avance</span>
+                    <span>40 %</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso en Análisis de Datos con Python">
+                    <span class="progreso__relleno progreso__relleno--40"></span>
+                  </div>
+                </div>
+                <div class="tarjeta__pie">
+                  <a href="aula-modulo.html" class="boton boton--primario boton--sm">Continuar aula</a>
+                </div>
+              </div>
+            </article>
+          </div>
+ section>
+
+        <div class="rejilla rejilla--dos">
+          <section class="tarjeta" aria-labelledby="titulo-calendario">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-calendario">Calendario de actividades</h2>
+              <div class="tabla-contenedor">
+                <table class="calendario">
+                  <caption>Noviembre de 2026</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Lun</th>
+                      <th scope="col">Mar</th>
+                      <th scope="col">Mié</th>
+                      <th scope="col">Jue</th>
+                      <th scope="col">Vie</th>
+                      <th scope="col">Sáb</th>
+                      <th scope="col">Dom</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+                      <td class="calendario__dia--hoy">22</td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+                      <td class="calendario__dia--evento">24</td>
+                      <td>25</td>
+                      <td class="calendario__dia--evento">26</td>
+                      <td>27</td><td>28</td><td>29</td>
+                    </tr>
+                    <tr>
+                      <td>30</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-agenda">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-agenda">Próximas sesiones</h2>
+              <ul class="lista-agenda">
+                <li class="lista-agenda__item">
+                  <span class="lista-agenda__titulo">Taller: Fetch y APIs en tiempo real</span>
+                  <span class="lista-agenda__meta">Martes 24 Nov · 18:00 - 19:30</span>
+                  <a href="aula-modulo.html" class="boton boton--contorno boton--sm">Unirse a clase</a>
+                </li>
+                <li class="lista-agenda__item lista-agenda__item--neutro">
+                  <span class="lista-agenda__titulo">Mentoría: Dudas Análisis Exploratorio</span>
+                  <span class="lista-agenda__meta">Jueves 26 Nov · 16:00 - 16:45</span>
+                  <span class="etiqueta etiqueta--info">Pendiente enlace</span>
+                </li>
+              </ul>
+              <div class="panel-lateral__seccion">
+                <h3 class="panel-lateral__seccion-titulo">Entregas pendientes</h3>
+                <ul class="lista-agenda">
+                  <li class="lista-agenda__item">
+                    <span class="lista-agenda__titulo">Evidencia Módulo 4: Proyecto Fetch</span>
+                    <span class="lista-agenda__meta">Vence en 3 días</span>
+                    <a href="entrega-evidencia.html" class="boton boton--secundario boton--sm">Preparar entrega</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

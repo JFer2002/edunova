@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Listado de cursos inscritos, progreso académico e historial de calificaciones en EduNova.">
+  <title>Mis Cursos — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Estudiante</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-estudiante.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="mis-cursos.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Mis cursos</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="certificados.html" class="nav-superior__enlace">Certificados</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Navegación del perfil">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">ML</div>
+          <p class="perfil-lateral__nombre">María Fernanda López</p>
+          <span class="etiqueta etiqueta--acento">Plan Pro</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del estudiante">
+          <ul>
+            <li><a href="panel-estudiante.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="mis-cursos.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Mis cursos inscritos</a></li>
+            <li><a href="aula-modulo.html" class="menu-lateral__enlace">Aula virtual</a></li>
+            <li><a href="entrega-evidencia.html" class="menu-lateral__enlace">Entregar evidencia</a></li>
+            <li><a href="certificados.html" class="menu-lateral__enlace">Mis certificados</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Mis cursos inscritos</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-14 · Historial de calificaciones</span>
+            <span class="etiqueta etiqueta--solida">RF-23 · Cálculo de avance</span>
+          </div>
+          <p class="texto-intro">Gestiona tus cursos activos y consulta tu historial académico detallado.</p>
+        </header>
+
+        <section aria-labelledby="titulo-inscripciones-activas">
+          <h2 id="titulo-inscripciones-activas">Cursos en aprendizaje</h2>
+          <div class="formulario">
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="fila-espaciada">
+                  <div>
+                    <span class="etiqueta etiqueta--info">En progreso</span>
+                    <h3 class="tarjeta__titulo">Desarrollo Web Full Stack</h3>
+                    <p class="texto-secundario">Inscrito el 10 de octubre de 2026 · Instructor: Laura Méndez</p>
+                  </div>
+                  <a href="aula-modulo.html" class="boton boton--primario">Ir al aula virtual</a>
+                </div>
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Progreso: 3 de 6 módulos completados</span>
+                    <span>50 %</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso en Desarrollo Web Full Stack">
+                    <span class="progreso__relleno progreso__relleno--50"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="fila-espaciada">
+                  <div>
+                    <span class="etiqueta etiqueta--info">En progreso</span>
+                    <h3 class="tarjeta__titulo">Análisis de Datos con Python</h3>
+                    <p class="texto-secundario">Inscrito el 20 de octubre de 2026 · Instructor: Andrés Salazar</p>
+                  </div>
+                  <a href="aula-modulo.html" class="boton boton--primario">Ir al aula virtual</a>
+                </div>
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Progreso: 2 de 5 módulos completados</span>
+                    <span>40 %</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso en Análisis de Datos con Python">
+                    <span class="progreso__relleno progreso__relleno--40"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="fila-espaciada">
+                  <div>
+                    <span class="etiqueta etiqueta--info">En progreso</span>
+                    <h3 class="tarjeta__titulo">Fundamentos de Inteligencia Artificial</h3>
+                    <p class="texto-secundario">Inscrito el 01 de noviembre de 2026 · Instructora: Sofía Herrera</p>
+                  </div>
+                  <a href="aula-modulo.html" class="boton boton--primario">Ir al aula virtual</a>
+                </div>
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Progreso: 3 de 5 módulos completados</span>
+                    <span>60 %</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso en Fundamentos de Inteligencia Artificial">
+                    <span class="progreso__relleno progreso__relleno--60"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-cursos-completados">
+          <h2 id="titulo-cursos-completados">Cursos completados</h2>
+          <div class="rejilla">
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <span class="etiqueta etiqueta--exito">Completado</span>
+                <h3 class="tarjeta__titulo">Inglés Técnico para Tecnología</h3>
+                <p class="tarjeta__texto">Finalizado el 05 de noviembre de 2026.</p>
+                <div class="tarjeta__pie">
+                  <a href="certificados.html" class="boton boton--contorno boton--sm">Ver certificado</a>
+                </div>
+              </div>
+            </article>
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <span class="etiqueta etiqueta--exito">Completado</span>
+                <h3 class="tarjeta__titulo">Gestión de Proyectos Ágiles</h3>
+                <p class="tarjeta__texto">Finalizado el 15 de noviembre de 2026.</p>
+                <div class="tarjeta__pie">
+                  <a href="certificados.html" class="boton boton--contorno boton--sm">Ver certificado</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-calificaciones">
+          <h2 id="titulo-calificaciones">Historial de entregas y calificaciones</h2>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Calificaciones obtenidas en los últimos módulos entregados</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Curso</th>
+                  <th scope="col">Módulo</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Desarrollo Web Full Stack</th>
+                  <td>Módulo 3: JavaScript esencial</td>
+                  <td>12 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--exito">Aprobado</span></td>
+                  <td>95/100</td>
+                </tr>
+                <tr>
+                  <th scope="row">Análisis de Datos con Python</th>
+                  <td>Módulo 2: Limpieza y preparación</td>
+                  <td>18 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--exito">Aprobado</span></td>
+                  <td>90/100</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fundamentos de IA</th>
+                  <td>Módulo 3: Modelos y aprendizaje</td>
+                  <td>20 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--info">En revisión</span></td>
+                  <td>Pendiente</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

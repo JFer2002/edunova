@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aula virtual de EduNova: visor de lecciones, navegación secuencial de módulos y recursos de aprendizaje.">
+  <title>Aula Virtual — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="panel-estudiante.html" class="marca">EduNova <span class="marca__etiqueta">Aula Virtual</span></a>
+      <nav class="nav-superior" aria-label="Navegación del aula">
+        <ul>
+          <li><a href="panel-estudiante.html" class="nav-superior__enlace">Mi Panel</a></li>
+          <li><a href="mis-cursos.html" class="nav-superior__enlace">Mis cursos</a></li>
+          <li><a href="entrega-evidencia.html" class="nav-superior__enlace">Entregar evidencia</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="mis-cursos.html" class="boton boton--contorno boton--sm">&larr; Volver a mis cursos</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Navegación secuencial del curso">
+        <h2 class="panel-lateral__titulo">Desarrollo Web Full Stack</h2>
+        <nav class="menu-lateral" aria-label="Módulos del curso">
+          <ul>
+            <li>
+              <a href="#" class="menu-lateral__enlace">
+                <span class="etiqueta etiqueta--exito">✓</span> Módulo 1: HTML5 y accesibilidad
+              </a>
+            </li>
+            <li>
+              <a href="#" class="menu-lateral__enlace">
+                <span class="etiqueta etiqueta--exito">✓</span> Módulo 2: CSS3 y responsivo
+              </a>
+            </li>
+            <li>
+              <a href="#" class="menu-lateral__enlace">
+                <span class="etiqueta etiqueta--exito">✓</span> Módulo 3: JavaScript esencial
+              </a>
+            </li>
+            <li>
+              <a href="aula-modulo.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">
+                <span class="etiqueta">►</span> Módulo 4: APIs y asincronía
+              </a>
+            </li>
+            <li>
+              <a href="#" class="menu-lateral__enlace">
+                <span class="etiqueta">○</span> Módulo 5: Backend y bases de datos
+              </a>
+            </li>
+            <li>
+              <a href="#" class="menu-lateral__enlace">
+                <span class="etiqueta">○</span> Módulo 6: Proyecto final
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Acompañamiento</p>
+          <div class="formulario">
+            <div class="mensaje mensaje--info">
+              <p class="mensaje__titulo">Próxima sesión en vivo</p>
+              <p>Martes 24 Nov · 18:00 HR</p>
+              <a href="#" class="boton boton--primario boton--sm boton--bloque">Unirse a videollamada</a>
+            </div>
+            <a href="entrega-evidencia.html" class="boton boton--secundario boton--sm boton--bloque">Subir evidencia módulo 4</a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <div class="fila-espaciada">
+            <div>
+              <span class="etiqueta etiqueta--info">Lección 4.2</span>
+              <h1>Consumo de APIs con Fetch y Promesas</h1>
+            </div>
+            <div class="acciones">
+              <span class="etiqueta etiqueta--solida">RF-10 · Orden secuencial</span>
+              <span class="etiqueta etiqueta--solida">RF-12 · Sesiones y grabaciones</span>
+            </div>
+          </div>
+          <p class="texto-intro">En esta lección aprenderás a realizar peticiones asíncronas a servicios externos y manejar las respuestas de forma segura.</p>
+        </header>
+
+        <section aria-label="Visor de la lección">
+          <div class="visor-contenido" role="img" aria-label="Reproductor de video de la lección (simulado)">
+            [ Visualizador de contenido: Peticiones Fetch y manejo de errores ]
+          </div>
+          <div class="tarjeta">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo">Acerca de esta lección</h2>
+              <p class="tarjeta__texto">Utilizaremos el estándar <code>fetch()</code> para obtener datos de una API REST pública. Analizaremos el ciclo de vida de una promesa, el uso de <code>.then()</code>, <code>.catch()</code> y la sintaxis moderna <code>async/await</code> para simplificar el código asíncrono.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="rejilla rejilla--dos">
+          <section class="tarjeta" aria-labelledby="titulo-recursos">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-recursos">Recursos de aprendizaje</h2>
+              <ul class="lista-recursos">
+                <li>
+                  <a href="#" class="recurso">
+                    <div class="recurso__info">
+                      <span class="recurso__nombre">Guía técnica: Promesas en JS</span>
+                      <span class="recurso__meta">Documento PDF · 1.2 MB</span>
+                    </div>
+                    <span class="etiqueta etiqueta--info">Descargar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="recurso">
+                    <div class="recurso__info">
+                      <span class="recurso__nombre">Código base: Ejemplo Fetch</span>
+                      <span class="recurso__meta">Repositorio GitHub</span>
+                    </div>
+                    <span class="etiqueta etiqueta--info">Ver código</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-grabaciones">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-grabaciones">Grabaciones anteriores</h2>
+              <ul class="lista-recursos">
+                <li>
+                  <article class="recurso">
+                    <div class="recurso__info">
+                      <span class="recurso__nombre">Grabación: Sesión Q&A Módulo 3</span>
+                      <span class="recurso__meta">17 de Noviembre · 1h 20m</span>
+                    </div>
+                    <a href="#" class="boton boton--contorno boton--sm">Ver clase</a>
+                  </article>
+                </li>
+                <li>
+                  <article class="recurso">
+                    <div class="recurso__info">
+                      <span class="recurso__nombre">Grabación: Clase teórica Asincronía</span>
+                      <span class="recurso__meta">10 de Noviembre · 1h 15m</span>
+                    </div>
+                    <a href="#" class="boton boton--contorno boton--sm">Ver clase</a>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <section class="bloque-destacado" aria-labelledby="titulo-retos">
+          <h2 class="tarjeta__titulo" id="titulo-retos">Reto práctico</h2>
+          <p class="tarjeta__texto">Modifica el código base para capturar errores de red (404, 500) y mostrar un mensaje amigable al usuario en lugar de fallar silenciosamente. Sube el enlace a tu repositorio en la sección de evidencias.</p>
+          <div class="acciones">
+            <a href="entrega-evidencia.html" class="boton boton--primario">Entregar evidencia del reto</a>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

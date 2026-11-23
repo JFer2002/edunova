@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certificados digitales verificables con QR emitidos por EduNova tras completar rutas de aprendizaje.">
+  <title>Mis Certificados — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="panel-estudiante.html" class="marca">EduNova <span class="marca__etiqueta">Estudiante</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-estudiante.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="mis-cursos.html" class="nav-superior__enlace">Mis cursos</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+          <li><a href="certificados.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Certificados</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Navegación del perfil">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">ML</div>
+          <p class="perfil-lateral__nombre">María Fernanda López</p>
+          <span class="etiqueta etiqueta--acento">Plan Pro</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del estudiante">
+          <ul>
+            <li><a href="panel-estudiante.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="mis-cursos.html" class="menu-lateral__enlace">Mis cursos inscritos</a></li>
+            <li><a href="aula-modulo.html" class="menu-lateral__enlace">Aula virtual</a></li>
+            <li><a href="entrega-evidencia.html" class="menu-lateral__enlace">Entregar evidencia</a></li>
+            <li><a href="certificados.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Mis certificados</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Certificados digitales verificables</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-15 · Emisión al 100%</span>
+            <span class="etiqueta etiqueta--solida">RF-16 · Código QR de respaldo</span>
+          </div>
+          <p class="texto-intro">Al completar el 100 % de una ruta y aprobar todas las evidencias, se emite automáticamente un certificado digital con respaldo institucional.</p>
+        </header>
+
+        <section aria-labelledby="titulo-estado-certificacion">
+          <h2 id="titulo-estado-certificacion">Estado de emisión</h2>
+          <div class="formulario">
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Inglés Técnico para Tecnología</span>
+                    <span class="etiqueta etiqueta--exito">100 % · Certificado emitido</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Curso de Inglés Técnico completado">
+                    <span class="progreso__relleno progreso__relleno--100 progreso__relleno--exito"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Gestión de Proyectos Ágiles</span>
+                    <span class="etiqueta etiqueta--exito">100 % · Certificado emitido</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Curso de Gestión Ágil completado">
+                    <span class="progreso__relleno progreso__relleno--100 progreso__relleno--exito"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="tarjeta">
+              <div class="tarjeta__cuerpo">
+                <div class="progreso">
+                  <div class="progreso__etiqueta">
+                    <span>Desarrollo Web Full Stack</span>
+                    <span class="etiqueta etiqueta--info">50 % · Pendiente de módulos finales</span>
+                  </div>
+                  <div class="progreso__barra" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Curso de Desarrollo Web en progreso">
+                    <span class="progreso__relleno progreso__relleno--50"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-vista-previa">
+          <h2 id="titulo-vista-previa">Vista previa del certificado</h2>
+          
+          <div id="mensaje-certificado" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <article class="certificado" aria-labelledby="titulo-cert-nombre">
+            <span class="etiqueta">EduNova · Certificado Oficial</span>
+            <h3 id="titulo-cert-nombre" class="certificado__nombre">Certificado de Finalización</h3>
+            
+            <p class="texto-secundario">Se certifica que</p>
+            <p class="tarjeta__titulo">María Fernanda López</p>
+            
+            <p class="texto-secundario">ha completado satisfactoriamente la ruta de formación</p>
+            <p class="tarjeta__titulo">Inglés Técnico para Tecnología</p>
+
+            <div class="certificado__datos">
+              <div class="certificado__dato">
+                <span class="recurso__meta">Duración estimada</span>
+                <span class="certificado__dato-valor">12 Horas académicas</span>
+              </div>
+              <div class="certificado__dato">
+                <span class="recurso__meta">Fecha de emisión</span>
+                <span class="certificado__dato-valor">05 de Noviembre de 2026</span>
+              </div>
+              <div class="certificado__dato">
+                <span class="recurso__meta">Identificador único</span>
+                <span class="certificado__dato-valor">EDN-CERT-2026-00841</span>
+              </div>
+            </div>
+
+            <div class="certificado__firmas">
+              <div class="certificado__firma">
+                <strong>Prof. Julián Pardo</strong>
+                <p class="recurso__meta">Instructor Titular</p>
+              </div>
+              <div class="certificado__qr" aria-hidden="true">
+                QR de verificación
+              </div>
+              <div class="certificado__firma">
+                <strong>Dirección Académica</strong>
+                <p class="recurso__meta">EduNova LMS</p>
+              </div>
+            </div>
+          </article>
+
+          <div class="acciones">
+            <button class="boton boton--primario" type="button" data-accion="descargar-certificado">Descargar PDF</button>
+            <button class="boton boton--contorno" type="button" data-accion="copiar-verificacion">Copiar enlace de verificación</button>
+            <a href="mis-cursos.html" class="boton boton--secundario">Volver a mis cursos</a>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-historial-certificados">
+          <h2 id="titulo-historial-certificados">Certificados aprobados</h2>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Listado de certificaciones emitidas hasta la fecha</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Curso / Carrera</th>
+                  <th scope="col">Emisión</th>
+                  <th scope="col">ID Certificado</th>
+                  <th scope="col">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Inglés Técnico para Tecnología</th>
+                  <td>05 Nov 2026</td>
+                  <td>EDN-CERT-2026-00841</td>
+                  <td><button class="boton boton--contorno boton--sm" type="button">Ver vista previa</button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Gestión de Proyectos Ágiles</th>
+                  <td>15 Nov 2026</td>
+                  <td>EDN-CERT-2026-00922</td>
+                  <td><button class="boton boton--contorno boton--sm" type="button">Ver vista previa</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

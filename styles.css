@@ -114,6 +114,10 @@
 
   /* ----- 1.8 Degradado de marca (extremos con contraste AA) ----- */
   --degradado-marca: linear-gradient(135deg, #44A5FF 0%, #10B981 100%);
+
+  /* ----- 1.9 Visor y multimedia ----- */
+  --visor-fondo: #0F172A;
+  --visor-texto: #F8FAFC;
 }
 
 /* Modo oscuro preparado: se activa con data-tema="oscuro" en <html>.
@@ -137,6 +141,7 @@
   --sombra-sm: 0 2px 6px rgba(0, 0, 0, 0.45);
   --sombra-md: 0 6px 16px rgba(0, 0, 0, 0.5);
   --sombra-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --visor-fondo: #020617;
 }
 
 /* ==========================================================================
@@ -503,6 +508,56 @@ table {
   color: var(--color-estructura-texto);
 }
 
+.perfil-lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-2);
+  margin-bottom: var(--espacio-6);
+  padding-bottom: var(--espacio-6);
+  border-bottom: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+.perfil-lateral__avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-superficie);
+  color: var(--color-titulo);
+  font-size: var(--texto-xl);
+  font-weight: var(--peso-negrita);
+  border: 2px solid var(--color-borde-fuerte);
+  border-radius: 50%;
+}
+
+.perfil-lateral__nombre {
+  font-size: var(--texto-base);
+  font-weight: var(--peso-semi);
+  color: var(--color-titulo);
+}
+
+.perfil-lateral__correo {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+}
+
+.panel-lateral__seccion {
+  margin-top: var(--espacio-6);
+  padding-top: var(--espacio-4);
+  border-top: 1px dashed var(--color-borde);
+}
+
+.panel-lateral__seccion-titulo {
+  margin-bottom: var(--espacio-3);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semi);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* ==========================================================================
    8. BOTONES
    ========================================================================== */
@@ -776,6 +831,10 @@ table {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--espacio-6);
   align-items: stretch;
+}
+
+.rejilla--dos {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
 }
 
 .rejilla > * {
@@ -1362,6 +1421,101 @@ textarea.campo__control {
   border-top: 2px solid var(--color-estructura);
   font-size: var(--texto-sm);
   color: var(--color-texto);
+}
+
+.certificado__nombre {
+  margin: var(--espacio-4) 0;
+  font-size: var(--texto-3xl);
+  font-weight: var(--peso-negrita);
+  color: var(--color-titulo);
+}
+
+.certificado__datos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espacio-6);
+  margin-bottom: var(--espacio-8);
+  font-size: var(--texto-sm);
+}
+
+.certificado__dato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+}
+
+.certificado__dato-valor {
+  font-weight: var(--peso-semi);
+  color: var(--color-titulo);
+}
+
+.visor-contenido {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  background-color: var(--visor-fondo);
+  color: var(--visor-texto);
+  border-radius: var(--radio-lg);
+  font-size: var(--texto-xl);
+  text-align: center;
+  padding: var(--espacio-6);
+}
+
+.visor-contenido--recurso {
+  aspect-ratio: auto;
+  min-height: 240px;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  border: 2px dashed var(--color-borde-fuerte);
+}
+
+.fila-espaciada {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-4);
+}
+
+.lista-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-3);
+  list-style: none;
+}
+
+.recurso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-4);
+  padding: var(--espacio-3) var(--espacio-4);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  transition: border-color var(--transicion);
+}
+
+.recurso:hover {
+  border-color: var(--color-accion);
+}
+
+.recurso__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+}
+
+.recurso__nombre {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-semi);
+  color: var(--color-titulo);
+}
+
+.recurso__meta {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
 }
 
 /* ==========================================================================
