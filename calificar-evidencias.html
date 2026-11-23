@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Revisión y calificación de evidencias en EduNova: entregas de aprendices y retroalimentación pedagógica.">
+  <title>Calificar evidencias — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Instructor</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-instructor.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="crear-curso.html" class="nav-superior__enlace">Crear curso</a></li>
+          <li><a href="calificar-evidencias.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Calificar evidencias</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del instructor">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">CM</div>
+          <p class="perfil-lateral__nombre">Prof. Carlos Mendoza</p>
+          <p class="perfil-lateral__correo">instructor@edunova.edu</p>
+          <span class="etiqueta etiqueta--solida">Instructor</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel del instructor">
+          <ul>
+            <li><a href="panel-instructor.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="crear-curso.html" class="menu-lateral__enlace">Autoría de cursos</a></li>
+            <li><a href="calificar-evidencias.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Calificar evidencias</a></li>
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Ver catálogo público</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Revisión y calificación de evidencias</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-14 · Registro de calificaciones</span>
+            <span class="etiqueta etiqueta--solida">RF-29 · Alertas de evaluación</span>
+          </div>
+          <p class="texto-intro">Evalúa los entregables prácticos de tus aprendices y registra la calificación con retroalimentación pedagógica.</p>
+        </header>
+
+        <section class="tarjeta" aria-labelledby="titulo-filtros">
+          <div class="tarjeta__cuerpo">
+            <h2 class="tarjeta__titulo" id="titulo-filtros">Filtros de entregas</h2>
+            <div class="barra-filtros">
+              <div class="campo">
+                <label class="campo__etiqueta" for="filtro-curso-calificar">Curso</label>
+                <select class="campo__control" id="filtro-curso-calificar" name="curso">
+                  <option value="">Todos los cursos</option>
+                  <option value="dw-frontend">Desarrollo Web Frontend con HTML5 y CSS3</option>
+                  <option value="js-vanilla">JavaScript Vanilla y Lógica de Programación</option>
+                  <option value="sql-bd">Bases de Datos Relacionales y SQL</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="filtro-estado-calificar">Estado</label>
+                <select class="campo__control" id="filtro-estado-calificar" name="estado">
+                  <option value="pendiente" selected>Pendientes de revisión</option>
+                  <option value="calificado">Ya calificadas</option>
+                  <option value="">Todas</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="buscar-estudiante">Buscar estudiante</label>
+                <input class="campo__control" id="buscar-estudiante" name="q" type="search" placeholder="Nombre del aprendiz...">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-lista-entregas">
+          <div class="fila-espaciada">
+            <h2 id="titulo-lista-entregas">Entregas de aprendices</h2>
+            <span class="etiqueta etiqueta--alerta">5 pendientes de revisión</span>
+          </div>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Entregables recibidos y su estado de calificación</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Estudiante</th>
+                  <th scope="col">Curso</th>
+                  <th scope="col">Módulo</th>
+                  <th scope="col">Fecha de envío</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Ana Torres</th>
+                  <td>Desarrollo Web Frontend</td>
+                  <td>Módulo 3: CSS3 y Flexbox</td>
+                  <td>22 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--alerta">Pendiente</span></td>
+                  <td><a href="#panel-calificacion" class="boton boton--primario boton--sm">Calificar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Luis Ramírez</th>
+                  <td>Desarrollo Web Frontend</td>
+                  <td>Módulo 2: Formularios</td>
+                  <td>21 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--alerta">Pendiente</span></td>
+                  <td><a href="#panel-calificacion" class="boton boton--primario boton--sm">Calificar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">María Gómez</th>
+                  <td>JavaScript Vanilla</td>
+                  <td>Módulo 1: Variables y funciones</td>
+                  <td>20 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--alerta">Pendiente</span></td>
+                  <td><a href="#panel-calificacion" class="boton boton--primario boton--sm">Calificar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Jorge Salas</th>
+                  <td>Bases de Datos Relacionales</td>
+                  <td>Módulo 2: Consultas SQL</td>
+                  <td>19 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--alerta">Pendiente</span></td>
+                  <td><a href="#panel-calificacion" class="boton boton--primario boton--sm">Calificar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Valeria Ruiz</th>
+                  <td>Desarrollo Web Frontend</td>
+                  <td>Módulo 1: HTML semántico</td>
+                  <td>18 Nov 2026</td>
+                  <td><span class="etiqueta etiqueta--exito">Calificada</span></td>
+                  <td><a href="#panel-calificacion" class="boton boton--secundario boton--sm">Ver calificación</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tarjeta" id="panel-calificacion" aria-labelledby="titulo-panel-calificacion">
+          <div class="tarjeta__cuerpo">
+            <h2 class="tarjeta__titulo" id="titulo-panel-calificacion">Calificar evidencia — Ana Torres</h2>
+            <p class="texto-secundario">Curso: Desarrollo Web Frontend con HTML5 y CSS3 · Módulo 3: CSS3 Puro y Flexbox · Enviado el 22 Nov 2026</p>
+
+            <div class="bloque-destacado" aria-labelledby="titulo-datos-entrega">
+              <h3 class="lista-agenda__titulo" id="titulo-datos-entrega">Datos de la entrega</h3>
+              <dl class="lista-datos">
+                <div>
+                  <dt>Archivo adjunto</dt>
+                  <dd>proyecto-modulo3.zip (2.4 MB)</dd>
+                </div>
+                <div>
+                  <dt>Repositorio</dt>
+                  <dd><a href="https://github.com/anatorres/proyecto-css">github.com/anatorres/proyecto-css</a></dd>
+                </div>
+                <div>
+                  <dt>Notas del estudiante</dt>
+                  <dd>«Construí el layout con Flexbox y variables CSS en :root. Incluí un diseño responsivo para móviles.»</dd>
+                </div>
+              </dl>
+              <div class="acciones">
+                <button class="boton boton--secundario boton--sm" type="button">Descargar archivo</button>
+                <a class="boton boton--contorno boton--sm" href="https://github.com/anatorres/proyecto-css">Abrir repositorio</a>
+              </div>
+            </div>
+
+            <form class="formulario" id="formulario-calificacion" data-formulario="calificacion" novalidate action="#" method="post">
+              <div id="mensaje-calificacion" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+              <div class="rejilla rejilla--campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="nota-calificacion">Calificación asignada (0 - 100) <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <input class="campo__control" id="nota-calificacion" name="nota" type="number" min="0" max="100" step="1" placeholder="Ej. 92" required data-validacion="requerido nota" aria-describedby="nota-calificacion-error">
+                  <div id="nota-calificacion-error" hidden><p class="campo__error"></p></div>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="resultado-calificacion">Resultado <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="resultado-calificacion" name="resultado" required data-validacion="requerido">
+                    <option value="aprobado" selected>Aprobado</option>
+                    <option value="rechazado">Rechazado — requiere reenvío</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="retroalimentacion">Retroalimentación para el estudiante <span class="campo__opcional">(Opcional)</span></label>
+                <textarea class="campo__control" id="retroalimentacion" name="retroalimentacion" placeholder="Detalla los aciertos de la entrega y los aspectos a mejorar..."></textarea>
+              </div>
+
+              <div class="campo-casilla">
+                <input type="checkbox" id="notificar-estudiante" name="notificar" checked data-validacion="terminos" aria-describedby="notificar-estudiante-error">
+                <label class="campo-casilla__texto" for="notificar-estudiante">Notificar la calificación al estudiante en su panel.</label>
+                <div id="notificar-estudiante-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="acciones">
+                <button class="boton boton--primario" type="submit">Guardar calificación y notificar</button>
+                <a href="panel-instructor.html" class="boton boton--contorno">Volver al panel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

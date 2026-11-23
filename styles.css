@@ -1518,6 +1518,51 @@ textarea.campo__control {
   color: var(--color-texto-suave);
 }
 
+.lista-modulos-creacion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-4);
+  padding: var(--espacio-4);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+}
+
+.modulo-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--espacio-4);
+  align-items: start;
+  padding: var(--espacio-4);
+  background-color: var(--color-superficie-alta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+}
+
+.modulo-item__numero {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-estructura);
+  color: var(--color-estructura-texto);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-negrita);
+  border-radius: 50%;
+}
+
+.metrica-global {
+  border-top: 4px solid var(--color-accion);
+}
+
+.metrica-global--exito {
+  border-top-color: var(--color-exito);
+}
+
+.metrica-global--acento {
+  border-top-color: var(--color-acento);
+}
+
 /* ==========================================================================
    17. COMPONENTES DE LA GUÍA DE ESTILOS
    ========================================================================== */
@@ -1627,7 +1672,54 @@ textarea.campo__control {
 }
 
 /* ==========================================================================
-   18. RESPONSIVIDAD
+   18. COMPONENTES DE AUTORÍA Y CALIFICACIÓN (Instructor)
+   ========================================================================== */
+
+.acciones--fin {
+  justify-content: flex-end;
+  padding-top: var(--espacio-4);
+  border-top: 1px solid var(--color-borde);
+}
+
+.rejilla--campos {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+.lista-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--espacio-4);
+  margin: 0;
+}
+
+.lista-datos > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+  min-width: 0;
+}
+
+.lista-datos dt {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-semi);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+}
+
+.lista-datos dd {
+  margin: 0;
+  font-size: var(--texto-sm);
+  color: var(--color-texto);
+  overflow-wrap: break-word;
+}
+
+.lista-modulos-creacion .formulario {
+  gap: var(--espacio-3);
+}
+
+/* ==========================================================================
+   19. RESPONSIVIDAD
    ========================================================================== */
 
 @media (max-width: 1024px) {
@@ -1656,6 +1748,15 @@ textarea.campo__control {
 
   .barra-filtros {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .modulo-item {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .modulo-item > .boton {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 
   .pie__contenedor {
@@ -1701,7 +1802,7 @@ textarea.campo__control {
 }
 
 /* ==========================================================================
-   19. PREFERENCIAS DE MOVIMIENTO REDUCIDO
+   20. PREFERENCIAS DE MOVIMIENTO REDUCIDO
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {

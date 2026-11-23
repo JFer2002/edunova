@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Autoría y gestión de cursos en EduNova: información general y módulos secuenciales del curso.">
+  <title>Crear y editar curso — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Instructor</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-instructor.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="crear-curso.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Crear curso</a></li>
+          <li><a href="calificar-evidencias.html" class="nav-superior__enlace">Calificar evidencias</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del instructor">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">CM</div>
+          <p class="perfil-lateral__nombre">Prof. Carlos Mendoza</p>
+          <p class="perfil-lateral__correo">instructor@edunova.edu</p>
+          <span class="etiqueta etiqueta--solida">Instructor</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel del instructor">
+          <ul>
+            <li><a href="panel-instructor.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="crear-curso.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Autoría de cursos</a></li>
+            <li><a href="calificar-evidencias.html" class="menu-lateral__enlace">Calificar evidencias</a></li>
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Ver catálogo público</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Autoría y gestión de cursos</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-09 · Publicar y editar cursos</span>
+            <span class="etiqueta etiqueta--solida">RF-10 · Módulos secuenciales</span>
+          </div>
+          <p class="texto-intro">Define la información general del curso y organiza sus módulos en orden secuencial antes de enviarlo a moderación.</p>
+        </header>
+
+        <form class="formulario" id="formulario-curso" data-formulario="curso" novalidate action="#" method="post">
+
+          <div id="mensaje-curso" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+          <section class="tarjeta" aria-labelledby="titulo-info-general">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-info-general">Información general del curso</h2>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="curso-titulo">Título del curso <span class="campo__requerido" aria-hidden="true">*</span></label>
+                <input class="campo__control" id="curso-titulo" name="titulo" type="text" value="Desarrollo Web Frontend con HTML5 y CSS3" required data-validacion="requerido nombre" aria-describedby="curso-titulo-error">
+                <div id="curso-titulo-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="curso-descripcion">Descripción del curso <span class="campo__requerido" aria-hidden="true">*</span></label>
+                <textarea class="campo__control" id="curso-descripcion" name="descripcion" required data-validacion="requerido" aria-describedby="curso-descripcion-ayuda curso-descripcion-error">Aprende a construir sitios y aplicaciones web accesibles, semánticas y responsivas utilizando exclusivamente estándares HTML5 y CSS3 moderno.</textarea>
+                <p class="campo__ayuda" id="curso-descripcion-ayuda">Resume los objetivos y el enfoque pedagógico del curso.</p>
+                <div id="curso-descripcion-error" hidden><p class="campo__error"></p></div>
+              </div>
+
+              <div class="rejilla rejilla--campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="curso-categoria">Categoría <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="curso-categoria" name="categoria" required data-validacion="requerido">
+                    <option value="desarrollo-web" selected>Desarrollo Web</option>
+                    <option value="programacion">Programación</option>
+                    <option value="bases-datos">Bases de Datos</option>
+                    <option value="diseno">Diseño UI/UX</option>
+                    <option value="herramientas">Herramientas</option>
+                  </select>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="curso-nivel">Nivel <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="curso-nivel" name="nivel" required data-validacion="requerido">
+                    <option value="principiante" selected>Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                  </select>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="curso-duracion">Duración estimada</label>
+                  <input class="campo__control" id="curso-duracion" name="duracion" type="text" placeholder="Ej. 12 semanas">
+                </div>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="curso-requisitos">Requisitos previos <span class="campo__opcional">(Opcional)</span></label>
+                <textarea class="campo__control" id="curso-requisitos" name="requisitos" placeholder="Ej. Manejo básico del computador y conexión a internet."></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-modulos">
+            <div class="tarjeta__cuerpo">
+              <div class="fila-espaciada">
+                <h2 class="tarjeta__titulo" id="titulo-modulos">Módulos del curso</h2>
+                <button class="boton boton--secundario boton--sm" type="button" id="agregar-modulo">Agregar módulo</button>
+              </div>
+              <p class="texto-secundario">Los módulos se muestran en orden secuencial. Puedes agregar o eliminar módulos antes de enviar el curso.</p>
+
+              <div class="lista-modulos-creacion" id="contenedor-modulos">
+
+                <div class="modulo-item">
+                  <div class="modulo-item__numero" aria-hidden="true">1</div>
+                  <div class="formulario">
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-titulo-1">Título del módulo 1 <span class="campo__requerido" aria-hidden="true">*</span></label>
+                      <input class="campo__control" id="modulo-titulo-1" name="modulo_titulo[]" type="text" value="Fundamentos de HTML5 y estructura semántica" required data-validacion="requerido nombre" aria-describedby="modulo-titulo-1-error">
+                      <div id="modulo-titulo-1-error" hidden><p class="campo__error"></p></div>
+                    </div>
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-detalle-1">Lecciones o detalle</label>
+                      <input class="campo__control" id="modulo-detalle-1" name="modulo_detalle[]" type="text" placeholder="Ej. Semanas 1-2 · Etiquetas, estructura y accesibilidad">
+                    </div>
+                  </div>
+                  <button type="button" class="boton boton--peligro boton--sm" data-accion="eliminar-modulo" aria-label="Eliminar módulo 1">Eliminar</button>
+                </div>
+
+                <div class="modulo-item">
+                  <div class="modulo-item__numero" aria-hidden="true">2</div>
+                  <div class="formulario">
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-titulo-2">Título del módulo 2 <span class="campo__requerido" aria-hidden="true">*</span></label>
+                      <input class="campo__control" id="modulo-titulo-2" name="modulo_titulo[]" type="text" value="Formularios web y validación semántica" required data-validacion="requerido nombre" aria-describedby="modulo-titulo-2-error">
+                      <div id="modulo-titulo-2-error" hidden><p class="campo__error"></p></div>
+                    </div>
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-detalle-2">Lecciones o detalle</label>
+                      <input class="campo__control" id="modulo-detalle-2" name="modulo_detalle[]" type="text" placeholder="Ej. Semanas 3-4 · Controles y asociación label for">
+                    </div>
+                  </div>
+                  <button type="button" class="boton boton--peligro boton--sm" data-accion="eliminar-modulo" aria-label="Eliminar módulo 2">Eliminar</button>
+                </div>
+
+                <div class="modulo-item">
+                  <div class="modulo-item__numero" aria-hidden="true">3</div>
+                  <div class="formulario">
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-titulo-3">Título del módulo 3 <span class="campo__requerido" aria-hidden="true">*</span></label>
+                      <input class="campo__control" id="modulo-titulo-3" name="modulo_titulo[]" type="text" value="CSS3 puro, Flexbox y Grid Layout" required data-validacion="requerido nombre" aria-describedby="modulo-titulo-3-error">
+                      <div id="modulo-titulo-3-error" hidden><p class="campo__error"></p></div>
+                    </div>
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-detalle-3">Lecciones o detalle</label>
+                      <input class="campo__control" id="modulo-detalle-3" name="modulo_detalle[]" type="text" placeholder="Ej. Semanas 5-7 · Modelo de caja, Flexbox y Grid">
+                    </div>
+                  </div>
+                  <button type="button" class="boton boton--peligro boton--sm" data-accion="eliminar-modulo" aria-label="Eliminar módulo 3">Eliminar</button>
+                </div>
+
+                <div class="modulo-item">
+                  <div class="modulo-item__numero" aria-hidden="true">4</div>
+                  <div class="formulario">
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-titulo-4">Título del módulo 4 <span class="campo__requerido" aria-hidden="true">*</span></label>
+                      <input class="campo__control" id="modulo-titulo-4" name="modulo_titulo[]" type="text" value="Proyecto final y entregable práctico" required data-validacion="requerido nombre" aria-describedby="modulo-titulo-4-error">
+                      <div id="modulo-titulo-4-error" hidden><p class="campo__error"></p></div>
+                    </div>
+                    <div class="campo">
+                      <label class="campo__etiqueta" for="modulo-detalle-4">Lecciones o detalle</label>
+                      <input class="campo__control" id="modulo-detalle-4" name="modulo_detalle[]" type="text" placeholder="Ej. Semanas 8-10 · Construcción guiada y entrega">
+                    </div>
+                  </div>
+                  <button type="button" class="boton boton--peligro boton--sm" data-accion="eliminar-modulo" aria-label="Eliminar módulo 4">Eliminar</button>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <div class="acciones acciones--fin">
+            <a href="panel-instructor.html" class="boton boton--contorno">Cancelar</a>
+            <button type="button" class="boton boton--secundario" data-accion="guardar-borrador">Guardar borrador</button>
+            <button class="boton boton--primario" type="submit">Enviar a moderación</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

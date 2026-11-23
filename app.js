@@ -207,6 +207,11 @@
         }
       } else if (regla === 'terminos' && !campo.checked) {
         mensaje = 'Debes aceptar los términos y condiciones.';
+      } else if (regla === 'nota' && valor !== '') {
+        const valorNumerico = Number(valor);
+        if (!Number.isFinite(valorNumerico) || valorNumerico < 0 || valorNumerico > 100) {
+          mensaje = 'Ingresa una nota entre 0 y 100.';
+        }
       } else if (regla === 'archivo' && !esCasilla) {
         const inputEvidencia = document.getElementById(campo.dataset.evidenciaGrupo || '');
         const enlaceEvidencia = document.getElementById(campo.dataset.evidenciaEnlace || '');
@@ -355,7 +360,13 @@
         evento.preventDefault();
         limpiarMensaje(contenedor);
 
-        const resultados = campos.map(function (campo) {
+        // Se reconsultan los campos en cada envío para incluir los módulos
+        // añadidos dinámicamente después de la carga inicial.
+        const camposActuales = qsa('input, select, textarea', formulario).filter(function (campo) {
+          return campo.dataset.validacion;
+        });
+
+        const resultados = camposActuales.map(function (campo) {
           return validarCampo(campo);
         });
 
@@ -376,6 +387,10 @@
           procesarRegistro(formulario, contenedor);
         } else if (tipo === 'evidencia') {
           procesarEvidencia(formulario, contenedor);
+        } else if (tipo === 'curso') {
+          procesarCreacionCurso(formulario, contenedor);
+        } else if (tipo === 'calificacion') {
+          procesarCalificacion(formulario, contenedor);
         }
       });
     });
@@ -398,6 +413,99 @@
       boton.textContent = 'Evidencia enviada';
     }
     formulario.reset();
+  };
+
+  const procesarCreacionCurso = function (formulario, contenedor) {
+    const boton = qs('button[type="submit"]', formulario);
+    mostrarMensaje(
+      contenedor,
+      'exito',
+      'Curso creado correctamente',
+      'El curso ha sido enviado a moderación. Una vez aprobado por el administrador, aparecerá en el catálogo público.',
+      { href: 'panel-instructor.html', texto: 'Volver al panel' }
+    );
+    if (contenedor) {
+      contenedor.focus();
+    }
+    if (boton) {
+      boton.disabled = true;
+      boton.textContent = 'Curso enviado';
+    }
+    formulario.reset();
+  };
+
+  const procesarCalificacion = function (formulario, contenedor) {
+    const boton = qs('button[type="submit"]', formulario);
+    const nota = qs('#nota-calificacion', formulario);
+    const resultado = qs('#resultado-calificacion', formulario);
+    const opcionResultado = resultado ? resultado.options[resultado.selectedIndex] : null;
+    const etiquetaResultado = opcionResultado ? opcionResultado.text : 'Aprobado';
+
+    mostrarMensaje(
+      contenedor,
+      'exito',
+      'Calificación registrada',
+      'Se guardó la nota ' + nota.value + '/100 con resultado «' + etiquetaResultado + '» en modo demostración. El estudiante verá la retroalimentación en su panel.',
+      { href: 'panel-instructor.html', texto: 'Volver al panel' }
+    );
+    if (contenedor) {
+      contenedor.focus();
+    }
+    if (boton) {
+      boton.disabled = true;
+      boton.textContent = 'Calificación guardada';
+    }
+  };
+
+  const manejarGeneradorModulos = function () {
+    const contenedor = qs('#contenedor-modulos');
+    const botonAgregar = qs('#agregar-modulo');
+    if (!contenedor || !botonAgregar) {
+      return;
+    }
+
+    let contadorModulos = qsa('.modulo-item', contenedor).length;
+
+    botonAgregar.addEventListener('click', function (evento) {
+      evento.preventDefault();
+      contadorModulos += 1;
+
+      const modulo = document.createElement('div');
+      modulo.className = 'modulo-item';
+      modulo.innerHTML = `
+        <div class="modulo-item__numero">${contadorModulos}</div>
+        <div class="formulario">
+          <div class="campo">
+            <label class="campo__etiqueta" for="modulo-titulo-${contadorModulos}">Título del módulo <span class="campo__requerido" aria-hidden="true">*</span></label>
+            <input class="campo__control" id="modulo-titulo-${contadorModulos}" name="modulo_titulo[]" type="text" required data-validacion="requerido nombre" aria-describedby="modulo-titulo-${contadorModulos}-error" placeholder="Ej. Introducción a variables">
+            <div id="modulo-titulo-${contadorModulos}-error" hidden><p class="campo__error"></p></div>
+          </div>
+          <div class="campo">
+            <label class="campo__etiqueta" for="modulo-detalle-${contadorModulos}">Detalle o semanas</label>
+            <input class="campo__control" id="modulo-detalle-${contadorModulos}" name="modulo_detalle[]" type="text" placeholder="Ej. Semanas 1-2 · Conceptos básicos">
+          </div>
+        </div>
+        <button type="button" class="boton boton--peligro boton--sm" data-accion="eliminar-modulo" aria-label="Eliminar módulo ${contadorModulos}">Eliminar</button>
+      `;
+
+      contenedor.appendChild(modulo);
+    });
+
+    contenedor.addEventListener('click', function (evento) {
+      const botonEliminar = evento.target.closest('[data-accion="eliminar-modulo"]');
+      if (botonEliminar) {
+        evento.preventDefault();
+        botonEliminar.closest('.modulo-item').remove();
+        // Recalcular números
+        qsa('.modulo-item', contenedor).forEach(function (item, indice) {
+          const numero = item.querySelector('.modulo-item__numero');
+          if (numero) {
+            numero.textContent = indice + 1;
+          }
+        });
+        contadorModulos = qsa('.modulo-item', contenedor).length;
+      }
+    });
   };
 
   const inicializarLogin = function () {
@@ -941,6 +1049,14 @@
       } else if (accion === 'copiar-verificacion') {
         evento.preventDefault();
         mostrarMensaje(qs('#mensaje-certificado'), 'info', 'Enlace copiado', 'El enlace de verificación se copió al portapapeles (simulado).');
+      } else if (accion === 'guardar-borrador') {
+        evento.preventDefault();
+        mostrarMensaje(
+          qs('#mensaje-curso'),
+          'info',
+          'Borrador guardado',
+          'El curso se guardó como borrador en modo demostración. Puedes continuar editándolo antes de enviarlo a moderación.'
+        );
       }
     });
   };
@@ -951,6 +1067,7 @@
     inicializarLogin();
     inicializarCatalogo();
     inicializarDetalleCurso();
+    manejarGeneradorModulos();
     inicializarAcciones();
   };
 

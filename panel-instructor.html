@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel del instructor en EduNova: métricas de desempeño, cursos creados, evidencias por calificar y agenda de mentorías.">
+  <title>Panel del Instructor — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Instructor</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-instructor.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Panel</a></li>
+          <li><a href="crear-curso.html" class="nav-superior__enlace">Crear curso</a></li>
+          <li><a href="calificar-evidencias.html" class="nav-superior__enlace">Calificar evidencias</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del instructor">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">CM</div>
+          <p class="perfil-lateral__nombre">Prof. Carlos Mendoza</p>
+          <p class="perfil-lateral__correo">instructor@edunova.edu</p>
+          <span class="etiqueta etiqueta--solida">Instructor</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel del instructor">
+          <ul>
+            <li><a href="panel-instructor.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Dashboard</a></li>
+            <li><a href="crear-curso.html" class="menu-lateral__enlace">Autoría de cursos</a></li>
+            <li><a href="calificar-evidencias.html" class="menu-lateral__enlace">Calificar evidencias</a></li>
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Ver catálogo público</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Panel del instructor</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-09 · Gestión de cursos</span>
+            <span class="etiqueta etiqueta--solida">RF-22 · Agenda de mentorías</span>
+            <span class="etiqueta etiqueta--info">RF-28 · Métricas de desempeño</span>
+          </div>
+          <p class="texto-intro">Bienvenido, Carlos. Gestiona tus cursos, revisa las evidencias pendientes y administra tu agenda de mentorías.</p>
+        </header>
+
+        <section class="rejilla" aria-labelledby="titulo-metricas">
+          <h2 id="titulo-metricas" class="visualmente-oculto">Indicadores clave</h2>
+          <article class="tarjeta tarjeta-metrica metrica-global">
+            <p class="tarjeta-metrica__valor">4</p>
+            <p class="tarjeta-metrica__etiqueta">Cursos publicados y activos</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global metrica-global--exito">
+            <p class="tarjeta-metrica__valor">128</p>
+            <p class="tarjeta-metrica__etiqueta">Aprendices matriculados</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global metrica-global--acento">
+            <p class="tarjeta-metrica__valor">17</p>
+            <p class="tarjeta-metrica__etiqueta">Evidencias por revisar</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global">
+            <p class="tarjeta-metrica__valor">6</p>
+            <p class="tarjeta-metrica__etiqueta">Mentorías esta semana</p>
+          </article>
+        </section>
+
+        <section aria-labelledby="titulo-mis-cursos">
+          <div class="fila-espaciada">
+            <h2 id="titulo-mis-cursos">Mis cursos creados</h2>
+            <a href="crear-curso.html" class="boton boton--primario boton--sm">Crear nuevo curso</a>
+          </div>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Cursos creados por el instructor y su estado de publicación</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Curso</th>
+                  <th scope="col">Categoría</th>
+                  <th scope="col">Módulos</th>
+                  <th scope="col">Estudiantes</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Desarrollo Web Frontend con HTML5 y CSS3</th>
+                  <td>Desarrollo Web</td>
+                  <td>4</td>
+                  <td>56</td>
+                  <td><span class="etiqueta etiqueta--exito">Publicado</span></td>
+                  <td><a href="crear-curso.html" class="boton boton--secundario boton--sm">Editar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">JavaScript Vanilla y Lógica de Programación</th>
+                  <td>Programación</td>
+                  <td>5</td>
+                  <td>42</td>
+                  <td><span class="etiqueta etiqueta--exito">Publicado</span></td>
+                  <td><a href="crear-curso.html" class="boton boton--secundario boton--sm">Editar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bases de Datos Relacionales y SQL</th>
+                  <td>Bases de Datos</td>
+                  <td>3</td>
+                  <td>30</td>
+                  <td><span class="etiqueta etiqueta--alerta">En moderación</span></td>
+                  <td><a href="crear-curso.html" class="boton boton--secundario boton--sm">Editar</a></td>
+                </tr>
+                <tr>
+                  <th scope="row">Fundamentos de Git y Control de Versiones</th>
+                  <td>Herramientas</td>
+                  <td>2</td>
+                  <td>0</td>
+                  <td><span class="etiqueta etiqueta--info">Borrador</span></td>
+                  <td><a href="crear-curso.html" class="boton boton--secundario boton--sm">Editar</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="rejilla rejilla--dos">
+          <section class="tarjeta" aria-labelledby="titulo-evidencias">
+            <div class="tarjeta__cuerpo">
+              <div class="fila-espaciada">
+                <h2 class="tarjeta__titulo" id="titulo-evidencias">Evidencias por calificar</h2>
+                <a href="calificar-evidencias.html" class="boton boton--contorno boton--sm">Ver todas</a>
+              </div>
+              <ul class="lista-agenda">
+                <li class="lista-agenda__item">
+                  <span class="lista-agenda__titulo">Ana Torres</span>
+                  <span class="lista-agenda__meta">Módulo 3: CSS3 Puro y Flexbox · 22 Nov 2026</span>
+                  <a href="calificar-evidencias.html" class="boton boton--secundario boton--sm">Calificar entrega</a>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="lista-agenda__titulo">Luis Ramírez</span>
+                  <span class="lista-agenda__meta">Módulo 2: Formulario Web con Labels · 21 Nov 2026</span>
+                  <a href="calificar-evidencias.html" class="boton boton--secundario boton--sm">Calificar entrega</a>
+                </li>
+                <li class="lista-agenda__item lista-agenda__item--neutro">
+                  <span class="lista-agenda__titulo">María Gómez</span>
+                  <span class="lista-agenda__meta">Módulo 1: Layout HTML Semántico · 20 Nov 2026</span>
+                  <a href="calificar-evidencias.html" class="boton boton--secundario boton--sm">Calificar entrega</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-agenda-mentorias">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-agenda-mentorias">Agenda de mentorías «tú a tú»</h2>
+              <ul class="lista-agenda">
+                <li class="lista-agenda__item">
+                  <span class="lista-agenda__titulo">Mentoría: Ana Torres</span>
+                  <span class="lista-agenda__meta">Lunes 24 Nov · 16:00 - 16:45</span>
+                  <a href="https://meet.edunova.com/m-2416" class="boton boton--contorno boton--sm">Abrir videollamada</a>
+                </li>
+                <li class="lista-agenda__item">
+                  <span class="lista-agenda__titulo">Mentoría: Luis Ramírez</span>
+                  <span class="lista-agenda__meta">Miércoles 26 Nov · 18:00 - 18:45</span>
+                  <a href="https://meet.edunova.com/m-2618" class="boton boton--contorno boton--sm">Abrir videollamada</a>
+                </li>
+                <li class="lista-agenda__item lista-agenda__item--neutro">
+                  <span class="lista-agenda__titulo">Mentoría: María Gómez</span>
+                  <span class="lista-agenda__meta">Viernes 28 Nov · 10:00 - 10:45</span>
+                  <a href="https://meet.edunova.com/m-2810" class="boton boton--contorno boton--sm">Abrir videollamada</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
