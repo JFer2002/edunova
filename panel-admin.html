@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel de administración de EduNova: métricas globales, suscripciones, distribución de ingresos y moderación de cursos.">
+  <title>Panel de Administración — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Administrador</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-admin.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Panel</a></li>
+          <li><a href="gestion-usuarios.html" class="nav-superior__enlace">Usuarios</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del administrador">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">AD</div>
+          <p class="perfil-lateral__nombre">Administrador Demo</p>
+          <p class="perfil-lateral__correo">admin@edunova.edu</p>
+          <span class="etiqueta etiqueta--solida">Administrador</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel de administración">
+          <ul>
+            <li><a href="panel-admin.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Dashboard</a></li>
+            <li><a href="gestion-usuarios.html" class="menu-lateral__enlace">Gestión de usuarios</a></li>
+            <li><a href="panel-admin.html#moderacion-cursos" class="menu-lateral__enlace">Moderación de cursos</a></li>
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Ver catálogo público</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Panel de administración</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-24 · Gestión de usuarios</span>
+            <span class="etiqueta etiqueta--solida">RF-28 · Métricas de desempeño</span>
+            <span class="etiqueta etiqueta--solida">RF-30 · Convenios y Revenue Share</span>
+            <span class="etiqueta etiqueta--info">RF-25 · Moderación de cursos</span>
+          </div>
+          <p class="texto-intro">Supervisa las métricas globales de la plataforma, revisa el estado de las suscripciones, la distribución de ingresos y modera los cursos enviados por los instructores.</p>
+        </header>
+
+        <section class="rejilla" aria-labelledby="titulo-metricas">
+          <h2 id="titulo-metricas" class="visualmente-oculto">Métricas globales de la plataforma</h2>
+          <article class="tarjeta tarjeta-metrica metrica-global">
+            <p class="tarjeta-metrica__valor">842</p>
+            <p class="tarjeta-metrica__etiqueta">Cuentas activas registradas</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global metrica-global--exito">
+            <p class="tarjeta-metrica__valor">36</p>
+            <p class="tarjeta-metrica__etiqueta">Cursos publicados en el catálogo</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global metrica-global--acento">
+            <p class="tarjeta-metrica__valor">5</p>
+            <p class="tarjeta-metrica__etiqueta">Cursos pendientes de aprobación</p>
+          </article>
+          <article class="tarjeta tarjeta-metrica metrica-global">
+            <p class="tarjeta-metrica__valor">612</p>
+            <p class="tarjeta-metrica__etiqueta">Suscripciones activas (Pro y Premium)</p>
+          </article>
+        </section>
+
+        <div class="rejilla rejilla--dos">
+          <section class="tarjeta" aria-labelledby="titulo-suscripciones">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-suscripciones">Estado de suscripciones</h2>
+              <p class="texto-secundario">Distribución de los 842 usuarios registrados por plan de membresía.</p>
+
+              <div class="progreso">
+                <div class="progreso__etiqueta">
+                  <span>Explorador (gratuito)</span>
+                  <span>230 usuarios · 27 %</span>
+                </div>
+                <div class="progreso__barra" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" aria-label="Proporción del plan Explorador">
+                  <span class="progreso__relleno progreso__relleno--25"></span>
+                </div>
+              </div>
+
+              <div class="progreso">
+                <div class="progreso__etiqueta">
+                  <span>Plan Pro</span>
+                  <span>384 usuarios · 46 %</span>
+                </div>
+                <div class="progreso__barra" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" aria-label="Proporción del plan Pro">
+                  <span class="progreso__relleno progreso__relleno--45"></span>
+                </div>
+              </div>
+
+              <div class="progreso">
+                <div class="progreso__etiqueta">
+                  <span>Plan Premium</span>
+                  <span>228 usuarios · 27 %</span>
+                </div>
+                <div class="progreso__barra" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" aria-label="Proporción del plan Premium">
+                  <span class="progreso__relleno progreso__relleno--25"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tarjeta" aria-labelledby="titulo-ingresos">
+            <div class="tarjeta__cuerpo">
+              <h2 class="tarjeta__titulo" id="titulo-ingresos">Distribución de ingresos</h2>
+              <p class="texto-secundario">Revenue Share del convenio institucional «Academia Técnica Nacional».</p>
+              <div class="tabla-contenedor">
+                <table class="tabla-datos">
+                  <caption>Reparto de ingresos del convenio (noviembre de 2026)</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Concepto</th>
+                      <th scope="col">Estudiantes</th>
+                      <th scope="col">Ingresos</th>
+                      <th scope="col">Participación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Matrículas del convenio</th>
+                      <td>188</td>
+                      <td>$ 37.600</td>
+                      <td><span class="etiqueta etiqueta--info">Base</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">EduNova (60 %)</th>
+                      <td>—</td>
+                      <td>$ 22.560</td>
+                      <td><span class="etiqueta etiqueta--exito">60 %</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Institución (40 %)</th>
+                      <td>—</td>
+                      <td>$ 15.040</td>
+                      <td><span class="etiqueta etiqueta--solida">40 %</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="texto-secundario">Total de estudiantes matriculados bajo el convenio: 188.</p>
+            </div>
+          </section>
+        </div>
+
+        <section id="moderacion-cursos" aria-labelledby="titulo-moderacion">
+          <div class="fila-espaciada">
+            <h2 id="titulo-moderacion">Cursos pendientes de moderación</h2>
+            <span class="etiqueta etiqueta--alerta">3 pendientes de revisión</span>
+          </div>
+          <div id="mensaje-moderacion" role="status" aria-live="polite" tabindex="-1"></div>
+          <div class="tabla-contenedor">
+            <table class="tabla-datos">
+              <caption>Cursos enviados por instructores a la espera de aprobación</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Curso</th>
+                  <th scope="col">Instructor</th>
+                  <th scope="col">Categoría</th>
+                  <th scope="col">Módulos</th>
+                  <th scope="col">Fecha de envío</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-moderacion-fila>
+                  <th scope="row">Bases de Datos Relacionales y SQL</th>
+                  <td>Prof. Carlos Mendoza</td>
+                  <td>Bases de Datos</td>
+                  <td>3</td>
+                  <td>20 Nov 2026</td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--primario boton--sm" type="button" data-accion="aprobar-curso" data-curso="Bases de Datos Relacionales y SQL">Aprobar</button>
+                      <button class="boton boton--contorno boton--sm" type="button" data-accion="rechazar-curso" data-curso="Bases de Datos Relacionales y SQL">Rechazar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-moderacion-fila>
+                  <th scope="row">Introducción a la Ciberseguridad</th>
+                  <td>Prof. Laura Vega</td>
+                  <td>Seguridad</td>
+                  <td>4</td>
+                  <td>19 Nov 2026</td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--primario boton--sm" type="button" data-accion="aprobar-curso" data-curso="Introducción a la Ciberseguridad">Aprobar</button>
+                      <button class="boton boton--contorno boton--sm" type="button" data-accion="rechazar-curso" data-curso="Introducción a la Ciberseguridad">Rechazar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-moderacion-fila>
+                  <th scope="row">Diseño de Interfaces Accesibles</th>
+                  <td>Prof. Andrés Paredes</td>
+                  <td>Diseño UI/UX</td>
+                  <td>5</td>
+                  <td>18 Nov 2026</td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--primario boton--sm" type="button" data-accion="aprobar-curso" data-curso="Diseño de Interfaces Accesibles">Aprobar</button>
+                      <button class="boton boton--contorno boton--sm" type="button" data-accion="rechazar-curso" data-curso="Diseño de Interfaces Accesibles">Rechazar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

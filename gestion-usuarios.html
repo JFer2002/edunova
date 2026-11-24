@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gestión de usuarios y roles en EduNova: búsqueda, filtros, creación y activación o desactivación de cuentas.">
+  <title>Gestión de usuarios — EduNova</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <a class="saltar-contenido" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <header class="encabezado">
+    <div class="encabezado__contenedor">
+      <a href="index.html" class="marca">EduNova <span class="marca__etiqueta">Administrador</span></a>
+      <nav class="nav-superior" aria-label="Navegación principal">
+        <ul>
+          <li><a href="panel-admin.html" class="nav-superior__enlace">Panel</a></li>
+          <li><a href="gestion-usuarios.html" class="nav-superior__enlace nav-superior__enlace--activo" aria-current="page">Usuarios</a></li>
+          <li><a href="catalogo.html" class="nav-superior__enlace">Catálogo</a></li>
+        </ul>
+      </nav>
+      <div class="acciones">
+        <button class="boton boton--secundario boton--sm" type="button" data-accion="alternar-tema" aria-pressed="false">Modo oscuro</button>
+        <a href="login.html" class="boton boton--contorno boton--sm">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido-principal" class="contenido">
+
+    <div class="disposicion-lateral">
+
+      <aside class="panel-lateral" aria-label="Información del administrador">
+        <div class="perfil-lateral">
+          <div class="perfil-lateral__avatar" aria-hidden="true">AD</div>
+          <p class="perfil-lateral__nombre">Administrador Demo</p>
+          <p class="perfil-lateral__correo">admin@edunova.edu</p>
+          <span class="etiqueta etiqueta--solida">Administrador</span>
+        </div>
+
+        <nav class="menu-lateral" aria-label="Menú del panel de administración">
+          <ul>
+            <li><a href="panel-admin.html" class="menu-lateral__enlace">Dashboard</a></li>
+            <li><a href="gestion-usuarios.html" class="menu-lateral__enlace menu-lateral__enlace--activo" aria-current="page">Gestión de usuarios</a></li>
+            <li><a href="panel-admin.html#moderacion-cursos" class="menu-lateral__enlace">Moderación de cursos</a></li>
+            <li><a href="catalogo.html" class="menu-lateral__enlace">Ver catálogo público</a></li>
+          </ul>
+        </nav>
+
+        <div class="panel-lateral__seccion">
+          <p class="panel-lateral__seccion-titulo">Accesos rápidos</p>
+          <ul class="menu-lateral">
+            <li><a href="login.html" class="menu-lateral__enlace">Cambiar de cuenta</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="formulario">
+        <header>
+          <h1>Gestión de usuarios y roles</h1>
+          <div class="acciones">
+            <span class="etiqueta etiqueta--solida">RF-24 · Gestión de usuarios</span>
+          </div>
+          <p class="texto-intro">Administra las cuentas registradas, asigna roles y controla el estado de acceso de cada usuario. Los cambios se aplican en modo demostración.</p>
+        </header>
+
+        <section class="tarjeta" aria-labelledby="titulo-crear-usuario">
+          <div class="tarjeta__cuerpo">
+            <h2 class="tarjeta__titulo" id="titulo-crear-usuario">Crear nuevo usuario</h2>
+            <form class="formulario" id="formulario-usuario" data-formulario="usuario" novalidate action="#" method="post">
+              <div id="mensaje-usuario" role="status" aria-live="polite" tabindex="-1" data-mensaje-formulario></div>
+
+              <div class="rejilla rejilla--campos">
+                <div class="campo">
+                  <label class="campo__etiqueta" for="usuario-nombre">Nombre completo <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <input class="campo__control" id="usuario-nombre" name="nombre" type="text" placeholder="Ej. Camila Fernández" required data-validacion="requerido nombre" aria-describedby="usuario-nombre-error">
+                  <div id="usuario-nombre-error" hidden><p class="campo__error"></p></div>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="usuario-correo">Correo electrónico <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <input class="campo__control" id="usuario-correo" name="correo" type="email" inputmode="email" placeholder="camila.fernandez@edunova.edu" required data-validacion="requerido correo" aria-describedby="usuario-correo-error">
+                  <div id="usuario-correo-error" hidden><p class="campo__error"></p></div>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="usuario-rol">Rol asignado <span class="campo__requerido" aria-hidden="true">*</span></label>
+                  <select class="campo__control" id="usuario-rol" name="rol" required data-validacion="requerido">
+                    <option value="estudiante" selected>Estudiante</option>
+                    <option value="instructor">Instructor</option>
+                    <option value="administrador">Administrador</option>
+                  </select>
+                </div>
+
+                <div class="campo">
+                  <label class="campo__etiqueta" for="usuario-plan">Plan de membresía</label>
+                  <select class="campo__control" id="usuario-plan" name="plan">
+                    <option value="explorador">Explorador</option>
+                    <option value="pro" selected>Pro</option>
+                    <option value="premium">Premium</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="acciones">
+                <button class="boton boton--primario" type="submit">Registrar usuario</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="tarjeta" aria-labelledby="titulo-filtros-usuarios">
+          <div class="tarjeta__cuerpo">
+            <h2 class="tarjeta__titulo" id="titulo-filtros-usuarios">Buscar y filtrar usuarios</h2>
+            <form class="barra-filtros" id="formulario-filtros-usuarios" role="search" action="gestion-usuarios.html" method="get">
+              <div class="campo">
+                <label class="campo__etiqueta" for="buscar-usuario">Buscar usuario</label>
+                <input class="campo__control" type="search" id="buscar-usuario" name="q" placeholder="Nombre o correo electrónico...">
+              </div>
+              <div class="campo">
+                <label class="campo__etiqueta" for="filtro-rol-usuario">Rol</label>
+                <select class="campo__control" id="filtro-rol-usuario" name="rol">
+                  <option value="">Todos los roles</option>
+                  <option value="estudiante">Estudiante</option>
+                  <option value="instructor">Instructor</option>
+                  <option value="administrador">Administrador</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label class="campo__etiqueta" for="filtro-estado-usuario">Estado</label>
+                <select class="campo__control" id="filtro-estado-usuario" name="estado">
+                  <option value="">Todos los estados</option>
+                  <option value="activo">Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+              </div>
+            </form>
+            <div class="acciones">
+              <p class="texto-secundario" id="resumen-usuarios" aria-live="polite">Mostrando 6 de 6 usuarios.</p>
+              <button class="boton boton--contorno boton--sm" type="button" id="limpiar-filtros-usuarios">Limpiar filtros</button>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="titulo-lista-usuarios">
+          <div class="fila-espaciada">
+            <h2 id="titulo-lista-usuarios">Usuarios registrados</h2>
+            <span class="etiqueta etiqueta--info">Página 1 de 141</span>
+          </div>
+
+          <div id="mensaje-usuarios" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <div class="tabla-contenedor">
+            <table class="tabla-datos" id="lista-usuarios">
+              <caption>Listado de cuentas registradas con su rol, plan y estado de acceso</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Nombre completo</th>
+                  <th scope="col">Correo electrónico</th>
+                  <th scope="col">Rol</th>
+                  <th scope="col">Plan</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-usuario data-nombre="Ana Torres" data-correo="ana.torres@ejemplo.com" data-rol="estudiante" data-estado="activo">
+                  <th scope="row">Ana Torres</th>
+                  <td>ana.torres@ejemplo.com</td>
+                  <td><span class="etiqueta etiqueta--info">Estudiante</span></td>
+                  <td>Pro</td>
+                  <td><span class="etiqueta etiqueta--exito" data-estado-usuario>Activo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--peligro boton--sm" type="button" data-accion="cambiar-estado-usuario">Desactivar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-usuario data-nombre="Carlos Mendoza" data-correo="carlos.mendoza@ejemplo.com" data-rol="instructor" data-estado="activo">
+                  <th scope="row">Carlos Mendoza</th>
+                  <td>carlos.mendoza@ejemplo.com</td>
+                  <td><span class="etiqueta etiqueta--solida">Instructor</span></td>
+                  <td>Premium</td>
+                  <td><span class="etiqueta etiqueta--exito" data-estado-usuario>Activo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--peligro boton--sm" type="button" data-accion="cambiar-estado-usuario">Desactivar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-usuario data-nombre="Luis Ramírez" data-correo="luis.ramirez@ejemplo.com" data-rol="estudiante" data-estado="activo">
+                  <th scope="row">Luis Ramírez</th>
+                  <td>luis.ramirez@ejemplo.com</td>
+                  <td><span class="etiqueta etiqueta--info">Estudiante</span></td>
+                  <td>Explorador</td>
+                  <td><span class="etiqueta etiqueta--exito" data-estado-usuario>Activo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--peligro boton--sm" type="button" data-accion="cambiar-estado-usuario">Desactivar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-usuario data-nombre="María Gómez" data-correo="maria.gomez@ejemplo.com" data-rol="estudiante" data-estado="inactivo">
+                  <th scope="row">María Gómez</th>
+                  <td>maria.gomez@ejemplo.com</td>
+                  <td><span class="etiqueta etiqueta--info">Estudiante</span></td>
+                  <td>Pro</td>
+                  <td><span class="etiqueta etiqueta--error" data-estado-usuario>Inactivo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--primario boton--sm" type="button" data-accion="cambiar-estado-usuario">Activar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-usuario data-nombre="Laura Vega" data-correo="laura.vega@ejemplo.com" data-rol="instructor" data-estado="activo">
+                  <th scope="row">Laura Vega</th>
+                  <td>laura.vega@ejemplo.com</td>
+                  <td><span class="etiqueta etiqueta--solida">Instructor</span></td>
+                  <td>Premium</td>
+                  <td><span class="etiqueta etiqueta--exito" data-estado-usuario>Activo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--peligro boton--sm" type="button" data-accion="cambiar-estado-usuario">Desactivar</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-usuario data-nombre="Administrador Demo" data-correo="admin@edunova.edu" data-rol="administrador" data-estado="activo">
+                  <th scope="row">Administrador Demo</th>
+                  <td>admin@edunova.edu</td>
+                  <td><span class="etiqueta etiqueta--solida">Administrador</span></td>
+                  <td>—</td>
+                  <td><span class="etiqueta etiqueta--exito" data-estado-usuario>Activo</span></td>
+                  <td>
+                    <div class="tabla-datos__acciones">
+                      <button class="boton boton--secundario boton--sm" type="button" disabled aria-disabled="true">Desactivar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <nav class="paginacion" aria-label="Paginación del listado de usuarios">
+            <a href="#" class="paginacion__enlace" aria-disabled="true">Anterior</a>
+            <a href="#" class="paginacion__enlace" aria-current="page">1</a>
+            <a href="#" class="paginacion__enlace">2</a>
+            <a href="#" class="paginacion__enlace">3</a>
+            <a href="#" class="paginacion__enlace">Siguiente</a>
+          </nav>
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenedor">
+      <p>&copy; 2026 EduNova. Plataforma de aprendizaje en línea.</p>
+      <ul class="pie__enlaces">
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="componentes.html">Sistema de diseño</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

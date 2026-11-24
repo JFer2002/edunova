@@ -391,6 +391,8 @@
           procesarCreacionCurso(formulario, contenedor);
         } else if (tipo === 'calificacion') {
           procesarCalificacion(formulario, contenedor);
+        } else if (tipo === 'usuario') {
+          procesarRegistroUsuario(formulario, contenedor);
         }
       });
     });
@@ -612,6 +614,113 @@
     }
 
     aplicarFiltros();
+  };
+
+  /* ------------------------------------------------------------------------
+     Gestión de usuarios (Administrador): búsqueda, filtros y acciones
+     ------------------------------------------------------------------------ */
+
+  let reaplicarFiltrosUsuarios = null;
+
+  const inicializarUsuarios = function () {
+    const lista = qs('#lista-usuarios');
+    if (!lista) {
+      return;
+    }
+
+    const buscador = qs('#buscar-usuario');
+    const rol = qs('#filtro-rol-usuario');
+    const estado = qs('#filtro-estado-usuario');
+    const resumen = qs('#resumen-usuarios');
+    const formulario = qs('#formulario-filtros-usuarios');
+    const limpiar = qs('#limpiar-filtros-usuarios');
+    const filas = qsa('[data-usuario]', lista);
+    const total = filas.length;
+
+    const aplicarFiltros = function () {
+      const texto = normalizar(buscador ? buscador.value : '');
+      const rolElegido = rol ? rol.value : '';
+      const estadoElegido = estado ? estado.value : '';
+      let visibles = 0;
+
+      filas.forEach(function (fila) {
+        const contenido = normalizar([fila.dataset.nombre, fila.dataset.correo].join(' '));
+        const coincideTexto = !texto || contenido.indexOf(texto) !== -1;
+        const coincideRol = !rolElegido || fila.dataset.rol === rolElegido;
+        const coincideEstado = !estadoElegido || fila.dataset.estado === estadoElegido;
+        const visible = coincideTexto && coincideRol && coincideEstado;
+
+        fila.hidden = !visible;
+        if (visible) {
+          visibles += 1;
+        }
+      });
+
+      if (resumen) {
+        resumen.textContent = visibles === 0
+          ? 'No hay usuarios que coincidan con los filtros.'
+          : 'Mostrando ' + visibles + ' de ' + total + ' usuarios.';
+      }
+    };
+
+    reaplicarFiltrosUsuarios = aplicarFiltros;
+
+    if (buscador) {
+      buscador.addEventListener('input', aplicarFiltros);
+    }
+    if (rol) {
+      rol.addEventListener('change', aplicarFiltros);
+    }
+    if (estado) {
+      estado.addEventListener('change', aplicarFiltros);
+    }
+    if (formulario) {
+      formulario.addEventListener('submit', function (evento) {
+        evento.preventDefault();
+        aplicarFiltros();
+      });
+    }
+    if (limpiar) {
+      limpiar.addEventListener('click', function () {
+        if (buscador) {
+          buscador.value = '';
+        }
+        if (rol) {
+          rol.value = '';
+        }
+        if (estado) {
+          estado.value = '';
+        }
+        aplicarFiltros();
+        if (buscador) {
+          buscador.focus();
+        }
+      });
+    }
+
+    aplicarFiltros();
+  };
+
+  const procesarRegistroUsuario = function (formulario, contenedor) {
+    const nombre = qs('#usuario-nombre', formulario);
+    const correo = qs('#usuario-correo', formulario);
+    const rol = qs('#usuario-rol', formulario);
+    const opcionRol = rol ? rol.options[rol.selectedIndex] : null;
+    const nombreRol = opcionRol ? opcionRol.text : 'Estudiante';
+
+    mostrarMensaje(
+      contenedor,
+      'exito',
+      'Usuario creado correctamente',
+      'La cuenta de ' + nombre.value.trim() + ' (' + correo.value.trim() + ') se registró como ' + nombreRol + ' en modo demostración.'
+    );
+    if (contenedor) {
+      contenedor.focus();
+    }
+    formulario.reset();
+    if (nombre) {
+      nombre.focus();
+    }
   };
 
   /* ------------------------------------------------------------------------
@@ -1013,8 +1122,48 @@
       contenedor,
       'exito',
       'Estado actualizado',
-      'El usuario quedó ' + (nuevoEstado === 'activo' ? 'activo' : 'inactivo') + ' en modo demostración.'
+      'El usuario ' + (fila.dataset.nombre || '') + ' quedó ' + (nuevoEstado === 'activo' ? 'activo' : 'inactivo') + ' en modo demostración.'
     );
+
+    // Si hay filtros activos, se vuelven a aplicar para que la fila
+    // respete el filtro de estado vigente tras el cambio.
+    if (typeof reaplicarFiltrosUsuarios === 'function') {
+      reaplicarFiltrosUsuarios();
+    }
+  };
+
+  const moderarCurso = function (boton, aprobado) {
+    const fila = boton.closest('[data-moderacion-fila]');
+    if (!fila) {
+      return;
+    }
+
+    const nombre = boton.dataset.curso || 'El curso';
+    const contenedor = qs('#mensaje-moderacion');
+
+    if (fila.parentNode) {
+      fila.remove();
+    }
+
+    mostrarMensaje(
+      contenedor,
+      aprobado ? 'exito' : 'alerta',
+      aprobado ? 'Curso aprobado' : 'Curso rechazado',
+      aprobado
+        ? '«' + nombre + '» se aprobó y ya está disponible en el catálogo público (modo demostración).'
+        : '«' + nombre + '» se rechazó y se notificó al instructor para que realice ajustes (modo demostración).'
+    );
+    if (contenedor) {
+      contenedor.focus();
+    }
+
+    const restantes = qsa('[data-moderacion-fila]').length;
+    const contador = qs('#moderacion-cursos .etiqueta--alerta');
+    if (contador) {
+      contador.textContent = restantes === 1
+        ? '1 pendiente de revisión'
+        : restantes + ' pendientes de revisión';
+    }
   };
 
   const inicializarAcciones = function () {
@@ -1043,6 +1192,12 @@
       } else if (accion === 'cambiar-estado-usuario') {
         evento.preventDefault();
         simularCambioEstadoUsuario(boton);
+      } else if (accion === 'aprobar-curso') {
+        evento.preventDefault();
+        moderarCurso(boton, true);
+      } else if (accion === 'rechazar-curso') {
+        evento.preventDefault();
+        moderarCurso(boton, false);
       } else if (accion === 'descargar-certificado') {
         evento.preventDefault();
         mostrarMensaje(qs('#mensaje-certificado'), 'exito', 'Descarga iniciada', 'Se está generando el archivo PDF del certificado...');
@@ -1066,6 +1221,7 @@
     inicializarValidacion();
     inicializarLogin();
     inicializarCatalogo();
+    inicializarUsuarios();
     inicializarDetalleCurso();
     manejarGeneradorModulos();
     inicializarAcciones();
